@@ -1,1 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
 
+
+.container {
+    flex-direction: column;   
+    height: 100vh;
+    display: flex;
+    flex-direction: column;   
+    background-image: url(/public/img/home.jpg); 
+}
+
+.rojo {
+    color: #ff3648;;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    padding: 25px 50px;
+}
+
+header nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul {
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+    color: white;
+    margin: 0px 20px;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.logo-grande {
+height: 40px;
+}
+
+.login {
+    width: 320px;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+}
+
+.login img {
+    width: 48px;
+    cursor: pointer;
+}
+
+.datosLogin {
+    position: absolute;
+    top: 80px;
+    right: 40px;
+    flex-direction: column;
+    display: flex;
+    background-color: #ff3648;   
+    gap: 15px;
+    border-radius: 15px;
+    padding: 20px 0px;
+}
+
+.datosLogin button {
+    background-color: #ff3648;
+    width: 150px;
+    border: none;
+    color: white;
+    
+}
+
+.home1_container {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-grow: 1;
+flex-direction: column;
+}
+
+.home1_container h1 {
+color: #eeeeee;
+font-size: 3.8rem;
+padding-bottom: 0.8rem;
+}
+
+
+
+.buttonCallToAction {
+    border-radius: 5px;
+    background-color: #ff3648;
+    border: none;
+    padding: 10px 20px;
+    width: 240px;
+    margin: 0px 10px ;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
