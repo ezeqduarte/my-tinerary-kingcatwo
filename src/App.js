@@ -3,11 +3,15 @@ import './App.css';
 import users from './data/registredUsers';
 import activities from './data/activities';
 import places from './data/cities';
+import admins  from './data/admins';
+import hotels from './data/hotels';
+import events from './data/events';
 
 function App() {
-  console.log(users)
-  console.log(places);
-  console.log(activities);
+  console.log(admins)
+  console.log(hotels)
+  console.log(events)
+  
   return (    
     <div className="App">
       <header className="App-header">
