@@ -1,8 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import users from './data/registredUsers';
+import activities from './data/activities';
+import places from './data/cities';
 
 function App() {
-  return (
+  console.log(users)
+  console.log(places);
+  console.log(activities);
+  return (    
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
