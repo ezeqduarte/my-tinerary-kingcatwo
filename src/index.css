@@ -1,1 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* 
+background-color:     #ff3648;
+background-color: #eeeeee;
+background-color: #202020; */
+
+/* /////////////////////////ACA EMPIEZA EL MAIN/////////////////////////////////////// */
+
+main {
+  min-height: 100vh;
+}
+
+h2 {
+  font-size: 60px;
+  margin-left: 50px;
+}
+
+.puntoRojo {
+  color: #ff3648;
+}
+
+h3 {
+  font-size: 25px;
+  font-weight: 400;
+  margin-left: 50px;
+}
+
+.subtitulosMain {
+  width: 100%;
+  height: 18vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.carrouselEstilo {
+  background-color: #ff3648;
+  height: 270px;
+}
+
+@media (max-width: 875px) {
+  h3 {
+    display: none;
+  }
+
+  .subtitulosMain {
+    align-items: center;
+  }
+
+  h2 {
+    margin-left: 0px;
+  }
+}
+
+/* /////////////////////////ACA TERMINA EL MAIN/////////////////////////////////////// */
+
+/* /////////////////////////ACA EMPIEZA EL FOOTEREANO/////////////////////////////////////// */
+
+.footereano {
+  height: 30vh;
+  background-color: #2e2d2d;
+}
+
+/* /////////////////////////ACA TERMINA EL FOOTEREANO/////////////////////////////////////// */
+
+.scrollTopBoton {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
