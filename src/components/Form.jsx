@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { useRef, useState, useEffect } from "react";
+
 import { ReactDOM } from 'react';
 
 
@@ -26,7 +28,9 @@ export default function Form() {
     }
 
     localStorage.setItem('newUser', JSON.stringify(newUser)) 
+
     form.current.reset()
+
   }
 
   return (

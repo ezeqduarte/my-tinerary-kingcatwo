@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
+import Footer from '../../components/Footer';
 import Form from '../../components/Form';
 import NavBar from '../../components/NavBar'
 import '../signup/signup.css';
@@ -31,6 +32,9 @@ export default function SignUp() {
             
             </div>
         </div>
+
+        
     </div>
+    
   )
 }

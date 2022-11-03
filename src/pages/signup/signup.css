@@ -30,6 +30,7 @@
     color: white;
     border: none;
     font-size: 2rem;
+    justify-content: center;
 }
 
 .createacc {
@@ -44,6 +45,7 @@
     flex-direction: column;
     justify-content: center;
     margin-bottom: 25px;
+    font-size: 2rem;
 }
 
 .buttons-form {
@@ -95,6 +97,7 @@
 .already_acc h3{
     color: #eeeeee;
     font-size: 1.7rem;
+    margin: 0;
 }
 
 .buttonsignin {

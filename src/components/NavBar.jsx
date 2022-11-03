@@ -27,14 +27,14 @@ export default function NavBar() {
         <img src="./img/menu-rounded.png" onClick={menu} alt="menu"/>
         <div className='menu'>
 
-        <NavLink to="/home">
+        <NavLink to="/home" style={{textDecoration: 'none'}}>
             <button>HOME<span className="rojo">.</span></button> 
         </NavLink>
 
-        <NavLink to="/cities">
+        <NavLink to="/cities" style={{textDecoration: 'none'}}>
             <button>CITIES<span className="rojo">.</span></button>
         </NavLink>
-        <NavLink to="/hotels">
+        <NavLink to="/hotels" style={{textDecoration: 'none'}}>
             <button>HOTELS<span className="rojo">.</span></button>    
         </NavLink>            
 
@@ -69,10 +69,10 @@ export default function NavBar() {
             : (<div className='login'>              
             <img src="./img/login.png" onClick={change} alt=""/>
             <div className='datosLogin'>
-            <NavLink to="/signup">
+            <NavLink to="/signup" style={{textDecoration: 'none'}}>
                 <button>LOGIN</button>
             </NavLink>
-            <NavLink to="/logout">
+            <NavLink to="/logout" style={{textDecoration: 'none'}}>
                 <button>LOGOUT</button>
             </NavLink>
 
