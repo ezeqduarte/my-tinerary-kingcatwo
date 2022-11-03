@@ -1,12 +1,14 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
+// Está complicado el asunto :/
+
 function BackToTopButton() {
   const [backToTopButton, setBackToTopButton] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 10) {
+      if (window.scrollY > 15) {
         setBackToTopButton(true);
       } else {
         setBackToTopButton(false);
