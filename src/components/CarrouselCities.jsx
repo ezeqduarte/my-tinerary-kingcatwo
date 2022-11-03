@@ -12,7 +12,7 @@ export default function CarrouselCities() {
       
       },
 
-      2500
+      2800
     );
     setId(idInterval);
     return clearInterval(id);

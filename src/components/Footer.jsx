@@ -9,13 +9,13 @@ export default function Footer() {
           <span>|</span> Navegation
         </h4>
         <ul>
-          <NavLink to="/home">
+          <NavLink to ="/home" style={{textDecoration: 'none'}}>
             <li>Home</li>
           </NavLink>
-          <NavLink to="/cities">
+          <NavLink to="/cities" style={{textDecoration: 'none'}}>
             <li>Cities</li>
           </NavLink>
-          <NavLink to="/hotels">
+          <NavLink to="/hotels" style={{textDecoration: 'none'}}>
             <li>Hotels</li>
           </NavLink>
         </ul>
@@ -26,10 +26,10 @@ export default function Footer() {
           <span>|</span> About US
         </h4>
         <ul>
-          <a href="https://github.com/ezeqduarte" target="blank">
+          <a href="https://github.com/ezeqduarte" target="blank" style={{textDecoration: 'none'}}>
             <li>Ezequiel Duarte</li>
           </a>
-          <a href="https://github.com/matiasecharri" target="blank">
+          <a href="https://github.com/matiasecharri" target="blank" style={{textDecoration: 'none'}}>
             <li>Matias Echarri</li>
           </a>
         </ul>
