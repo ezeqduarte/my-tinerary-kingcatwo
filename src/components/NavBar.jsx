@@ -6,14 +6,16 @@ export default function NavBar() {
 
     let [mostrar, setMostrarOcultar] = useState (true)
     let change = () => {
-        setMostrarOcultar(!mostrar)
-        console.log(mostrar);
+        
+        setMostrarOcultar(!mostrar)        
+        
     }
 
     let [mostrarMenu, setMostrarMenu] = useState (false)
     let menu = () => {
-        setMostrarMenu(!mostrarMenu)
-        console.log(mostrarMenu);
+        
+        setMostrarMenu(!mostrarMenu)       
+       
     }
 
   return (
@@ -22,17 +24,24 @@ export default function NavBar() {
 
         { mostrarMenu 
         ? (<div className='flex-menu'>              
-        <img src="https://img.icons8.com/ios-filled/50/000000/menu-rounded.png" onClick={menu} alt=""/>
+        <img src="./img/menu-rounded.png" onClick={menu} alt="menu"/>
         <div className='menu'>
 
-            <button>HOME</button>
-            <button>CITIES</button>
-            <button>HOTELS</button>                
+        <NavLink to="/home">
+            <button>HOME<span className="rojo">.</span></button> 
+        </NavLink>
+
+        <NavLink to="/cities">
+            <button>CITIES<span className="rojo">.</span></button>
+        </NavLink>
+        <NavLink to="/hotels">
+            <button>HOTELS<span className="rojo">.</span></button>    
+        </NavLink>            
 
         </div>
     </div>)
         : (<div className='flex-menu'>              
-        <img src="https://img.icons8.com/ios-filled/50/000000/menu-rounded.png" onClick={menu} alt=""/>
+        <img src="./img/menu-rounded.png" onClick={menu} alt=""/>
     </div>)
 
 
@@ -42,13 +51,13 @@ export default function NavBar() {
         
         <nav>
             <ul>
-                <NavLink to="/home">
+                <NavLink to="/home" style={{textDecoration: 'none'}}>
                     <li>HOME</li>
                 </NavLink>
-                <NavLink to="/cities">
+                <NavLink to="/cities" style={{textDecoration: 'none'}}>
                     <li>CITIES</li>
                 </NavLink>
-                <NavLink to="/hotels">
+                <NavLink to="/hotels" style={{textDecoration: 'none'}}>
                     <li>HOTELS</li>
                 </NavLink>
             </ul>

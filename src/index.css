@@ -22,11 +22,12 @@ header {
     display: flex;
     width: 100%;
     padding: 25px 50px;
+    align-items: center;
 }
 
 header nav {
     flex-grow: 1;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -44,14 +45,44 @@ header ul li {
 }
 
 .logo-grande {
-height: 40px;
+height: 30px;
+display: none;
 }
 
 .login {
-    width: 320px;
     display: flex;
     align-items: end;
     flex-direction: column;
+    flex-grow: 1;
+}
+
+.flex-menu {
+display: block;
+}
+
+.flex-menu div {
+    position: absolute;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+
+    background-color: rgb(32, 32, 32);
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+.menu button {
+
+    background-color: transparent;
+    border: none;
+    margin: 15px 0px;
+    color: white;
+    width: 100%;
+
 }
 
 .login img {
@@ -65,14 +96,14 @@ height: 40px;
     right: 40px;
     flex-direction: column;
     display: flex;
-    background-color: #ff3648;   
+    background-color: rgb(32, 32, 32);   
     gap: 15px;
     border-radius: 15px;
     padding: 20px 0px;
 }
 
 .datosLogin button {
-    background-color: #ff3648;
+    background-color: rgb(32, 32, 32);
     width: 150px;
     border: none;
     color: white;
@@ -89,8 +120,15 @@ flex-direction: column;
 
 .home1_container h1 {
 color: #eeeeee;
-font-size: 3.8rem;
+font-size: 3.7rem;
 padding-bottom: 0.8rem;
+}
+
+Link {
+    text-decoration: none;
+    border: none;
+    background-color: blueviolet;
+    color: blue;
 }
 
 
@@ -101,8 +139,55 @@ padding-bottom: 0.8rem;
     border: none;
     padding: 10px 20px;
     width: 240px;
-    margin: 0px 10px ;
+    margin: 10px 10px ;
     color: white;
     font-size: 1.3rem;
     cursor: pointer;
 }
+
+@media (min-width: 576px) { 
+
+ }
+
+
+@media (min-width: 768px) { 
+
+    header nav {
+        
+        display: flex;
+        
+    }
+
+    .logo-grande {
+        height: 30px;
+        display: flex;
+        }
+
+    .flex-menu {
+        display: none;
+    }
+
+ }
+
+
+@media (min-width: 992px) { 
+
+    .login {        
+        flex-grow: 0;
+        width: 150px;
+    }
+
+ }
+
+
+@media (min-width: 1200px) { 
+    .login {        
+        flex-grow: 0;
+        width: 200px;
+    }
+ }
+
+
+@media (min-width: 1400px) { 
+
+ }
