@@ -1,7 +1,13 @@
-import React from 'react'
+import { useEffect } from 'react'
+import {useLocation} from  'react-router-dom'
 
-export default function AutoToTop() {
-  return (
-    <div>AutoToTop</div>
-  )
+export default function AutoToTop() {  
+
+    let {pathname} = useLocation()
+    useEffect(()=> {
+        window.scrollTo(0,0);
+    }, [pathname])
+
+    return null
+
 }
