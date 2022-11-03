@@ -1,16 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import places from "../data/cities";
 
 
 export default function CarrouselCities() {
   let [numberPhotoToChange, setnumberPhotoToChange] = useState(0);
+  let [id, setId] = useState(0);
+  useEffect(() => {
+    let idInterval = setInterval(
+      () => {
+        siguiente();
+      
+      },
 
+      2500
+    );
+    setId(idInterval);
+    return clearInterval(id);
+  }, [numberPhotoToChange]);
+
+
+
+
+
+
+  
   let anterior = function () {
     if (numberPhotoToChange > 0 ) {
       setnumberPhotoToChange(--numberPhotoToChange);
     } else {
       setnumberPhotoToChange(2);
-    }
+    } clearInterval(id)
   };
 
   let siguiente = function () {
