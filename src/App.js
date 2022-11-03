@@ -8,11 +8,7 @@ import events from "./data/events";
 import Home2 from "./pages/Home2";
 
 function App() {
-  console.log(admins);
-  console.log(hotels);
-  console.log(events);
-
-  return <Home2></Home2>;
+ 
 }
 
 export default App;
