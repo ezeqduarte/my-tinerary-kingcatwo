@@ -69,9 +69,12 @@ export default function NavBar() {
             : (<div className='login'>              
             <img src="./img/login.png" onClick={change} alt=""/>
             <div className='datosLogin'>
-
+            <NavLink to="/signup">
                 <button>LOGIN</button>
+            </NavLink>
+            <NavLink to="/logout">
                 <button>LOGOUT</button>
+            </NavLink>
 
             </div>
         </div>)
@@ -82,3 +85,4 @@ export default function NavBar() {
     </header>
   )
 }
+

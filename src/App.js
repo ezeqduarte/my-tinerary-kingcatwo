@@ -19,6 +19,7 @@ function App() {
   return (   <>
   
     <AutoToTop/>    
+    
       <Routes>
         <Route path="" element={<Home1/>}/>
         <Route path="/home" element={<Home1/>}/>
