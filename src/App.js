@@ -16,6 +16,7 @@ function App() {
   console.log(events)
   
   return (   <>
+  
     <AutoToTop/>
     <Home1>
       <Routes>
@@ -24,13 +25,7 @@ function App() {
         <Route path="/hotels" element={<Home1/>}/>
       </Routes>
     </Home1> 
-    <Home1>
-    <Routes>
-      <Route path="/home" element={<Home1/>}/>
-      <Route path="/cities" element={<Home1/>}/>
-      <Route path="/hotels" element={<Home1/>}/>
-    </Routes>
-  </Home1> 
+
   </>
   );
 }
