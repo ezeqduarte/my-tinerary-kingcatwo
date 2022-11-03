@@ -1,3 +1,4 @@
+
 import Home1 from "./pages/Home1";
 import { Routes, Route } from "react-router-dom";
 import AutoToTop from "./components/AutoToTop";
@@ -16,6 +17,7 @@ function App() {
         <Route path="/hotels" element={<Home1 />} />
         <Route path="/signup" element={<LSignUp />} />
       </Routes>
+
 
     </>
   );
