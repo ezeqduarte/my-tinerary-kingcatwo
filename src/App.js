@@ -7,6 +7,7 @@ import Main from "./layouts/Main";
 import SignUp from "./pages/signup/SignUp";
 import NotFound from "./pages/NotFound";
 import LogIn from "./pages/login/LogIn"
+import NewHotel from "./pages/newHotel/NewHotel";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/login" element={<LogIn/>} />
         <Route path="*" element={<NotFound/>} />
+        <Route path="newhotel" element={<NewHotel/>} />
       </Routes>
 
     </Main>

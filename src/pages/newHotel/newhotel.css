@@ -1,0 +1,56 @@
+*{
+
+padding: 0%;
+margin: 0%;
+box-sizing: border-box;
+
+}
+
+.newHotel{
+
+height: 100vh;
+background-image: url(/public/img/home.jpg);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+
+
+
+}
+
+
+.divh2Hotel{
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+
+} 
+
+.h2Hotel{
+    position: absolute;
+    top: 100px;
+    color: #eeeeee;
+
+
+
+}
+
+.botonHotel{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.formHotel{
+
+
+display: flex;
+flex-direction: column;
+
+    
+}
