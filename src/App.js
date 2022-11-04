@@ -6,6 +6,7 @@ import AutoToTop from "./components/AutoToTop";
 import Main from "./layouts/Main";
 import SignUp from "./pages/signup/SignUp";
 import NotFound from "./pages/NotFound";
+import LogIn from "./pages/login/LogIn"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/cities" element={<Home1 />} />
         <Route path="/hotels" element={<Home1 />} />
         <Route path="/signup" element={<SignUp/>} />
+        <Route path="/login" element={<LogIn/>} />
         <Route path="*" element={<NotFound/>} />
       </Routes>
 
