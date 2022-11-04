@@ -29,6 +29,7 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    font-weight: 700;
 }
 
 .formNewCity label input {
@@ -59,4 +60,15 @@
     background-color: #ff3648;
     color: white;
     padding: 20px 0px;
+}
+
+@media (max-width: 576px) { 
+    .formNewCity{
+
+        padding: 0px;
+        width: 300px;
+        height: 400px;
+      ;
+    
+    }
 }
