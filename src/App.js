@@ -7,7 +7,7 @@ import Main from "./layouts/Main";
 import SignUp from "./pages/signup/SignUp";
 import NotFound from "./pages/NotFound";
 import LogIn from "./pages/login/LogIn"
-import NewHotel from "./pages/newHotel/NewHotel";
+import NewHotel from "./newHotel/NewHotel";
 
 function App() {
   return (

@@ -11,20 +11,15 @@ export default function Home2() {
       <main>
         <div className="subtitulosMain">
           <h2>
-            CITIES<span className="puntoRojo">.</span>
+            CITIES & HOTELS<span className="puntoRojo">.</span>
           </h2>
-          <h3>Meet our most popular locations!</h3>
+          <h3>Meet popular locations and best comodities!</h3>
         </div>
         
         <CarrouselCities></CarrouselCities>
         
 
-        <div className="subtitulosMain">
-          <h2>
-            HOTELS<span className="puntoRojo">.</span>
-          </h2>
-          <h3>Enjoy our best comodities!</h3>
-        </div>
+       
 
         <Carrousel></Carrousel>
    

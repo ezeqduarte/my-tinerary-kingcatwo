@@ -4,7 +4,7 @@ let places = [
         id: "city1",
         name: "Hong Kong",
         continent: "Asia",
-        photo: "https://images.pexels.com/photos/1738994/pexels-photo-1738994.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        photo: "https://nomadict.org/wp-content/uploads/2021/10/Ma-On-Shan-Hong-Kong-2020.jpg",
         population:  7400000,
         userId:  "admn0"
 
@@ -22,7 +22,7 @@ let places = [
         id: "city3",
         name: "Rio de Janeiro",
         continent: "America",
-        photo: "https://images.pexels.com/photos/6580703/pexels-photo-6580703.jpeg",
+        photo: "https://images.pexels.com/photos/10254833/pexels-photo-10254833.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         population:  6700000,
         userId:  "admn0"
 
@@ -31,7 +31,7 @@ let places = [
         id: "city4",
         name: "El Cairo",
         continent: "Africa",
-        photo: "https://images.pexels.com/photos/7566890/pexels-photo-7566890.jpeg",
+        photo: "https://images.pexels.com/photos/13402991/pexels-photo-13402991.jpeg",
         population:  9500000,
         userId:  "admn0"
 
@@ -40,7 +40,7 @@ let places = [
         id: "city5",
         name: "London",
         continent: "Europe",
-        photo: "https://images-ext-1.discordapp.net/external/4d3sdgdIKsRyeiLnAsXc1ZD8-lvlyllLXXE3SeTGSUg/%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxzZWFyY2h8M3x8bG9uZG9ufGVufDB8fDB8fA%253D%253D%26w%3D1000%26q%3D80/https/images.unsplash.com/photo-1529655683826-aba9b3e77383?width=541&height=676",
+        photo: "https://images.pexels.com/photos/6064692/pexels-photo-6064692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         population:  9000000,
         userId:  "admn0"
 
@@ -49,7 +49,7 @@ let places = [
         id: "city6",
         name: "París",
         continent: "Europe",
-        photo: "https://images-ext-1.discordapp.net/external/g3PPIYr5DaxsTKvAmC7kqK4uk2PWFXjAWv8B7NPFHcc/https/images2.alphacoders.com/546/thumb-1920-546391.jpg?width=958&height=676",
+        photo: "https://images.pexels.com/photos/3375997/pexels-photo-3375997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=16",
         population:  2000000,
         userId:  "admn0"
 
@@ -85,7 +85,7 @@ let places = [
         id: "city10",
         name: "Kuala Lumpur",
         continent: "Asia",
-        photo: "https://images.pexels.com/photos/4007642/pexels-photo-4007642.jpeg",
+        photo: "https://images.pexels.com/photos/2741626/pexels-photo-2741626.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         population:  3000000,
         userId:  "admn0"
 
@@ -103,7 +103,7 @@ let places = [
         id: "city12",
         name: "Tokyo",
         continent: "Asia",
-        photo: "https://images-ext-1.discordapp.net/external/FutNGDjY54YyjpM5Wy6d5OBFX6PrJGHS2X1Sh2FBfH0/https/cdn.pixabay.com/photo/2019/08/28/14/24/tokyo-4436914_960_720.jpg",
+        photo: "https://images-ext-1.discordapp.net/external/mPYhTZLxwrOM_rA6j4A3wgHl4zwd31GW49UW_nBARg8/%3Fitok%3D3nrPOQvT/https/lonelyplanetes.cdnstatics2.com/sites/default/files/styles/max_1300x1300/public/fotos/japon_tokio_montefuji_shutterstock_756354574_sean_pavone_shutterstock.jpg?width=1007&height=671",
         population:  7500000,
         userId:  "admn0"
 

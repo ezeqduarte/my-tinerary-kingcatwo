@@ -11,7 +11,7 @@ export default function Carrousel() {
       
       },
 
-      2800
+      4000
     );
     setId(idInterval);
     return clearInterval(id);
