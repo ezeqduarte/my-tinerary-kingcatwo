@@ -1,14 +1,15 @@
 import React from 'react'
+import CallToAction from '../components/CallToAction'
 
 export default function NotFound() {
   return (
-    <div>
+   <main className='NotFound'>
 
-<H2> We sorry! this page does not exist or we could not find it... </H2>
-<CallToAction text="CITIES" rute="/cities"/>
-<CallToAction text="HOTELS" rute="/hotels"/>
+<h2> We sorry! this page does not exist or we could not find it... </h2>
+<CallToAction text="Go to home!" rute="/home"/>
+</main>
 
-    </div>
+    
   )
 }
 
