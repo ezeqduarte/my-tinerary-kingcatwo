@@ -31,7 +31,6 @@ export default function Home2() {
         <BackToTopButton className="scrollTopBoton"></BackToTopButton>
       </main>
 
-      <Footer></Footer>
     </>
   );
 }
