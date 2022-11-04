@@ -5,7 +5,7 @@
   font-family: "Montserrat", sans-serif;
 }
 
-main {
+.main {
   min-height: 100vh;
 }
 
@@ -197,6 +197,11 @@ cursor:pointer
   font-size: 25px;
 }
 
+.footereano img {
+  width: 40px;
+  height: 40px;
+}
+
 
 .footereano h4 span{
 
@@ -305,6 +310,7 @@ header {
   width: 100%;
   padding: 25px 50px;
   align-items: center;
+  position: absolute;
 }
 
 header nav {
