@@ -2,10 +2,11 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import Footer from '../../components/Footer';
 import Form from '../../components/Form';
+import FormLogIn from '../../components/FormLogIn';
 import NavBar from '../../components/NavBar'
-import '../signup/signup.css';
+import '../login/login.css';
 
-export default function SignUp() {
+export default function LogIn() {
 
 
   return (
@@ -15,18 +16,23 @@ export default function SignUp() {
         <div className="container_form">
             <div className='form'>
                 <div className='createacc'>
-                    <h2>Create your account</h2>
-                   <Form/>
+                    <h2>Log in with your Account</h2>
+                   
+                   
+                   
+                   <FormLogIn></FormLogIn>
+
                 </div>
                 <div className='already_acc'>
-                        <h3 className='rojo'>Already has an account?</h3>
+                       
                         <div className='buttons-form'>
-                        <NavLink to="/login" style={{textDecoration: 'none'}}>
-                            <button className='buttonsignin'>Sign in with account</button>
+                       
+                       
+                        <h3 className='rojo'>You dont have an account?</h3>
+                        <NavLink to="/signup" style={{textDecoration: 'none'}}>
+                            <button className='buttonsignin'>Create account</button>
                         </NavLink>
-                        <NavLink to="/signin" style={{textDecoration: 'none'}}>
-                            <button className='buttonsignin'> Sign in with <img src="https://img.icons8.com/color/28/null/google-logo.png"/>oogle</button>
-                        </NavLink>
+                       
                         </div>
                 </div>
             

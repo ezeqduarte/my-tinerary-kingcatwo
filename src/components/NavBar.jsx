@@ -69,7 +69,7 @@ export default function NavBar() {
             : (<div className='login'>              
             <img src="./img/login.png" onClick={change} alt=""/>
             <div className='datosLogin'>
-            <NavLink to="/signup" style={{textDecoration: 'none'}}>
+            <NavLink to="/login" style={{textDecoration: 'none'}}>
                 <button>LOGIN</button>
             </NavLink>
             <NavLink to="/logout" style={{textDecoration: 'none'}}>
