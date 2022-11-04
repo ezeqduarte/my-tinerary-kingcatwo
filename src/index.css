@@ -4,7 +4,10 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+  
+}
 main {
   min-height: 100vh;
 }
@@ -26,7 +29,7 @@ h3 {
 
 .subtitulosMain {
   width: 100%;
-height: 18vh;
+  height: 18vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -35,7 +38,6 @@ height: 18vh;
 }
 
 .carrouselEstilo {
- 
   min-height: 35vh;
   display: flex;
   flex-direction: row;
@@ -44,8 +46,7 @@ height: 18vh;
   width: 100%;
 }
 
-
-.imagenesCarrousel{
+.imagenesCarrousel {
   display: flex;
   flex-direction: row;
   gap: 1px;
@@ -56,111 +57,84 @@ height: 18vh;
   flex-wrap: wrap;
   margin: 12px;
   background-color: #f5f1f1a8;
-  border-radius: 15px ;
-
-
+  border-radius: 15px;
 }
-.imagenesCarrousel img{
-
-
+.imagenesCarrousel img {
   width: 360px;
   height: 260px;
   border-radius: 10px 10px 10px 10px;
- margin: 20px;
- box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-
+  margin: 20px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-.imagenesCarrousel img:hover{
-
+.imagenesCarrousel img:hover {
   width: 370px;
   height: 270px;
   transition-duration: 400ms;
-  
-
 }
 
-
-
-.botonCarrousel{
-  width: 0; 
-  height: 0; 
+.botonCarrousel {
+  width: 0;
+  height: 0;
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
-  
-  border-left: 20px solid rgb(43, 44, 43);
-margin-right: 40px;
-background-color: rgb(255, 255, 255);
-cursor:pointer
 
+  border-left: 20px solid rgb(43, 44, 43);
+  margin-right: 40px;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
-.botonCarrousel2{
-  width: 0; 
-  height: 0; 
+.botonCarrousel2 {
+  width: 0;
+  height: 0;
   border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent; 
-  
-  border-right:20px solid rgb(43, 44, 43);
+  border-bottom: 20px solid transparent;
+
+  border-right: 20px solid rgb(43, 44, 43);
   margin-left: 40px;
   background-color: rgb(255, 255, 255);
-  cursor:pointer
-  
-  }
-  
-  .botonCarrousel2:hover{
-    width: 0; 
-  height: 0; 
+  cursor: pointer;
+}
+
+.botonCarrousel2:hover {
+  width: 0;
+  height: 0;
   border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent; 
-  
-  border-right:20px solid #ff3648;
+  border-bottom: 20px solid transparent;
+
+  border-right: 20px solid #ff3648;
   margin-left: 40px;
-    transition-duration: 350ms;
-    
-  }
-  .botonCarrousel:hover{
-    width: 0; 
-    height: 0; 
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    
-    border-left: 20px solid #ff3648;
+  transition-duration: 350ms;
+}
+.botonCarrousel:hover {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+
+  border-left: 20px solid #ff3648;
   margin-right: 40px;
-    transition-duration: 350ms;
+  transition-duration: 350ms;
+}
+
+@media (max-width: 580px) {
+  .imagenesCarrousel img {
+    width: 220px;
+    height: 290px;
+    border-radius: 10px;
+    margin: 20px;
   }
 
-
-  @media (max-width: 580px) {
-    .imagenesCarrousel img{
-
-
-      width: 220px;
-      height: 290px;
-      border-radius: 10px;
-     margin: 20px;
-    
-    }
-
-
-    
-  
-      .imagenesCarrousel img:hover{
-        width: 220px;
-        height: 290px;
-      }
-
-      .imagenesCarrousel{
-        background-color: #ffffff;
-      }
-
-    
+  .imagenesCarrousel img:hover {
+    width: 220px;
+    height: 290px;
   }
 
-
-
-
-
+  .imagenesCarrousel {
+    background-color: #ffffff;
+  }
+}
 
 @media (max-width: 875px) {
   h3 {
@@ -181,7 +155,6 @@ cursor:pointer
 /* /////////////////////////ACA EMPIEZA EL FOOTEREANO/////////////////////////////////////// */
 
 .footereano {
-
   height: 30vh;
   width: 100%;
   background-color: #2c2b2b;
@@ -191,21 +164,17 @@ cursor:pointer
   padding-right: 80px;
 }
 
-.footereano h4{
-
+.footereano h4 {
   color: #fdfdfd;
   font-size: 25px;
 }
 
-
-.footereano h4 span{
-
+.footereano h4 span {
   color: #ff3648;
   font-size: 25px;
- 
 }
 
-.footereano ul{
+.footereano ul {
   list-style: none;
   margin: 5px;
 }
@@ -248,7 +217,7 @@ button {
   content: "#";
   position: absolute;
   top: 0;
-  color:#ff3648;
+  color: #ff3648;
   background: #ffffff;
   width: 100%;
   height: 100%;
@@ -328,12 +297,8 @@ header ul li {
 }
 
 header ul li:hover {
-color: #c4c1c1;
+  color: #c4c1c1;
 }
-
-
-
-
 
 .logo-grande {
   height: 30px;
@@ -371,7 +336,6 @@ color: #c4c1c1;
   color: white;
   width: 100%;
   justify-content: center;
-
 }
 
 .login img {
@@ -447,13 +411,9 @@ Link {
     flex-direction: column;
   }
 
-  
-h1{
-   font-size: 28px !important;
-}
-
-
-
+  h1 {
+    font-size: 28px !important;
+  }
 }
 
 @media (min-width: 768px) {
