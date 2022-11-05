@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import CardCity from '../../components/CardCity';
 import GoTo from '../../components/GoTo';
 import Label from '../../components/Label';
@@ -9,12 +9,17 @@ export default function Cities() {
 
     let continents = [...new Set ([...places].map(place=>place.continent))]
 
-    console.log(continents);
-    console.log(typeof(continents));
+    let [inputText, setInputText] = useState('');
+    let [checkboxs, setCheckboxs] = useState([])
 
-    let contContinents= useRef()
-    console.log(contContinents);
-    console.log(typeof(contContinents));
+    let renderInput = (e) => {
+
+        setInputText(e.target.value);
+        console.log(e.target.value);
+
+    }
+
+
     
 
 
@@ -32,7 +37,7 @@ export default function Cities() {
             <div className='citiesPhrase'>
                 <p>The most populars cities, visited by our travelers...</p>
             </div>
-            <form className='inputs' ref={contContinents}>
+            <form className='inputs'>
 
                 <fieldset className='checkboxs' >
                     {continents.map(continent=><Label continent={continent}></Label>)}
@@ -40,7 +45,7 @@ export default function Cities() {
 
                 <fieldset>
                     <label>Search for name of city
-                        <input type="text" className='searchForText'/>
+                        <input type="text" className='searchForText' onChange={(e)=> renderInput(e)} value={inputText} />
                     </label>
                 </fieldset>
                     
