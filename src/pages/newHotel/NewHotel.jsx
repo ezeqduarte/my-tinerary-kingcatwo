@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import "./newhotel.css";
-import places from  "../data/cities";
+import "../newHotel/newhotel.css";
+
 
 export default function NewHotel() {
   let form = useRef();
@@ -8,44 +8,37 @@ export default function NewHotel() {
   let photoHotel = useRef();
   let capacityHotel = useRef();
   let descriptionHotel = useRef();
-  let city = useRef()
-  let cityId = useRef();
+  let city = useRef();
 
 
-  function newHotel (event){ 
+  function newHotel(event) {
+   
+
+    let newHotel = {
+      id: nameHotel.current.value,
+      name: nameHotel.current.value,
+      photo: photoHotel.current.value,
+      capacity: capacityHotel.current.value,
+      description: descriptionHotel.current.value,
+      adminId: "admn0",
+    };
+
     event.preventDefault();
 
-
-let newHotel= {
-    id: nameHotel.current.value,
-    name: nameHotel.current.value, 
-    photo: photoHotel.current.value, 
-    capacity: capacityHotel.current.value, 
-    description: descriptionHotel.current.value,
-    adminId: "admn0",
-  if(places){}
-
-}
-
-
-
-
-    form.current.reset()
-
+    localStorage.setItem("newHotel", JSON.stringify(newHotel));
+    form.current.reset();
   }
 
   return (
     <>
-
-
-      <div className="divh2Hotel">
-        <h2 className="h2Hotel">
+      <div className="divTituloNewhotel">
+        <h2 className="tituloNewHotel">
           Create New Hotel<span className="rojo">.</span>
         </h2>
       </div>
 
-      <div className="newHotel">
-        <form className="formHotel" ref={form}>
+      <div className="newhotel">
+        <form className="formNewHotel" onSubmit={newHotel} ref={form}>
           <label>
             Name of Hotel
             <input type="text" name="nameHotel" ref={nameHotel}></input>
@@ -71,13 +64,14 @@ let newHotel= {
             <input
               type="text"
               name="descrpition"
-              ref={descriptionHotel}></input>
+              ref={descriptionHotel}
+            ></input>
           </label>
           <label>
             Ciudad
             <input type="text" name="ciudad" ref={city}></input>
           </label>
-          <button className="botonHotel">CREATE A NEW HOTEL</button>
+          <button className="btn-newhotel">CREATE A NEW HOTEL</button>
         </form>
       </div>
     </>

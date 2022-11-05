@@ -1,0 +1,74 @@
+.newhotel {
+
+    height: 100vh;
+    background-image: url(/public/img/home.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.formNewHotel{
+    
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgba(33, 33, 33, 0.815);
+    padding: 25px;
+    width: 500px;
+    height: 400px;
+    border-radius: 1rem;
+    color: white;
+
+}
+
+.formNewHotel label {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+}
+
+.formNewHotel label input {
+
+    width: 70%;
+    padding: 10px;
+
+}
+
+.tituloNewHotel {
+    top: 100px;
+    position: absolute;
+    color: #eeeeee;
+    
+}
+
+.divTituloNewhotel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-newhotel {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #ff3648;
+    color: white;
+    padding: 20px 0px;
+}
+
+@media (max-width: 576px) { 
+    .formNewHotel{
+
+        padding: 0px;
+        width: 300px;
+        height: 400px;
+      ;
+    
+    }
+}
