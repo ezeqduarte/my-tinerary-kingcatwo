@@ -24,6 +24,21 @@ h3 {
   margin-left: 50px;
 }
 
+.objetoHome2 {
+  color: #fcf7f700;
+  font-size: 50px;
+  position: absolute;
+  top: 350px;
+ 
+  
+}
+.objetoHome2:hover{
+  
+  color:#ffffffd3;
+  transition: ease-in-out 1.3s;
+ 
+}
+
 .subtitulosMain {
   width: 100%;
   height: 18vh;
@@ -95,7 +110,7 @@ h3 {
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
 
-  border-right: 20px solid #ff3648;
+  border-right: 25px solid #ff3648;
   margin-left: 40px;
   transition-duration: 350ms;
 }
@@ -105,7 +120,7 @@ h3 {
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
 
-  border-left: 20px solid #ff3648;
+  border-left: 25px solid #ff3648;
   margin-right: 40px;
   transition-duration: 350ms;
 }
@@ -311,13 +326,14 @@ header ul li {
   list-style: none;
   color: white;
   margin: 0px 20px;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 800;
 }
 
 header ul li:hover {
-  color: #c4c1c1;
+  color: #f8e5e5f6;
+  transition-duration: 400ms;
 }
 
 .logo-grande {
@@ -423,15 +439,33 @@ Link {
   cursor: pointer;
   display: flex;
   justify-content: center;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 0 #ffffff;
+  transition: ease-out 0.3s;
+  outline: none;
+}
+
+.buttonCallToAction:hover {
+ 
+  color: #2c2b2b;
+
+  box-shadow: inset 0 0 0 0 #2c2b2b;
+  transition: ease-out 0.5s;
+  box-shadow: inset 300px 0 0 0 #fffffff3;
+  outline: none;
 }
 
 .NotFound {
   min-height: 70vh;
-  background-image: url(/public/img/home.jpg);
+  background-image: url(/public/notfound.png);
+  background-color: #181717;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -100px;
 }
 
 .NotFound h2 {
@@ -445,10 +479,9 @@ Link {
     flex-direction: column;
   }
 
-
-.aboutus{
-  display: none;
-}
+  .aboutus {
+    display: none;
+  }
 
   h1 {
     font-size: 28px !important;
