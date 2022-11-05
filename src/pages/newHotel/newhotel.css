@@ -1,7 +1,10 @@
 .newhotel {
 
     height: 100vh;
-    background-image: url(/public/img/home.jpg);
+    background-image: url(https://images.pexels.com/photos/3610006/pexels-photo-3610006.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
