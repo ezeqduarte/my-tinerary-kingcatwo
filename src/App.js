@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import LogIn from "./pages/login/LogIn"
 import NewCity from "./pages/newcity/NewCity";
 import NewHotel from "./pages/newHotel/NewHotel";
+import Cities from "./pages/cities/Cities";
 
 
 
@@ -19,7 +20,7 @@ function App() {
       <Routes>
         <Route path="" element={<Home/>}/>
         <Route path="/home" element={<Home/>} />
-        <Route path="/cities" element={<Home1 />} />
+        <Route path="/cities" element={<Cities/>} />
         <Route path="/hotels" element={<Home1 />} />
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/login" element={<LogIn/>} />

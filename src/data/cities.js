@@ -4,7 +4,7 @@ let places = [
         id: "city1",
         name: "Hong Kong",
         continent: "Asia",
-        photo: "https://nomadict.org/wp-content/uploads/2021/10/Ma-On-Shan-Hong-Kong-2020.jpg",
+        photo: "https://images.pexels.com/photos/1738994/pexels-photo-1738994.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         population:  7400000,
         userId:  "admn0"
 
@@ -40,14 +40,14 @@ let places = [
         id: "city5",
         name: "London",
         continent: "Europe",
-        photo: "https://images.pexels.com/photos/6064692/pexels-photo-6064692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        photo: "https://images.pexels.com/photos/1427578/pexels-photo-1427578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         population:  9000000,
         userId:  "admn0"
 
     },
     {
         id: "city6",
-        name: "París",
+        name: "Par­is",
         continent: "Europe",
         photo: "https://images.pexels.com/photos/3375997/pexels-photo-3375997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=16",
         population:  2000000,
@@ -85,7 +85,7 @@ let places = [
         id: "city10",
         name: "Kuala Lumpur",
         continent: "Asia",
-        photo: "https://images.pexels.com/photos/2741626/pexels-photo-2741626.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        photo: "https://images.pexels.com/photos/6016676/pexels-photo-6016676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         population:  3000000,
         userId:  "admn0"
 
@@ -94,7 +94,7 @@ let places = [
         id: "city11",
         name: "Buenos Aires",
         continent: "America",
-        photo: "https://resizer.glanacion.com/resizer/r0fnat89PBQVTTNXhmly89DHHlE=/1200x800/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/AAJI6DGLLNBORFVUIYP4H3LAG4.webp",
+        photo: "https://www.patagonline.com/wp-content/uploads/2020/12/obelisco-buenos-aires-scaled.jpg",
         population:  2000000,
         userId:  "admn0"
 
@@ -103,7 +103,7 @@ let places = [
         id: "city12",
         name: "Tokyo",
         continent: "Asia",
-        photo: "https://images-ext-1.discordapp.net/external/mPYhTZLxwrOM_rA6j4A3wgHl4zwd31GW49UW_nBARg8/%3Fitok%3D3nrPOQvT/https/lonelyplanetes.cdnstatics2.com/sites/default/files/styles/max_1300x1300/public/fotos/japon_tokio_montefuji_shutterstock_756354574_sean_pavone_shutterstock.jpg?width=1007&height=671",
+        photo: "https://lonelyplanetes.cdnstatics2.com/sites/default/files/styles/max_1300x1300/public/fotos/japon_tokio_montefuji_shutterstock_756354574_sean_pavone_shutterstock.jpg?itok=3nrPOQvT",
         population:  7500000,
         userId:  "admn0"
 
