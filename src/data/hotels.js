@@ -167,3 +167,10 @@ let hotels = [
 
 
 export default hotels;
+
+
+
+
+
+
+

@@ -33,9 +33,11 @@ export default function Cities() {
       ...checkboxs,
       [e.target.value]: e.target.checked,
     }));
-    console.log(checkboxs);
+    
   };
+  
 
+  console.log(checkboxs);
   const form = useRef();
 
 

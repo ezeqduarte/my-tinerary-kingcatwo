@@ -24,6 +24,21 @@ h3 {
   margin-left: 50px;
 }
 
+.objetoHome2 {
+  color: #fcf7f700;
+  font-size: 50px;
+  position: absolute;
+  top: 350px;
+ 
+  
+}
+.objetoHome2:hover{
+  
+  color:#ffffffd3;
+  transition: ease-in-out 1.3s;
+ 
+}
+
 .subtitulosMain {
   width: 100%;
   height: 18vh;
@@ -46,28 +61,23 @@ h3 {
 .imagenesCarrousel {
   display: flex;
   flex-direction: row;
-  gap: 1px;
+
   flex-grow: 1;
   justify-content: center;
   align-items: center;
   width: 100%;
   flex-wrap: wrap;
-  margin: 12px;
-  background-color: #f5f1f1a8;
+  margin-bottom: 20px;
+
   border-radius: 15px;
 }
 .imagenesCarrousel img {
   width: 360px;
-  height: 260px;
-  border-radius: 10px 10px 10px 10px;
-  margin: 20px;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
+  height: 460px;
 
-.imagenesCarrousel img:hover {
-  width: 370px;
-  height: 270px;
-  transition-duration: 400ms;
+  margin: 6px;
+
+  box-shadow: rgb(200, 202, 204) 0px 20px 30px -10px;
 }
 
 .botonCarrousel {
@@ -76,7 +86,7 @@ h3 {
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
 
-  border-left: 20px solid rgb(43, 44, 43);
+  border-left: 25px solid rgb(212, 212, 212);
   margin-right: 40px;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
@@ -88,7 +98,7 @@ h3 {
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
 
-  border-right: 20px solid rgb(43, 44, 43);
+  border-right: 25px solid rgb(212, 212, 212);
   margin-left: 40px;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
@@ -100,7 +110,7 @@ h3 {
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
 
-  border-right: 20px solid #ff3648;
+  border-right: 25px solid #ff3648;
   margin-left: 40px;
   transition-duration: 350ms;
 }
@@ -110,7 +120,7 @@ h3 {
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
 
-  border-left: 20px solid #ff3648;
+  border-left: 25px solid #ff3648;
   margin-right: 40px;
   transition-duration: 350ms;
 }
@@ -119,8 +129,30 @@ h3 {
   .imagenesCarrousel img {
     width: 220px;
     height: 290px;
-    border-radius: 10px;
-    margin: 20px;
+
+    margin-top: 0px;
+  }
+  .botonCarrousel {
+    display: none;
+  }
+  .botonCarrousel2 {
+    display: none;
+  }
+
+  .footereano {
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  h4 {
+    font-size: 15px !important;
+  }
+
+  h2 {
+    font-size: 35px;
   }
 
   .imagenesCarrousel img:hover {
@@ -294,13 +326,14 @@ header ul li {
   list-style: none;
   color: white;
   margin: 0px 20px;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 800;
 }
 
 header ul li:hover {
-  color: #c4c1c1;
+  color: #f8e5e5f6;
+  transition-duration: 400ms;
 }
 
 .logo-grande {
@@ -406,15 +439,33 @@ Link {
   cursor: pointer;
   display: flex;
   justify-content: center;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 0 #ffffff;
+  transition: ease-out 0.3s;
+  outline: none;
+}
+
+.buttonCallToAction:hover {
+ 
+  color: #2c2b2b;
+
+  box-shadow: inset 0 0 0 0 #2c2b2b;
+  transition: ease-out 0.5s;
+  box-shadow: inset 300px 0 0 0 #fffffff3;
+  outline: none;
 }
 
 .NotFound {
   min-height: 70vh;
-  background-image: url(/public/img/home.jpg);
+  background-image: url(/public/notfound.png);
+  background-color: #181717;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -100px;
 }
 
 .NotFound h2 {
@@ -426,6 +477,10 @@ Link {
   .home1_container div {
     display: flex;
     flex-direction: column;
+  }
+
+  .aboutus {
+    display: none;
   }
 
   h1 {
@@ -460,20 +515,13 @@ Link {
     flex-grow: 0;
     width: 200px;
   }
-
-
 }
 
 @media (min-width: 1400px) {
 }
 
-
-
-
 @media (max-width: 1188px) {
-  
-  .NotFound h2{
-font-size: 12px;
-
+  .NotFound h2 {
+    font-size: 12px;
   }
 }
