@@ -10,6 +10,9 @@ import LogIn from "./pages/login/LogIn"
 import NewCity from "./pages/newcity/NewCity";
 import NewHotel from "./pages/newHotel/NewHotel";
 import Cities from "./pages/cities/Cities";
+import Hotels from "./pages/hotels/Hotels";
+
+
 
 
 
@@ -20,8 +23,8 @@ function App() {
       <Routes>
         <Route path="" element={<Home/>}/>
         <Route path="/home" element={<Home/>} />
-        <Route path="/cities" element={<Cities/>} />
-        <Route path="/hotels" element={<Home1 />} />
+        <Route path="/cities" element={<Cities/>} />        
+        <Route path="/hotels" element={<Hotels/>} />
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/login" element={<LogIn/>} />
         <Route path="/newcity" element= {<NewCity/>} />
