@@ -1,0 +1,177 @@
+.cardDetailsCity {
+
+    background-color: rgba(32, 32, 32, 0.959);
+    height: 550px;
+    width: 1000px;
+    flex-direction: row;
+    display: flex;
+    color: white;
+    border-radius: 20px;
+
+}
+
+.detailscity {
+    background-image: url(/public/img/home.jpg) ;
+    min-height: 100vh;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.imagenCardDetails {
+    display: flex;
+    width: 50%;
+    height: 100%;
+
+}
+
+.imagenCardDetails img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.informacionCardDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    gap: 40px;
+}
+
+.informacionCardDetails h3 {
+    margin: 0;
+}
+
+.buttonBackCity {
+
+    border-radius: 400px;
+    background-color: red;
+
+}
+
+.informationCities{
+    padding-top: 35px;
+    min-height: 80vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.informationCities h2 {
+    margin: 0;
+}
+
+.hotelsfromcities {
+    padding: 20px;
+    gap: 50px;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+.rowComentsCards{
+    display: flex;
+    flex-direction: row;
+}
+
+.coments{
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(207, 207, 207);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+
+}
+
+.coment {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.coments {
+
+    width: 250px;
+
+}
+
+@media (max-width: 875px) {
+h3 {
+    display: block;
+}}
+
+@media (max-width: 768px) {
+    .cardDetailsCity {
+        background-color: rgba(32, 32, 32, 0.959);
+        height: 550px;
+        width: 1000px;
+        flex-direction: column;
+        display: flex;
+        color: white;
+        border-radius: 20px;
+    }
+
+    .imagenCardDetails {
+        display: flex;
+        width: 100%;
+        height: 70%;
+    }
+
+    .informacionCardDetails {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 40px;
+    }
+
+    .hotelsfromcities {
+        padding: 0px;
+        gap: 50px;
+        width: 100%;
+        flex-grow: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .rowComentsCards {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .coments {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgb(207, 207, 207);
+        border-radius: 0px;
+        width: 340px;
+    }
+
+
+
+}
+
