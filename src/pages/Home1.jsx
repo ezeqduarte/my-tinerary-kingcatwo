@@ -18,7 +18,7 @@ export default function Home1() {
             <CallToAction text="HOTELS" rute="/hotels" />
           </div>
 
-          <h4 className="objetoHome2">The best experiences are with us</h4>
+        
         </div>
       </div>
     </div>
