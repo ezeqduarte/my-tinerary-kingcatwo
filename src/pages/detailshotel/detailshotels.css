@@ -51,15 +51,17 @@
 
   align-items: center;
   flex-direction: column;
+  background-color: rgb(240, 240, 240);
 }
 
 h2 {
   margin: 0px;
+  
 }
 .eventsfromhotels {
   flex-grow: 1;
   width: 100%;
-
+  background-color: rgb(240, 240, 240);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,9 +89,10 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgb(207, 207, 207);
+  background-color: rgba(28, 28, 28, 0.896);
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
   width: 250px;
-  height: 513px;
+  height: 507px;
+  color: aliceblue;
 }
