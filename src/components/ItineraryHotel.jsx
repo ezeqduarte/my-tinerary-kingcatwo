@@ -26,7 +26,7 @@ export default function ItineraryHotel() {
             <img src={hotel.photo[0]} alt={hotel.name} />
           </div>
           <h4>{hotel.name}</h4>
-          <NavLink style={{textDecoration: 'none'}} className="btn-details" to={`/hoteldetails/${hotel.id}`} >
+          <NavLink style={{textDecoration: 'none'}} className="btn-details" to={`/detailshotel/${hotel.id}`} >
           <div >
             <p>More details</p>
           </div>
