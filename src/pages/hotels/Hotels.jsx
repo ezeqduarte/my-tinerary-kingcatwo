@@ -1,13 +1,13 @@
-import React, { useRef, useState, useEffect } from "react";
-import CardHotels from "../../components/CardHotels";
-import GoTo from "../../components/GoTo";
+import React, { useRef, useState, useEffect } from "react"; //importo todo lo necesario 
+import CardHotels from "../../components/CardHotels"; //importo mis cards 
+import GoTo from "../../components/GoTo"; 
 import Label from "../../components/Label";
 import places from "../../data/cities";
 import "../cities/cities.css";
-import hotels from "../../data/hotels";
+import hotels from "../../data/hotels"; //importo la info de hotels
 
 export default function Hotels() {
-  let [inputText, setInputText] = useState("");
+  let [inputText, setInputText] = useState(""); //Utilizo el hook useState para determinar que el inputText va ser un elemento inicial, va a tener un modificador y un estado inicial.
 
   let renderInput = (e) => {
     setInputText(e.target.value);
