@@ -1,5 +1,5 @@
+import axios from "axios";
 import React, { useRef } from "react";
-import BackToTopButton from "../../components/BackToTopButton";
 import "../newcity/newcity.css";
 
 export default function NewCity() {
@@ -9,25 +9,15 @@ export default function NewCity() {
   let picture = useRef();
   let population = useRef();
 
-  console.log(form.current);
-  console.log(nameCity.current);
-  console.log(continentCity.current);
-  console.log(picture.current);
-  console.log(population.current);
-
   function newCity(event) {
+    event.preventDefault();
+
     let newCity = {
-      id: nameCity.current.value,
       name: nameCity.current.value,
       continent: continentCity.current.value,
       photo: picture.current.value,
       population: population.current.value,
-      userId: "admn0",
     };
-
-    console.log(picture.current.value);
-
-    event.preventDefault();
 
     localStorage.setItem("newCity", JSON.stringify(newCity));
     form.current.reset();
@@ -55,16 +45,17 @@ export default function NewCity() {
               required
             />
           </label>
-          <label>Choose a picture of city</label>
+          <label>
+            Choose a picture of city
+            <input
+              type="text"
+              name="photoCity"
+              ref={picture}
+              required
+              id="photo"
+            />
+          </label>
 
-          <input
-            type="file"
-            name="photoCity"
-            accept=".jpg"
-            ref={picture}
-            required
-            id="photo"
-          />
           <label>
             Population
             <input
