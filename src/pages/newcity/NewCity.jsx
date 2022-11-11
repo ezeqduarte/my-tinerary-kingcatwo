@@ -15,6 +15,7 @@ export default function NewCity() {
     continent: "",
     photo: "",
     population: 0,
+    userId: "636d1e66dbb2d08117b1c7c2"
   });
 
   /* console.log(typeof(objectForm.population)); */
