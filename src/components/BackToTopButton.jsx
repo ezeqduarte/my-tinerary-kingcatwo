@@ -27,10 +27,10 @@ function BackToTopButton() {
       {backToTopButton && (
         <button className="scrollTopBoton" onClick={scrollUp}>
      
-    <div class="box">B</div>
-    <div class="box">A</div>
-    <div class="box">C</div>
-    <div class="box">K</div>
+    <div className="box">B</div>
+    <div className="box">A</div>
+    <div className="box">C</div>
+    <div className="box">K</div>
         </button>
       )}
     </div>

@@ -6,43 +6,53 @@ import Label from "../../components/Label";
 
 import "../cities/cities.css";
 
-const initialChecboxsValues = {
-  Asia: false,
-  America: false,
-  Africa: false,
-  Europe: false,
-};
-
-export default function Cities() { 
-
+export default function Cities() {
+  //llamo a todas las ciudades para poder imprimir los checkboxs
   let [allCities, setAllCities] = useState([]);
-  let [inputText, setInputText] = useState("");
-  let [checkboxs, setCheckboxs] = useState(initialChecboxsValues);  
-
   useEffect(() => {
     axios
       .get("http://localhost:8000/api/cities/")
       .then((response) => setAllCities(response.data.cities));
   }, []);
+  let allContinents = [
+    ...new Set([...allCities].map((city) => city.continent)),
+  ];
+  //genere todos los checks
+  //checks
 
-  let continents = [...new Set([...allCities].map((place) => place.continent))];
+  let [checks, setChecks] = useState([]);
+
+  let checksboxs = useRef();
+
+  let [citiesFiltered, setCitiesFiltered] = useState(allCities)
+
+  
+
+  async function checkboxsCheckeds(e) {
+    if (e.target.checked) {
+      setChecks(checks.concat(e.target.value));
+    } else {
+      setChecks(checks.filter((check)=>check !== e.target.value))
+    }
+  }
+
+  function peticion() {
+    let oracion = "?"
+    for (const check of checks) {
+      oracion += `continent=${check}&` 
+    }
+    return oracion
+  }
 
 
+  useEffect(()=>{
 
-  let renderInput = (e) => {
-    setInputText(e.target.value);
-    console.log(e.target.value);
-  };
+    axios.get(`http://localhost:8000/api/cities/${peticion()}`)
+        .then((response)=>setCitiesFiltered(response.data.cities))
 
-  const checkboxsCheckeds = (e) => {
-    setCheckboxs((checkboxs) => ({
-      ...checkboxs,
-      [e.target.value]: e.target.checked,
-    }));
-  };
+  },[checks])
 
-  console.log(checkboxs);
-  const form = useRef();
+  console.log(checks);
 
   return (
     <>
@@ -61,9 +71,13 @@ export default function Cities() {
           <p>The most populars cities, visited by our travelers...</p>
         </div>
 
-        <form className="inputs" ref={form}>
-          <fieldset className="checkboxs" onChange={checkboxsCheckeds}>
-            {continents.map((continent) => (
+        <form className="inputs" /* ref={form} */>
+          <fieldset
+            className="checkboxs"
+            ref={checksboxs}
+            onChange={checkboxsCheckeds}
+          >
+            {allContinents.map((continent) => (
               <Label continent={continent} key={continent}></Label>
             ))}
           </fieldset>
@@ -71,17 +85,12 @@ export default function Cities() {
           <fieldset>
             <label>
               Search for name of city
-              <input
-                type="text"
-                className="searchForText"
-                onChange={renderInput}
-                value={inputText}
-              />
+              <input type="text" className="searchForText" />
             </label>
           </fieldset>
         </form>
         <div className="mainCities">
-          {allCities.map((place) => (
+          {citiesFiltered.map((place) => (
             <CardCity city={place} key={place._id} />
           ))}
         </div>
