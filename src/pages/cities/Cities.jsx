@@ -9,6 +9,7 @@ import "../cities/cities.css";
 export default function Cities() {
   //llamo a todas las ciudades para poder imprimir los checkboxs
   let [allCities, setAllCities] = useState([]);
+
   useEffect(() => {
     axios
       .get("http://localhost:8000/api/cities/")
@@ -19,40 +20,44 @@ export default function Cities() {
   ];
   //genere todos los checks
   //checks
+  let checksboxs = useRef();
+  let inputText = useRef();
 
   let [checks, setChecks] = useState([]);
+  let [text, setText] = useState("");
+  let [citiesFiltered, setCitiesFiltered] = useState(allCities);
 
-  let checksboxs = useRef();
-
-  let [citiesFiltered, setCitiesFiltered] = useState(allCities)
-
-  
-
-  async function checkboxsCheckeds(e) {
+  function checkboxsCheckeds(e) {
     if (e.target.checked) {
       setChecks(checks.concat(e.target.value));
     } else {
-      setChecks(checks.filter((check)=>check !== e.target.value))
+      setChecks(checks.filter((check) => check !== e.target.value));
     }
+  }
+
+  function searchText(e) {
+    setText(e.target.value);
   }
 
   function peticion() {
-    let oracion = "?"
-    for (const check of checks) {
-      oracion += `continent=${check}&` 
+    let oracion = "?";
+
+    if (checks.length !== 0) {
+      for (const check of checks) {
+        oracion += `continent=${check}&`;
+      }
     }
-    return oracion
+
+    oracion += `name=${text}&`;
+
+    return oracion;
   }
 
-
-  useEffect(()=>{
-
-    axios.get(`http://localhost:8000/api/cities/${peticion()}`)
-        .then((response)=>setCitiesFiltered(response.data.cities))
-
-  },[checks])
-
-  console.log(checks);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/cities/${peticion()}`)
+      .then((response) => setCitiesFiltered(response.data.cities));
+  }, [checks, text]);
 
   return (
     <>
@@ -85,7 +90,12 @@ export default function Cities() {
           <fieldset>
             <label>
               Search for name of city
-              <input type="text" className="searchForText" />
+              <input
+                type="text"
+                onChange={searchText}
+                className="searchForText"
+                ref={inputText}
+              />
             </label>
           </fieldset>
         </form>
