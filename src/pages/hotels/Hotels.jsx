@@ -1,13 +1,15 @@
-import React, { useRef, useState, useEffect } from "react"; //importo todo lo necesario 
-import CardHotels from "../../components/CardHotels"; //importo mis cards 
-import GoTo from "../../components/GoTo"; 
+import React, { useRef, useState, useEffect } from "react"; //importo todo lo necesario
+import CardHotels from "../../components/CardHotels"; //importo mis cards
+import GoTo from "../../components/GoTo";
 import Label from "../../components/Label";
 import places from "../../data/cities";
 import "../cities/cities.css";
 import hotels from "../../data/hotels"; //importo la info de hotels
+import axios from "axios";
 
 export default function Hotels() {
   let [inputText, setInputText] = useState(""); //Utilizo el hook useState para determinar que el inputText va ser un elemento inicial, va a tener un modificador y un estado inicial.
+  let [hotels, sethotels] = useState([]);
 
   let renderInput = (e) => {
     setInputText(e.target.value);
@@ -15,17 +17,26 @@ export default function Hotels() {
   };
 
   let [option, setOption] = useState(hotels);
-  function mayor(evento) {if (evento.target.value === "mayor") {
-      setOption(option.sort((a, b) => b.capacity - a.capacity));
+  async function mayor(evento) {
+    if (evento.target.value === "mayor") {
+      setOption("asc");
     } else if (evento.target.value === "menor") {
-      setOption(option.sort((a, b) => a.capacity - b.capacity));
+      setOption("desc");
     } else {
-      setOption(hotels);
+      setOption("");
     }
     console.log(option);
   }
 
   const form = useRef();
+
+  useEffect(() => {
+    axios
+      .get(
+        `http://localhost:8000/api/hotels/?name=${inputText}&order=${option}`
+      ) // Importante poner HTTP o tira ERROR. CUIDADO....
+      .then((response) => sethotels(response.data.Hotels));
+  }, [hotels, option]);
 
   return (
     <>
@@ -69,9 +80,14 @@ export default function Hotels() {
           </fieldset>
         </form>
         <div className="mainCities">
-          {hotels.map((place) => (
-            <CardHotels hotel={place} key={place.id} />
-          ))}
+          {hotels.length === 0 ? (  // ? es lo mismo que IF
+            <h2 className="noMatch">
+              No hotels were found that match your search
+              <span className="rojo">.</span>
+            </h2>
+          ) : ( // : es lo mismo que ELSE 
+            hotels.map((place) => <CardHotels hotel={place} key={place._id} />)
+          )}
         </div>
       </div>
     </>
