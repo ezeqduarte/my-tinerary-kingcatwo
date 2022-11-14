@@ -1,12 +1,27 @@
+import axios from 'axios';
 import React from 'react'
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router';
 import places from "../data/cities";
 
-export default function CardDetailsCity() {
+export default async function CardDetailsCity() {
 
     const {id} = useParams()
     
     let place = places.find(place=> place.id === id)
+
+    /* let [place, setPlace] = useState({}) */
+
+    useEffect=(()=>{
+
+      axios.get("http://localhost:8000/api/cities")
+      .then((response)=> console.log(response))
+
+
+    },[])
+
+
 
 
   return (

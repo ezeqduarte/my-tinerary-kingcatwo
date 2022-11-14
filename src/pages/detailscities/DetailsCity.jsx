@@ -1,12 +1,12 @@
 import React from 'react'
-import { useNavigation } from 'react-router';
+import { useNavigation, useParams } from 'react-router';
 import CardDetailsCity from '../../components/CardDetailsCity';
 import ItineraryHotel from '../../components/ItineraryHotel';
 import "../detailscities/detailscity.css";
 
 export default function DetailsCity() {
 
-    
+  const {id} = useParams()
 
   return (
     <>
@@ -15,12 +15,12 @@ export default function DetailsCity() {
     </div>
     <div className='informationCities'>
         <h2>Hotels<span className="rojo">.</span></h2>
-        <div className='hotelsfromcities'>
+        {/* <div className='hotelsfromcities'>
 
             <ItineraryHotel/>
            
 
-        </div>
+        </div> */}
     </div>
     </>
   )
