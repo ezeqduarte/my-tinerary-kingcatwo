@@ -27,11 +27,18 @@ export default function DetailsCity() {
         <h2>
           Itineraries<span className="rojo">.</span>
         </h2>
-        <div className="hotelsfromcities">{
-
-          itineraries.map(itinerary=><ItineraryCard itinerary={itinerary}/>)
-
-        }</div>
+        <div className="hotelsfromcities">
+          {itineraries.length === 0 ? (
+            <h2 className="noMatch">
+              There are no itineraries available
+              <span className="rojo">.</span>
+            </h2>
+          ) : (
+            itineraries.map((itinerary) => (
+              <ItineraryCard itinerary={itinerary} />
+            ))
+          )}
+        </div>
       </div>
     </>
   );
