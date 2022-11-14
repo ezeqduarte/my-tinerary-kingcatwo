@@ -1,27 +1,38 @@
-import React from 'react'
-import { useNavigation } from 'react-router';
-import CardDetailsCity from '../../components/CardDetailsCity';
-import ItineraryHotel from '../../components/ItineraryHotel';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useNavigation, useParams } from "react-router";
+import CardDetailsCity from "../../components/CardDetailsCity";
+import ItineraryCard from "../../components/ItineraryCard";
+import ItineraryHotel from "../../components/ItineraryCard";
 import "../detailscities/detailscity.css";
 
 export default function DetailsCity() {
+  const { id } = useParams();
+  let [itineraries, setItineraries] = useState([]);
 
-    
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/itineraries?cityId=${id}`)
+      .then((response) => setItineraries(response.data.searched));
+  }, []);
+
+  /* console.log(itineraries); */
 
   return (
     <>
-    <div className='detailscity'>
-        <CardDetailsCity/>
-    </div>
-    <div className='informationCities'>
-        <h2>Hotels<span className="rojo">.</span></h2>
-        <div className='hotelsfromcities'>
+      <div className="detailscity">
+        <CardDetailsCity />
+      </div>
+      <div className="informationCities">
+        <h2>
+          Itineraries<span className="rojo">.</span>
+        </h2>
+        <div className="hotelsfromcities">{
 
-            <ItineraryHotel/>
-           
+          itineraries.map(itinerary=><ItineraryCard itinerary={itinerary}/>)
 
-        </div>
-    </div>
+        }</div>
+      </div>
     </>
-  )
+  );
 }

@@ -10,7 +10,7 @@ export default function CardCity(props) {
         </div>
         <h4>{city.name}</h4>
         <div className='btn-details'>
-          <NavLink to={`/details/${city.id}`} style={{textDecoration: 'none', color: 'white'}}>
+          <NavLink to={`/details/${city._id}`} style={{textDecoration: 'none', color: 'white'}}>
             <p>More details</p>
           </NavLink>
         </div>

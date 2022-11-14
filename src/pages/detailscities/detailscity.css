@@ -10,6 +10,28 @@
 
 }
 
+.cardItinerary {
+    width: 340px;
+    height: 630px;
+    background-color: rgba(238, 238, 238, 0.315);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    position: relative;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+
+  .cardItinerary:hover{
+
+    transform: scale(1.01);
+    transition: 350ms;
+
+  }
+
+
+
 .detailscity {
     background-image: url(/public/img/home.jpg) ;
     min-height: 100vh;
@@ -18,6 +40,20 @@
     justify-content: center;
     align-items: center;
     
+}
+
+.tituloCardItinerary {
+
+    margin: 0;
+
+
+}
+
+.description {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .imagenCardDetails {
@@ -30,7 +66,7 @@
 .imagenCardDetails img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
@@ -68,7 +104,7 @@
 }
 
 .hotelsfromcities {
-    padding: 20px;
+    padding: 80px 20px;
     gap: 50px;
     width: 100%;
     flex-grow: 1;
@@ -76,7 +112,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+   
 
 
 }
@@ -133,7 +169,20 @@ h3 {
         display: flex;
         width: 100%;
         height: 70%;
+        justify-content: center;
+        /* align-items: center; */
+        
     }
+
+    .imagenCardDetails img {
+        object-fit: contain;
+        border-radius: 25px;
+        border: wheat 1px solid;
+        width: auto;
+        height: auto;
+    }
+
+    
 
     .informacionCardDetails {
         display: flex;
@@ -143,6 +192,8 @@ h3 {
         width: 100%;
         gap: 40px;
     }
+
+    
 
     .hotelsfromcities {
         padding: 0px;
