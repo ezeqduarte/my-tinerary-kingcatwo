@@ -7,6 +7,7 @@ import Label from "../../components/Label";
 import "../cities/cities.css";
 
 export default function Cities() {
+  
   let checksboxs = useRef();
   let inputText = useRef();
 
