@@ -7,33 +7,31 @@ import Label from "../../components/Label";
 import "../cities/cities.css";
 
 export default function Cities() {
-  //llamo a todas las ciudades para poder imprimir los checkboxs
+  let checksboxs = useRef();
+  let inputText = useRef();
+
   let [allCities, setAllCities] = useState([]);
+  let [checks, setChecks] = useState([]);
+  let [text, setText] = useState("");
+  let [citiesFiltered, setCitiesFiltered] = useState(allCities);
 
   useEffect(() => {
     axios
       .get("http://localhost:8000/api/cities/")
       .then((response) => setAllCities(response.data.cities));
   }, []);
+
   let allContinents = [
     ...new Set([...allCities].map((city) => city.continent)),
   ];
-  //genere todos los checks
-  //checks
-  let checksboxs = useRef();
-  let inputText = useRef();
-
-  let [checks, setChecks] = useState([]);
-  let [text, setText] = useState("");
-  let [citiesFiltered, setCitiesFiltered] = useState(allCities);
 
   function checkboxsCheckeds(e) {
-    if (e.target.checked) {
-      setChecks(checks.concat(e.target.value));
-    } else {
-      setChecks(checks.filter((check) => check !== e.target.value));
-    }
+    e.target.checked
+      ? setChecks(checks.concat(e.target.value))
+      : setChecks(checks.filter((check) => check !== e.target.value));
   }
+
+  console.log(checks);
 
   function searchText(e) {
     setText(e.target.value);
@@ -42,10 +40,8 @@ export default function Cities() {
   function peticion() {
     let oracion = "?";
 
-    if (checks.length !== 0) {
-      for (const check of checks) {
-        oracion += `continent=${check}&`;
-      }
+    for (const check of checks) {
+      oracion += `continent=${check}&`;
     }
 
     oracion += `name=${text}&`;
@@ -76,7 +72,7 @@ export default function Cities() {
           <p>The most populars cities, visited by our travelers...</p>
         </div>
 
-        <form className="inputs" /* ref={form} */>
+        <form className="inputs">
           <fieldset
             className="checkboxs"
             ref={checksboxs}
@@ -100,9 +96,16 @@ export default function Cities() {
           </fieldset>
         </form>
         <div className="mainCities">
-          {citiesFiltered.map((place) => (
-            <CardCity city={place} key={place._id} />
-          ))}
+          {citiesFiltered.length !== 0 ? (
+            citiesFiltered.map((city) => (
+              <CardCity city={city} key={city.name} />
+            ))
+          ) : (
+            <h2 className="noMatch">
+              No cities were found that match your search
+              <span className="rojo">.</span>
+            </h2>
+          )}
         </div>
       </div>
     </>
