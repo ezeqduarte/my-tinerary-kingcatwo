@@ -1,46 +1,59 @@
+import axios from "axios";
 import React, { useRef, useState, useEffect } from "react";
 import CardCity from "../../components/CardCity";
 import GoTo from "../../components/GoTo";
 import Label from "../../components/Label";
-import places from "../../data/cities";
+
 import "../cities/cities.css";
 
-const initialChecboxsValues = {
-  Asia: false,
-  America: false,
-  Africa: false,
-  Europe: false,
-};
-
 export default function Cities() {
+  let checksboxs = useRef();
+  let inputText = useRef();
 
-  let continents = [...new Set([...places].map((place) => place.continent))];
+  let [allCities, setAllCities] = useState([]);
+  let [checks, setChecks] = useState([]);
+  let [text, setText] = useState("");
+  let [citiesFiltered, setCitiesFiltered] = useState(allCities);
 
-  let [inputText, setInputText] = useState("");
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/cities/")
+      .then((response) => setAllCities(response.data.cities));
+  }, []);
 
-  let [checkboxs, setCheckboxs] = useState(initialChecboxsValues);
+  let allContinents = [
+    ...new Set([...allCities].map((city) => city.continent)),
+  ];
 
-  let renderInput = (e) => {
+  function checkboxsCheckeds(e) {
+    e.target.checked
+      ? setChecks(checks.concat(e.target.value))
+      : setChecks(checks.filter((check) => check !== e.target.value));
+  }
 
-    
-    setInputText(e.target.value);
-    console.log(e.target.value);
+  console.log(checks);
 
-  };
+  function searchText(e) {
+    setText(e.target.value);
+  }
 
-  const checkboxsCheckeds = (e) => {
-    setCheckboxs((checkboxs) => ({
-      ...checkboxs,
-      [e.target.value]: e.target.checked,
-    }));
-    
-  };
-  
+  function peticion() {
+    let oracion = "?";
 
-  console.log(checkboxs);
-  const form = useRef();
+    for (const check of checks) {
+      oracion += `continent=${check}&`;
+    }
 
+    oracion += `name=${text}&`;
 
+    return oracion;
+  }
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/cities/${peticion()}`)
+      .then((response) => setCitiesFiltered(response.data.cities));
+  }, [checks, text]);
 
   return (
     <>
@@ -59,9 +72,13 @@ export default function Cities() {
           <p>The most populars cities, visited by our travelers...</p>
         </div>
 
-        <form className="inputs" ref={form} >
-          <fieldset className="checkboxs" onChange={checkboxsCheckeds} >
-            {continents.map((continent) => (
+        <form className="inputs">
+          <fieldset
+            className="checkboxs"
+            ref={checksboxs}
+            onChange={checkboxsCheckeds}
+          >
+            {allContinents.map((continent) => (
               <Label continent={continent} key={continent}></Label>
             ))}
           </fieldset>
@@ -71,17 +88,24 @@ export default function Cities() {
               Search for name of city
               <input
                 type="text"
+                onChange={searchText}
                 className="searchForText"
-                onChange={renderInput}
-                value={inputText}
+                ref={inputText}
               />
             </label>
           </fieldset>
         </form>
         <div className="mainCities">
-          {places.map((place) => (
-            <CardCity city={place} key={place.id} />
-          ))}
+          {citiesFiltered.length !== 0 ? (
+            citiesFiltered.map((city) => (
+              <CardCity city={city} key={city.name} />
+            ))
+          ) : (
+            <h2 className="noMatch">
+              No cities were found that match your search
+              <span className="rojo">.</span>
+            </h2>
+          )}
         </div>
       </div>
     </>
