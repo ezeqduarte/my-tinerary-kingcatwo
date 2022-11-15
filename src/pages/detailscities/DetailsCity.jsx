@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigation, useParams } from "react-router";
 import CardDetailsCity from "../../components/CardDetailsCity";
+import GoTo from "../../components/GoTo";
 import ItineraryCard from "../../components/ItineraryCard";
 import ItineraryHotel from "../../components/ItineraryCard";
 import "../detailscities/detailscity.css";
@@ -22,12 +23,13 @@ export default function DetailsCity() {
     <>
       <div className="detailscity">
         <CardDetailsCity />
+        
       </div>
-      <div className="informationCities">
+      <div className="informationCities" id="itineraries">
         <h2>
           Itineraries<span className="rojo">.</span>
         </h2>
-        <div className="hotelsfromcities">
+        <div className="hotelsfromcities" >
           {itineraries.length === 0 ? (
             <h2 className="noMatch">
               There are no itineraries available

@@ -3,6 +3,7 @@ import CardHotels from "../../components/CardHotels"; //importo mis cards
 import GoTo from "../../components/GoTo";
 import Label from "../../components/Label";
 import places from "../../data/cities";
+import "./hotels.css";
 import "../cities/cities.css";
 import hotels from "../../data/hotels"; //importo la info de hotels
 import axios from "axios";
@@ -19,9 +20,9 @@ export default function Hotels() {
   let [option, setOption] = useState(hotels);
   async function mayor(evento) {
     if (evento.target.value === "mayor") {
-      setOption("asc");
-    } else if (evento.target.value === "menor") {
       setOption("desc");
+    } else if (evento.target.value === "menor") {
+      setOption("asc");
     } else {
       setOption("");
     }
@@ -36,11 +37,11 @@ export default function Hotels() {
         `http://localhost:8000/api/hotels/?name=${inputText}&order=${option}`
       ) // Importante poner HTTP o tira ERROR. CUIDADO....
       .then((response) => sethotels(response.data.Hotels));
-  }, [hotels, option]);
+  }, [option, inputText]);
 
   return (
     <>
-      <div className="headerCities">
+      <div className="headerHotels">
         <h2>
           Meet our most popular hotels<span className="rojo">.</span>
         </h2>
@@ -56,6 +57,17 @@ export default function Hotels() {
         </div>
 
         <form className="inputs" ref={form}>
+        <fieldset>
+            <label>
+              Search for name of hotel
+              <input
+                type="text"
+                className="searchForText"
+                onChange={renderInput}
+                value={inputText}
+              />
+            </label>
+          </fieldset>
           <fieldset className="checkboxs">
             {/* {continents.map((continent) => (
               <Label continent={continent} key={continent}></Label>
@@ -67,17 +79,7 @@ export default function Hotels() {
             </select>
           </fieldset>
 
-          <fieldset>
-            <label>
-              Search for name of hotel
-              <input
-                type="text"
-                className="searchForText"
-                onChange={renderInput}
-                value={inputText}
-              />
-            </label>
-          </fieldset>
+          
         </form>
         <div className="mainCities">
           {hotels.length === 0 ? (  // ? es lo mismo que IF

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useParams } from "react-router";
 import hotels from "../data/hotels"
 import axios from "axios";
+import GoTo from "./GoTo";
 
 
 
@@ -36,7 +37,7 @@ export default function CardDetailsHotel() {
       <p>{hotel.description}</p>
       <p>The hotel capacity is: {hotel.capacity}</p>
 
-
+      <GoTo anchor="#showsss"/>
 
       </div>
     </div>

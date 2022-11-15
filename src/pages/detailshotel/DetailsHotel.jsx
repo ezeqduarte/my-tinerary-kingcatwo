@@ -8,16 +8,14 @@ import events from "../../data/events";
 import "../detailshotel/detailshotels.css";
 
 export default function () {
-
-const {id} = useParams()
-// let itineraryEventsX = events.filter(event=>event.hotelId === id)
-let [itineraryEventsX, setItineraryEventsX] = useState([])
-useEffect(()=> {
-
-axios.get(`http://localhost:8000/api/shows?hotelId=${id}`)
-.then ((Response) => setItineraryEventsX(Response.data.searched))
-
-},[])
+  const { id } = useParams();
+  // let itineraryEventsX = events.filter(event=>event.hotelId === id)
+  let [itineraryEventsX, setItineraryEventsX] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/shows?hotelId=${id}`)
+      .then((Response) => setItineraryEventsX(Response.data.searched));
+  }, []);
 
   return (
     <div>
@@ -25,19 +23,23 @@ axios.get(`http://localhost:8000/api/shows?hotelId=${id}`)
         <CardDetailsHotel></CardDetailsHotel>
       </div>
 
-      <div className="informationhotel">
+      <div className="informationhotel" id="showsss">
         <h2>
           Events<span className="rojo">.</span>{" "}
         </h2>
         <div className="eventsfromhotels">
-
-
-
-
-            {itineraryEventsX.map(event=><ItineraryEvents object={event} key={event.name}> </ItineraryEvents>)}        
-
-
-          
+          {itineraryEventsX.length != 0 ? (
+            itineraryEventsX.map((event) => (
+              <ItineraryEvents object={event} key={event.name}>
+                {" "}
+              </ItineraryEvents>
+            ))
+          ) : (
+            <h2 className="noMatch">
+              There are no shows available
+              <span className="rojo">.</span>
+            </h2>
+          )}
         </div>
       </div>
     </div>

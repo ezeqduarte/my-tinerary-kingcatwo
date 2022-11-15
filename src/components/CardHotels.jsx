@@ -9,6 +9,7 @@ export default function CardHotels(props) {
         <img src={hotel.photo[0]} alt="{hotel.name}" />
       </div>
       <h4>{hotel.name}</h4>
+      <h5>Capacity: {hotel.capacity}</h5>
       <NavLink
         to={`/detailshotel/${hotel._id}`}
         className="btn-details"
