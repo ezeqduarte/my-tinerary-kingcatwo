@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router";
 import places from "../data/cities";
+import GoTo from "./GoTo";
 
 export default function CardDetailsCity() {
 
@@ -36,7 +37,7 @@ export default function CardDetailsCity() {
             <h3><span className="rojo">|</span>{place.name}</h3>
             <p>This places is ubicated in {place.continent}.</p>
             <p>Have a population of {place.population} peoples.</p>
-            
+            <GoTo anchor="#itineraries"/>
 
         </div>
     </div>

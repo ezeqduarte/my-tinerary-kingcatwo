@@ -7,7 +7,6 @@ import Label from "../../components/Label";
 import "../cities/cities.css";
 
 export default function Cities() {
-  
   let checksboxs = useRef();
   let inputText = useRef();
 
@@ -74,16 +73,6 @@ export default function Cities() {
         </div>
 
         <form className="inputs">
-          <fieldset
-            className="checkboxs"
-            ref={checksboxs}
-            onChange={checkboxsCheckeds}
-          >
-            {allContinents.map((continent) => (
-              <Label continent={continent} key={continent}></Label>
-            ))}
-          </fieldset>
-
           <fieldset>
             <label>
               Search for name of city
@@ -94,6 +83,16 @@ export default function Cities() {
                 ref={inputText}
               />
             </label>
+          </fieldset>
+
+          <fieldset
+            className="checkboxs"
+            ref={checksboxs}
+            onChange={checkboxsCheckeds}
+          >
+            {allContinents.map((continent) => (
+              <Label continent={continent} key={continent}></Label>
+            ))}
           </fieldset>
         </form>
         <div className="mainCities">

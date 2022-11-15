@@ -237,9 +237,13 @@ h3 {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url(/public/img/home.jpg);
+  background-image: url("https://s1.1zoom.me/big3/697/Italy_Mountains_Houses_Cinque_Terre_park_Crag_612651_5120x2926.jpg");
+  background-color: rgba(0, 0, 0, 0.596);
+  background-blend-mode: color;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .rojo {
