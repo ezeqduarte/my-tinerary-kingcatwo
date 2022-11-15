@@ -10,7 +10,7 @@ export default function CardHotels(props) {
       </div>
       <h4>{hotel.name}</h4>
       <NavLink
-        to={`/detailshotel/${hotel.id}`}
+        to={`/detailshotel/${hotel._id}`}
         className="btn-details"
         style={{ textDecoration: "none" }}
       >
