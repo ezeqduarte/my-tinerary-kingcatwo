@@ -1,74 +1,180 @@
 .cardDetailsCity {
+  background-color: rgba(32, 32, 32, 0.959);
+  height: 550px;
+  width: 1000px;
+  flex-direction: row;
+  display: flex;
+  color: white;
+  border-radius: 20px;
+}
 
-    background-color: rgba(32, 32, 32, 0.959);
-    height: 550px;
-    width: 1000px;
-    flex-direction: row;
-    display: flex;
-    color: white;
-    border-radius: 20px;
+.cardItinerary {
+  width: 340px;
+  height: 630px;
+  background-color: rgba(238, 238, 238, 0.315);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  position: relative;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
 
+.cardItinerary:hover {
+  transform: scale(1.01);
+  transition: 350ms;
 }
 
 .detailscity {
-    background-image: url(/public/img/home.jpg) ;
-    min-height: 100vh;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+  background-image: url("https://s1.1zoom.me/big3/645/339631-svetik.jpg");
+  background-color: rgba(0, 0, 0, 0.596);
+  background-blend-mode: color;
+  background-attachment: fixed;
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.tituloCardItinerary {
+  margin: 0;
+}
+
+.description {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .imagenCardDetails {
-    display: flex;
-    width: 50%;
-    height: 100%;
-
+  display: flex;
+  width: 50%;
+  height: 100%;
 }
 
 .imagenCardDetails img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .informacionCardDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  gap: 40px;
+}
+
+.informacionCardDetails h3 {
+  margin: 0;
+}
+
+.buttonBackCity {
+  border-radius: 400px;
+  background-color: red;
+}
+
+.informationCities {
+  padding-top: 35px;
+  min-height: 80vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.informationCities h2 {
+  margin: 0;
+}
+
+.hotelsfromcities {
+  padding: 80px 20px;
+  gap: 50px;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.rowComentsCards {
+  display: flex;
+  flex-direction: row;
+}
+
+.coments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(207, 207, 207);
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.coment {
+  display: flex;
+  flex-direction: column;
+}
+
+.coments {
+  width: 250px;
+}
+
+@media (max-width: 875px) {
+  h3 {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardDetailsCity {
+    background-color: rgba(32, 32, 32, 0.959);
+    height: 550px;
+    width: 1000px;
+    flex-direction: column;
+    display: flex;
+    color: white;
+    border-radius: 20px;
+  }
+
+  .imagenCardDetails {
+    display: flex;
+    width: 100%;
+    height: 70%;
+    justify-content: center;
+    /* align-items: center; */
+  }
+
+  .imagenCardDetails img {
+    object-fit: contain;
+    border-radius: 25px;
+    border: wheat 1px solid;
+    width: auto;
+    height: auto;
+  }
+
+  .informacionCardDetails {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 100%;
     gap: 40px;
-}
+  }
 
-.informacionCardDetails h3 {
-    margin: 0;
-}
-
-.buttonBackCity {
-
-    border-radius: 400px;
-    background-color: red;
-
-}
-
-.informationCities{
-    padding-top: 35px;
-    min-height: 80vh;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-
-.informationCities h2 {
-    margin: 0;
-}
-
-.hotelsfromcities {
-    padding: 20px;
+  .hotelsfromcities {
+    padding: 0px;
     gap: 50px;
     width: 100%;
     flex-grow: 1;
@@ -77,101 +183,20 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  }
 
-
-}
-
-.rowComentsCards{
+  .rowComentsCards {
     display: flex;
-    flex-direction: row;
-}
+    flex-direction: column;
+  }
 
-.coments{
-
-
+  .coments {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: rgb(207, 207, 207);
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-
-
+    border-radius: 0px;
+    width: 340px;
+  }
 }
-
-.coment {
-
-    display: flex;
-    flex-direction: column;
-
-}
-
-.coments {
-
-    width: 250px;
-
-}
-
-@media (max-width: 875px) {
-h3 {
-    display: block;
-}}
-
-@media (max-width: 768px) {
-    .cardDetailsCity {
-        background-color: rgba(32, 32, 32, 0.959);
-        height: 550px;
-        width: 1000px;
-        flex-direction: column;
-        display: flex;
-        color: white;
-        border-radius: 20px;
-    }
-
-    .imagenCardDetails {
-        display: flex;
-        width: 100%;
-        height: 70%;
-    }
-
-    .informacionCardDetails {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        gap: 40px;
-    }
-
-    .hotelsfromcities {
-        padding: 0px;
-        gap: 50px;
-        width: 100%;
-        flex-grow: 1;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .rowComentsCards {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .coments {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background-color: rgb(207, 207, 207);
-        border-radius: 0px;
-        width: 340px;
-    }
-
-
-
-}
-

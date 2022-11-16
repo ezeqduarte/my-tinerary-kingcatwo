@@ -23,7 +23,7 @@ export default function ItineraryEvents(props) {
 
         <p>The price is: ${object.price}</p>
 
-        <p>The date is: {object.date.toString().slice(0, 21)}</p>
+        <p>The date is: {object.date.toString().slice(0, 10)}</p>
 
         <div className="btn-details" onClick={change}>
           <p>Comentaries</p>

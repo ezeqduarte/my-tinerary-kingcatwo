@@ -1,5 +1,6 @@
+import axios from "axios";
 import React, { useRef } from "react";
-import BackToTopButton from "../../components/BackToTopButton";
+import { useState } from "react";
 import "../newcity/newcity.css";
 
 export default function NewCity() {
@@ -9,29 +10,52 @@ export default function NewCity() {
   let picture = useRef();
   let population = useRef();
 
-  console.log(form.current);
-  console.log(nameCity.current);
-  console.log(continentCity.current);
-  console.log(picture.current);
-  console.log(population.current);
+  const [objectForm, setObjectForm] = useState({
+    name: "",
+    continent: "",
+    photo: "",
+    population: 0,
+    userId: "636d1e66dbb2d08117b1c7c2"
+  });
 
-  function newCity(event) {
-    let newCity = {
-      id: nameCity.current.value,
-      name: nameCity.current.value,
-      continent: continentCity.current.value,
-      photo: picture.current.value,
-      population: population.current.value,
-      userId: "admn0",
-    };
+  /* console.log(typeof(objectForm.population)); */
 
-    console.log(picture.current.value);
+  function handleForm(event) {
+    let object = { ...objectForm, [event.target.id]: event.target.value };
 
+    setObjectForm(object);
+  }
+/* 
+  console.log(typeof objectForm.name);
+  console.log(typeof objectForm.continent);
+  console.log(typeof objectForm.photo);
+  console.log(typeof objectForm.population); */
+
+  async function submitForm(event) {
     event.preventDefault();
 
-    localStorage.setItem("newCity", JSON.stringify(newCity));
-    form.current.reset();
+    axios
+      .post("http://localhost:8000/api/cities/", objectForm)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    console.log(objectForm);
+
+    setObjectForm({
+      name: "",
+      continent: "",
+      photo: "",
+      population: 0,
+    });
+
+    event.target.reset();
   }
+
+/*   console.log(objectForm); */
 
   return (
     <>
@@ -41,10 +65,18 @@ export default function NewCity() {
         </h2>
       </div>
       <div className="newcity">
-        <form className="formNewCity" onSubmit={newCity} ref={form}>
+        <form className="formNewCity" onSubmit={submitForm} ref={form}>
           <label>
             Name of city
-            <input type="text" name="nameCity" ref={nameCity} required />
+            <input
+              type="text"
+              name="nameCity"
+              id="name"
+              ref={nameCity}
+              onChange={handleForm}
+              placeholder="Insert name of the city"
+              required
+            />
           </label>
           <label>
             Continent
@@ -52,25 +84,34 @@ export default function NewCity() {
               type="text"
               name="continentCity"
               ref={continentCity}
+              id="continent"
+              onChange={handleForm}
+              placeholder="Insert continent of the city"
               required
             />
           </label>
-          <label>Choose a picture of city</label>
+          <label>
+            Picture of city
+            <input
+              type="text"
+              name="photoCity"
+              ref={picture}
+              id="photo"
+              onChange={handleForm}
+              placeholder="Insert photo URL of the city"
+              required
+            />
+          </label>
 
-          <input
-            type="file"
-            name="photoCity"
-            accept=".jpg"
-            ref={picture}
-            required
-            id="photo"
-          />
           <label>
             Population
             <input
               type="number"
               name="populationCity"
+              id="population"
               ref={population}
+              onChange={handleForm}
+              placeholder="Insert population of the city"
               required
             />
           </label>

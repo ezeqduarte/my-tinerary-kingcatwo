@@ -1,31 +1,47 @@
+import axios from "axios";
 import React, { useRef } from "react";
+import { useState } from "react";
 import "../newHotel/newhotel.css";
-
+let send = async function (object) {
+  axios
+    .post("http://localhost:8000/api/hotels/", object)
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+};
 
 export default function NewHotel() {
   let form = useRef();
   let nameHotel = useRef();
-  let photoHotel = useRef();
+  let photoHotel1 = useRef();
+  let photoHotel2 = useRef();
+  let photoHotel3 = useRef();
   let capacityHotel = useRef();
   let descriptionHotel = useRef();
   let city = useRef();
 
-
-  function newHotel(event) {
-   
-
+  async function newHotel(event) {
     let newHotel = {
-      id: nameHotel.current.value,
       name: nameHotel.current.value,
-      photo: photoHotel.current.value,
-      capacity: capacityHotel.current.value,
+      photo: [
+        photoHotel1.current.value,
+        photoHotel2.current.value,
+        photoHotel3.current.value,
+      ],
+      capacity: parseFloat(capacityHotel.current.value),
       description: descriptionHotel.current.value,
-      adminId: "admn0",
+      userId: "636d1e66dbb2d08117b1c7c2",
+      cityId: "636e5eb0bbea8608a2ec4f9a",
     };
 
     event.preventDefault();
+    send(newHotel);
 
-    localStorage.setItem("newHotel", JSON.stringify(newHotel));
+    console.log(newHotel);
+
     form.current.reset();
   }
 
@@ -45,19 +61,39 @@ export default function NewHotel() {
           </label>
 
           <label>
-            Choose a hotel photos
+            Photo 1:
             <input
-              type="file"
+              type="text"
               name="photoHotel"
               accept="image/png, image/jpeg"
               multiple
-              ref={photoHotel}
+              ref={photoHotel1}
+            />
+          </label>
+          <label>
+            Photo 2:
+            <input
+              type="text"
+              name="photoHotel"
+              accept="image/png, image/jpeg"
+              multiple
+              ref={photoHotel2}
+            />
+          </label>
+          <label>
+            Photo 3:
+            <input
+              type="text"
+              name="photoHotel"
+              accept="image/png, image/jpeg"
+              multiple
+              ref={photoHotel3}
             />
           </label>
 
           <label>
             Capacity
-            <input type="text" name="capacity" ref={capacityHotel}></input>
+            <input type="number" name="capacity" ref={capacityHotel}></input>
           </label>
           <label>
             Description
