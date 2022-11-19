@@ -3,30 +3,40 @@ import axios from "axios";
 import API from "../../api";
 
 const getCities = createAsyncThunk("getCities", async (data) => {
-
-    const {peticion} = data
-    console.log(peticion);
-    const res = await axios.get(`${API}/cities/${peticion}`)
-    console.log(res);
+  try {
+    const { peticion } = data;
+    //console.log(peticion);
+    const res = await axios.get(`${API}/cities/${peticion}`);
+    //console.log(res);
     return {
-        cities: res.data.cities
-    }
+      cities: res.data.cities,
+    };
+  } catch (error) {
+    console.log(error.message);
+    return {
+        cities: [],
+      };
+  }
 });
 
 const getContinent = createAsyncThunk("getContinent", async () => {
-
-    
-    const res = await axios.get(`${API}/cities/`)
+  try {
+    const res = await axios.get(`${API}/cities/`);
     const continents = [
-        ...new Set([...res.data.cities].map((city) => city.continent)),
-      ]
+      ...new Set([...res.data.cities].map((city) => city.continent)),
+    ];
 
-      /* console.log(continents); */
+    /* console.log(continents); */
 
     return {
-        continents: continents
-    }
-
+      continents: continents,
+    };
+  } catch (error) {
+    console.log(error.message);
+    return {
+        continents: [],
+      };
+  }
 });
 
 const citiesActions = {
