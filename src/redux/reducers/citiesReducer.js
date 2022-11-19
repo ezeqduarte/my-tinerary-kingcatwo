@@ -3,7 +3,7 @@ import citiesActions from "../actions/citiesActions";
 const { getCities , getContinent } = citiesActions;
 
 const initialState = {
-  cities: [],
+  cities: [],  //Esto lo haciamos antes pero ahora lo estamos haciendo en el reductor, ahora se llena cuando ejecut
   continents: [],
 };
 
