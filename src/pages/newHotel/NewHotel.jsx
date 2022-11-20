@@ -2,18 +2,15 @@ import axios from "axios";
 import React, { useRef } from "react";
 import { useState } from "react";
 import "../newHotel/newhotel.css";
-let send = async function (object) {
-  axios
-    .post("http://localhost:8000/api/hotels/", object)
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log(error.message);
-    });
-};
+import { ToastContainer, toast } from "react-toastify";
+import OurToastContainer from "../../components/OurToastContainer";
+import { useNavigate } from "react-router";
 
+
+
+//Los HOOKS SOLO SE PUEDEN USAR EN COMPONENTES DE REACT
 export default function NewHotel() {
+  let navigate = useNavigate()
   let form = useRef();
   let nameHotel = useRef();
   let photoHotel1 = useRef();
@@ -21,7 +18,65 @@ export default function NewHotel() {
   let photoHotel3 = useRef();
   let capacityHotel = useRef();
   let descriptionHotel = useRef();
-  let city = useRef();
+  let send = async function (object) {
+  
+    axios
+      .post("http://localhost:8000/api/hotels/", object)
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.success === false) {
+  
+          
+          response.data.message.map((message) => {
+            toast.error(`${message}`, {
+              position: "bottom-left",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            })
+          })
+  
+  
+  
+  
+  
+        } else {
+  
+          toast.success(`${response.data.hotelCreated.name} has created successfuly`, {
+            position: "bottom-left",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+  
+          setTimeout(function () {
+            navigate(`/detailshotel/${response.data.hotelCreated._id}`);
+          }, 3000);
+  
+        }
+
+        
+      })
+
+
+      
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
+
+
+
+
 
   async function newHotel(event) {
     let newHotel = {
@@ -40,13 +95,12 @@ export default function NewHotel() {
     event.preventDefault();
     send(newHotel);
 
-    console.log(newHotel);
-
     form.current.reset();
   }
 
   return (
     <>
+     <OurToastContainer></OurToastContainer>
       <div className="divTituloNewhotel">
         <h2 className="tituloNewHotel">
           Create New Hotel<span className="rojo">.</span>
@@ -103,13 +157,18 @@ export default function NewHotel() {
               ref={descriptionHotel}
             ></input>
           </label>
-          <label>
-            Ciudad
-            <input type="text" name="ciudad" ref={city}></input>
-          </label>
+
           <button className="btn-newhotel">CREATE A NEW HOTEL</button>
         </form>
+
+
+
+
+
+
       </div>
     </>
   );
+
+  
 }
