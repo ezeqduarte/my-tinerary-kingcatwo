@@ -24,7 +24,7 @@ export default function MyCities() {
     <>
       <div className="headerMyCities">
         <h2>
-          Look at the cities are you created<span className="rojo">.</span>
+          Look at the Cities you created<span className="rojo">.</span>
         </h2>
         <GoTo anchor="#MyCities"></GoTo>
       </div>
