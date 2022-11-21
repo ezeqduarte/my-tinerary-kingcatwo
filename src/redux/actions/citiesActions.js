@@ -71,11 +71,42 @@ const deleteCityAdmin = createAsyncThunk("deleteCityAdmin", async (data) => {
   }
 });
 
+const editCityAdmin = createAsyncThunk("editCityAdmin", async (data) => {
+  try {
+
+    const { id } = data;
+    const object = {
+      name: data.name,
+      continent: data.continent,
+      photo: data.photo,
+      population: data.population,
+      userId: `636d1e66dbb2d08117b1c7c2`
+    }    
+
+    console.log(id);
+    console.log(data);
+
+    //console.log(peticion);
+    const res = await axios.put(`${API}cities/${id}`, object , { new: true });
+    /* console.log(res); */
+    if (res) {
+      return {
+        cityModificated: res.data.cityModificated,
+        succes: true
+      };
+    }
+   
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
 const citiesActions = {
   getCities,
   getContinent,
   getCitiesOfAdmin,
-  deleteCityAdmin
+  deleteCityAdmin,
+  editCityAdmin
 };
 
 export default citiesActions;

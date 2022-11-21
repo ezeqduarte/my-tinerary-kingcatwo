@@ -6,14 +6,14 @@ import citiesActions from "../redux/actions/citiesActions";
 
 export default function CardMyCities(props) {
   let { city } = props;
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const { deleteCityAdmin } = citiesActions;
 
   function click() {
     Swal.fire({
       title: "Are you sure of deleted this city?",
       imageUrl: "https://img.icons8.com/ios-glyphs/120/000000/break.png",
-      width:"25rem",
+      width: "25rem",
       padding: "2rem",
       showCancelButton: true,
       confirmButtonColor: "#3085d1",
@@ -24,12 +24,11 @@ export default function CardMyCities(props) {
         Swal.fire({
           title: "The city has deleted",
           imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
-          width:"25rem",
+          width: "25rem",
           padding: "2rem",
         });
-        
-        dispatch(deleteCityAdmin({id: city._id}))
 
+        dispatch(deleteCityAdmin({ id: city._id }));
       }
     });
   }
@@ -39,7 +38,7 @@ export default function CardMyCities(props) {
         <img src={city.photo} alt="{city.name}" />
       </div>
       <h4>{city.name}</h4>
-      <h5 className="adminId">Admin: {city.userId._id}</h5>
+      <h5 className="adminId">Admin: {city.userId._id || city.userId}</h5>
       <h5 className="cityId">City: {city._id}</h5>
       <div className="btn-details">
         <NavLink

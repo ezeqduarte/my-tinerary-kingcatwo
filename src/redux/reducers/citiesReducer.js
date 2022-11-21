@@ -1,7 +1,12 @@
 import { createReducer } from "@reduxjs/toolkit";
 import citiesActions from "../actions/citiesActions";
-const { getCities, getContinent, getCitiesOfAdmin, deleteCityAdmin } =
-  citiesActions;
+const {
+  getCities,
+  getContinent,
+  getCitiesOfAdmin,
+  deleteCityAdmin,
+  editCityAdmin,
+} = citiesActions;
 
 const initialState = {
   cities: [],
@@ -19,15 +24,26 @@ const citiesReducer = createReducer(initialState, (builder) => {
     return { ...state, continents: action.payload.continents };
   });
   builder.addCase(getCitiesOfAdmin.fulfilled, (state, action) => {
-    
     //console.log(action);
-    return   { ...state, citiesOfAdmin: action.payload.citiesOfAdmin };
+    return { ...state, citiesOfAdmin: action.payload.citiesOfAdmin };
   });
   builder.addCase(deleteCityAdmin.fulfilled, (state, action) => {
+    /*   console.log(initialState.citiesOfAdmin); */
 
-    console.log(initialState.citiesOfAdmin);
-
-     return   { ...state, citiesOfAdmin: state.citiesOfAdmin.filter(city=> city._id!==action.payload.cityDeleted) };
+    return {
+      ...state,
+      citiesOfAdmin: state.citiesOfAdmin.filter(
+        (city) => city._id !== action.payload.cityDeleted
+      ),
+    };
+  });
+  builder.addCase(editCityAdmin.fulfilled, (state, action) => {
+    return {
+      ...state,
+      citiesOfAdmin: state.citiesOfAdmin.filter(
+        (city) => city._id !== action.payload.cityModificated._id
+      ).concat(action.payload.cityModificated),
+    };
   });
 });
 

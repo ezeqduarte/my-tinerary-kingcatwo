@@ -32,7 +32,7 @@ export default function MyCities() {
         <h2>
           Choose an option<span className="rojo">.</span>
         </h2>
-        <CreateCityAdmin />
+        {/* <CreateCityAdmin /> */}
         <EditCityAdmin />
       </div>
       <div className="bodyCities" id="MyCities">
