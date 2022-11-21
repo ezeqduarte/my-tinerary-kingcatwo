@@ -31,28 +31,41 @@ const getHotelsAdmin = createAsyncThunk("getHotelsAdmin", async () => {
   }
 });
 
+const editHotelsAdmin = createAsyncThunk("editHotelsAdmin", async (data) => {
+
+  console.log(data)
 
 
-const deleteHotelsAdmin = createAsyncThunk("deleteHotelsAdmin", async (data) => { console.log(data)
-  //En el caso de las acciones lo que llega aca (data) siempre tiene que ser un objetom, no se le puede pasar 2 parametros, tiene que ser uno solo y tiene que ser un objeto, si se quieren pasar 2 PARAMETROS O MÁS TIENEN QUE SER DENTRODE UN OBJETOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
   try {
-    const respuesta = await axios.delete(
-      `${API}hotels/${data.id}`
+    const respuesta = await axios.patch(
+      `${API}hotels/${data.id}`,
+      data.objeto,
+      { new: true }
     );
 
-    return { hotel: respuesta.data.hotel };
+    return { hotelsAdmin: respuesta.data.hotelito};
   } catch (error) {
     console.log(error.message + " ---------------> Está sucediendo otra vez");
   }
 });
 
+const deleteHotelsAdmin = createAsyncThunk(
+  "deleteHotelsAdmin",
+  async (data) => {
+    console.log(data);
+    //En el caso de las acciones lo que llega aca (data) siempre tiene que ser un objetom, no se le puede pasar 2 parametros, tiene que ser uno solo y tiene que ser un objeto, si se quieren pasar 2 PARAMETROS O MÁS TIENEN QUE SER DENTRODE UN OBJETOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+    try {
+      const respuesta = await axios.delete(`${API}hotels/${data.id}`);
 
-
-
-
-
+      return { hotel: respuesta.data.hotel };
+    } catch (error) {
+      console.log(error.message + " ---------------> Está sucediendo otra vez");
+    }
+  }
+);
 
 const hotelsAction = {
+  editHotelsAdmin ,
   getHotels,
   deleteHotelsAdmin,
   getHotelsAdmin, //Contenedor de acciones de hotels

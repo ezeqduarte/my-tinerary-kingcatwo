@@ -47,7 +47,7 @@ let click = async function () {
   return (
     <div className="cardMyCities">
       <div className="imgCard">
-        <img src={hotel.photo} alt={hotel.name} />
+        <img src={hotel.photo[0]} alt={hotel.name} />
       </div>
       <h4>{hotel.name}</h4>
       <h5 className="adminId">Admin: {hotel.userId._id || hotel.userId}</h5>
