@@ -11,13 +11,13 @@ export default function CardMyCities(props) {
 
   function click() {
     Swal.fire({
-      title: "Are you sure of deleted this city?",
+      title: "Are you sure to delete this city?",
       imageUrl: "https://img.icons8.com/ios-glyphs/120/000000/break.png",
       width: "25rem",
       padding: "2rem",
       showCancelButton: true,
-      confirmButtonColor: "#3085d1",
-      cancelButtonColor: "#d33",
+      confirmButtonColor: "#eb3a34",
+      cancelButtonColor: "#5e5b5b",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
