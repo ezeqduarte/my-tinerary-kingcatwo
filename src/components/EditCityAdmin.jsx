@@ -1,12 +1,28 @@
 import React from "react";
+import { useRef } from "react";
 
 export default function EditCityAdmin() {
+  let form = useRef()
+
+  const clear = (event) => {
+
+    event.preventDefault()
+    form.current.reset()
+
+  }
+
+  const send = (event) => {
+
+    event.preventDefault()
+
+  }
+
   return (
     <div className="formCityAdmin">
       <h3>
         Edit City<span className="rojo">.</span>
       </h3>
-      <form>
+      <form ref={form}>
         <fieldset className="editcityfieldset">
           <label>
             Id city<span className="rojo">.</span>
@@ -26,12 +42,12 @@ export default function EditCityAdmin() {
           </label>
           <label>
             Population<span className="rojo">.</span>
-            <input type="text" />
+            <input type="number" />
           </label>
         </fieldset>
         <fieldset>
-          <button>CLEAR</button>
-          <button>SEND</button>
+          <button onClick={clear}>CLEAR</button>
+          <button onClick={send}>SEND</button>
         </fieldset>
       </form>
     </div>

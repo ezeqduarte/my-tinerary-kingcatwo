@@ -1,6 +1,23 @@
 import React from "react";
+import { useRef } from "react";
 
 export default function CreateCityAdmin() {
+
+  let form = useRef()
+
+  const clear = (event) => {
+
+    event.preventDefault()
+    form.current.reset()
+
+  }
+
+  const send = (event) => {
+
+    event.preventDefault()
+
+  }
+
   return (
     <div className="formCityAdmin">
       <div className="h3Createcity">
@@ -8,7 +25,7 @@ export default function CreateCityAdmin() {
           Create City<span className="rojo">.</span>
         </h3>
       </div>
-      <form>
+      <form ref={form}>
         <fieldset className="newcityfieldset">
           <label>
             Name<span className="rojo">.</span>
@@ -24,12 +41,12 @@ export default function CreateCityAdmin() {
           </label>
           <label>
             Population<span className="rojo">.</span>
-            <input type="text" />
+            <input type="number" />
           </label>
         </fieldset>
         <fieldset>
-          <button>CLEAR</button>
-          <button>SEND</button>
+          <button onClick={clear}>CLEAR</button>
+          <button onClick={send}>SEND</button>
         </fieldset>
       </form>
     </div>
