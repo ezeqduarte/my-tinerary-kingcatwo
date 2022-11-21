@@ -1,7 +1,5 @@
-import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CardMyCities from "../../components/CardMyCities";
 import CreateCityAdmin from "../../components/CreateCityAdmin";

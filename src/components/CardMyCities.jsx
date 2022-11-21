@@ -1,9 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2/dist/sweetalert2.js";
+import citiesActions from "../redux/actions/citiesActions";
 
 export default function CardMyCities(props) {
   let { city } = props;
+  const dispatch = useDispatch()
+  const { deleteCityAdmin } = citiesActions;
+
   function click() {
     Swal.fire({
       title: "Are you sure of deleted this city?",
@@ -22,6 +27,9 @@ export default function CardMyCities(props) {
           width:"25rem",
           padding: "2rem",
         });
+        
+        dispatch(deleteCityAdmin({id: city._id}))
+
       }
     });
   }

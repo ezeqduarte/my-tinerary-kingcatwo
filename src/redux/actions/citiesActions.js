@@ -56,10 +56,26 @@ const getCitiesOfAdmin = createAsyncThunk("getCitiesOfAdmin", async (data) => {
   }
 });
 
+const deleteCityAdmin = createAsyncThunk("deleteCityAdmin", async (data) => {
+  try {
+    const { id } = data;    
+    //console.log(peticion);
+    const res = await axios.delete(`${API}/cities/${id}`);
+    console.log(res);
+    return {
+      cityDeleted: res.data.cityDeleted,
+      succes: true
+    };
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
 const citiesActions = {
   getCities,
   getContinent,
-  getCitiesOfAdmin
+  getCitiesOfAdmin,
+  deleteCityAdmin
 };
 
 export default citiesActions;
