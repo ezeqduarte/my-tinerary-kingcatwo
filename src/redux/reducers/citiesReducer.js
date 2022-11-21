@@ -1,10 +1,11 @@
 import { createReducer } from "@reduxjs/toolkit";
 import citiesActions from "../actions/citiesActions";
-const { getCities , getContinent } = citiesActions;
+const { getCities , getContinent, getCitiesOfAdmin } = citiesActions;
 
 const initialState = {
-  cities: [],  //Esto lo haciamos antes pero ahora lo estamos haciendo en el reductor, ahora se llena cuando ejecut
+  cities: [],  
   continents: [],
+  citiesOfAdmin: []
 };
 
 const citiesReducer = createReducer(initialState, (builder) => {
@@ -15,6 +16,10 @@ const citiesReducer = createReducer(initialState, (builder) => {
   builder.addCase(getContinent.fulfilled, (state, action) => {
     //console.log(action);
     return {...state, continents: action.payload.continents}
+  });
+  builder.addCase(getCitiesOfAdmin.fulfilled, (state, action) => {
+    //console.log(action);
+    return {...state, citiesOfAdmin: action.payload.citiesOfAdmin}
   });
 });
 

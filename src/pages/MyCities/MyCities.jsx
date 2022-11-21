@@ -2,27 +2,22 @@ import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import CardMyCities from "../../components/CardMyCities";
 import CreateCityAdmin from "../../components/CreateCityAdmin";
 import EditCityAdmin from "../../components/EditCityAdmin";
 import GoTo from "../../components/GoTo";
 import "../MyCities/MyCities.css";
+import citiesActions from "../../redux/actions/citiesActions";
 
 export default function MyCities() {
-  let [citiesAdmin, SetCitiesAdmin] = useState([]);
+  const dispatch = useDispatch();
+  const citiesAdmin = useSelector((store) => store.citiesReducer.citiesOfAdmin);
+
+  const { getCitiesOfAdmin } = citiesActions;
 
   useEffect(() => {
-    let peticion = async () => {
-      try {
-        const res = await axios.get(
-          "http://localhost:8000/api/cities/?userId=636d1e66dbb2d08117b1c7c2"
-        );
-        SetCitiesAdmin(res.data.cities);
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-    peticion();
+    dispatch(getCitiesOfAdmin({ id: "636d1e66dbb2d08117b1c7c2" }));
   }, []);
 
   console.log(citiesAdmin);

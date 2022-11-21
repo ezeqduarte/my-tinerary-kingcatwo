@@ -1,8 +1,30 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Swal from "sweetalert2/dist/sweetalert2.js";
 
 export default function CardMyCities(props) {
   let { city } = props;
+  function click() {
+    Swal.fire({
+      title: "Are you sure of deleted this city?",
+      imageUrl: "https://img.icons8.com/ios-glyphs/120/000000/break.png",
+      width:"25rem",
+      padding: "2rem",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d1",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "The city has deleted",
+          imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
+          width:"25rem",
+          padding: "2rem",
+        });
+      }
+    });
+  }
   return (
     <div className="cardMyCities">
       <div className="imgCard">
@@ -18,6 +40,13 @@ export default function CardMyCities(props) {
         >
           <p>More details</p>
         </NavLink>
+      </div>
+      <div className="btn-delete">
+        <img
+          src="https://img.icons8.com/ios-glyphs/30/FFFFFF/multiply.png"
+          onClick={click}
+          alt={`${city._id}`}
+        />
       </div>
     </div>
   );

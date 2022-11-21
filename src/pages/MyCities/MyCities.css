@@ -26,21 +26,19 @@
   gap: 50px;
 }
 .formMyCities h2 {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 35px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 35px;
 }
 
 .h3Createcity {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    align-items: baseline;
-    height: 39.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  align-items: baseline;
+  height: 39.5px;
 }
-
-
 
 .formMyCities h3 {
   margin: 0;
@@ -52,21 +50,20 @@
 }
 
 .editcityfieldset {
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
 }
 
-.newcityfieldset{
-    display: flex;
-    flex-wrap: wrap;
-    height: 77%;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 20px;
+.newcityfieldset {
+  display: flex;
+  flex-wrap: wrap;
+  height: 77%;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
 }
-
 
 .formCityAdmin {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
@@ -133,11 +130,11 @@
 
 .cardMyCities h4 {
   position: absolute;
-  top: 10px;
+  top: 333px;
   color: white;
   background-color: rgba(0, 0, 0, 0.521);
-  width: 96.1%;
-  padding: 5px 5px;
+  width: 97.1%;
+  padding: 15px 5px;
   display: flex;
   font-size: 1.5rem;
   justify-content: space-around;
@@ -145,11 +142,11 @@
 
 .adminId {
   position: absolute;
-  bottom: 81px;
-  right: 6px;
+  top: 10px;
   color: white;
   background-color: rgba(0, 0, 0, 0.521);
-  width: 96.1%;
+  left: 6.5px;
+  width: 96.45%;
   padding: 5px 5px;
   display: flex;
   justify-content: space-around;
@@ -157,12 +154,31 @@
 
 .cityId {
   position: absolute;
-  bottom: 109px;
-  right: 6px;
+  top: 36px;
   color: white;
+  left: 6.5px;
+  width: 96.45%;
   background-color: rgba(0, 0, 0, 0.521);
-  width: 96.1%;
+
   padding: 5px 5px;
   display: flex;
   justify-content: center;
+}
+
+.btn-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  font-weight: 400;
+  font-size: 1.3rem;
+  background-color: rgb(255, 54, 72);
+  padding: 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
