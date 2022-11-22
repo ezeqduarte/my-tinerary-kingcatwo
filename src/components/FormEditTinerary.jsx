@@ -40,6 +40,7 @@ export default function FormEditTinerary() {
     };
 
     dispatch(editTinerary(data));
+    form.current.reset();
   };
 
   return (
