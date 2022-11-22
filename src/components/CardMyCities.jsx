@@ -16,7 +16,7 @@ export default function CardMyCities(props) {
       width: "25rem",
       padding: "2rem",
       showCancelButton: true,
-      confirmButtonColor: "#eb3a34",
+      confirmButtonColor: "#ff3648",
       cancelButtonColor: "#5e5b5b",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
