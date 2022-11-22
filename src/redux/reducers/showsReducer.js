@@ -20,7 +20,7 @@ const showsReducer = createReducer(initialState, (builder) => {
 
   builder.addCase(editShows.fulfilled, (state, action) => {
     //console.log(action);
-    return { ...state, showsReducer: state.showsReducer.filter(show => show._id != action.payload.idShowDeleted._id).concat(action.payload.editShows) };
+    return { ...state, showsReducer: state.showsReducer.filter(show => show._id != action.payload.idShowEdited._id).concat(action.payload.idShowEdited) };
   });
 
 

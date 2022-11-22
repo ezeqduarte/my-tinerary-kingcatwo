@@ -34,7 +34,7 @@ export default function MyShows() {
         <h2>
           Your Shows<span className="rojo">.</span>
         </h2>
-
+{console.log(showcitos)}
         <div className="YourShowsDiv">
           {showcitos.map((shows) => (
             <CardMyShow city={shows} key={shows.name} />
