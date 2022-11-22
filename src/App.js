@@ -15,6 +15,7 @@ import DetailsHotel from "./pages/detailshotel/DetailsHotel";
 import DetailsCity from "./pages/detailscities/DetailsCity";
 import MyCities from "./pages/MyCities/MyCities";
 import MyHotels from "./pages/MyHotels/MyHotels";
+import MyTineraries from "./pages/myTineraries/MyTineraries";
 
 
 
@@ -37,7 +38,7 @@ function App() {
         <Route path="/myhotels" element= {<MyHotels/>} />
         <Route path="/detailshotel" element= {<DetailsHotel/>} />
         <Route path="/detailshotel/:id" element= {<DetailsHotel/>} />
-        
+        <Route path="/mytineraries" element= {<MyTineraries/>} />
         <Route path="*" element={<NotFound/>} />
         <Route path="/details/:id" element={<DetailsCity/>} />
       
