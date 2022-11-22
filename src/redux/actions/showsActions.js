@@ -14,15 +14,14 @@ const getShows = createAsyncThunk("getShows", async () => {
   } catch (error) {
     console.log(error.message);
     return {
-        shows: [],
-      };
+      shows: [],
+    };
   }
 });
 
 const deleteShows = createAsyncThunk("deleteShows", async (data) => {
- const {id} = data
+  const { id } = data;
   try {
-  
     //console.log(peticion);
     const res = await axios.delete(`${API}/shows/${id}`);
     //console.log(res);
@@ -32,18 +31,36 @@ const deleteShows = createAsyncThunk("deleteShows", async (data) => {
   } catch (error) {
     console.log(error.message);
     return {
-        shows: [],
-      };
+      shows: [],
+    };
   }
 });
 
-
-
+const editShows = createAsyncThunk("editShows", async (data) => {
+  const { id, info } = data;
+  try {
+    //console.log(peticion);
+    const res = await axios.patch(
+      `${API}/shows/${id}`,
+       info ,
+      { new: true }
+    );
+    //console.log(res);
+    return {
+      idShowEdited: res.data.id,
+    };
+  } catch (error) {
+    console.log(error.message);
+    return {
+      shows: [],
+    };
+  }
+});
 
 const showsActions = {
   getShows,
   deleteShows,
-  
+  editShows,
 };
 
 export default showsActions;

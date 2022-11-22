@@ -51,7 +51,7 @@ Swal.fire({
       </div>
       <h4>{city.name}</h4>
       <h5 className="adminId">Admin: {city.userId._id || city.userId}</h5>
-      <h5 className="cityId">City: {city._id}</h5>
+      <h5 className="cityId">Show: {city._id}</h5>
       <div className="btn-details">
         <p>$ {city.price}</p>
       </div>
