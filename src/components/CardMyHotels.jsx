@@ -54,7 +54,7 @@ let click = async function () {
       <h5 className="hotelId">hotel: {hotel._id}</h5>
       <div className="btn-details">
         <NavLink
-          to={`/details/${hotel._id}`}
+          to={`/detailshotel/${hotel._id}`}
           style={{ textDecoration: "none", color: "white" }}
         >
           <p>More details</p>

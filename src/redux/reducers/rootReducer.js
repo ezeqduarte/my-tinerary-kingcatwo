@@ -1,13 +1,15 @@
-import citiesReducer from "./citiesReducer"
-import hotelsReducer from "./hotelsReducer"
-import showsReducer from "./showsReducer"
+import citiesReducer from "./citiesReducer";
+import hotelsReducer from "./hotelsReducer";
+import tineraryReducer from "./tinerariesReducer";
+import showsReducer from "./showsReducer";
+
 //Aca es donde juntamos todos los reductores, se hace por más prolijidad.
 
 const rootReducer = {
-    hotelsReducer,
-    citiesReducer,
-    showsReducer ,
-   
-}
+  hotelsReducer,
+  citiesReducer,
+  tineraryReducer,
+  showsReducer,
+};
 
-export default rootReducer
+export default rootReducer;
