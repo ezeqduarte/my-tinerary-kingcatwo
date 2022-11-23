@@ -18,19 +18,19 @@ export default function CardMyTinerary(props) {
       confirmButtonColor: "#eb3a34",
       cancelButtonColor: "#5e5b5b",
       confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
+        dispatch(deleteTinerary({ id: itinerary._id }));
         Swal.fire({
           title: "The tinerary has deleted",
           imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
           width: "25rem",
           padding: "2rem",
         });
-
-        dispatch(deleteTinerary({ id: itinerary._id }));
       }
     });
   };
+  console.log(itinerary);
 
   return (
     <div className="cardMyCities">
@@ -39,7 +39,7 @@ export default function CardMyTinerary(props) {
       </div>
       <h4>{itinerary.name}</h4>
       <h5 className="adminId">
-        Admin: {itinerary.userId._id || itinerary.userId}
+        Created by {itinerary.userId.name} {itinerary.userId.lastName}
       </h5>
       <h5 className="itineraryId">Tinerary: {itinerary._id}</h5>
       <div className="btn-details">

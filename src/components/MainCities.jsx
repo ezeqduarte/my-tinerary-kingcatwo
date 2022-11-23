@@ -18,6 +18,11 @@ export default function MainCities() {
   const citiesFiltered = useSelector((store) => store.citiesReducer.cities);
   const allContinents = useSelector((store) => store.citiesReducer.continents);
 
+  
+  console.log(checks);
+  console.log(text);
+  console.log(data);
+
   useEffect(() => {
     dispatch(getContinent());
   }, []);
@@ -40,7 +45,7 @@ export default function MainCities() {
     if (text.length > 0) {
       oracion += `name=${text}`;
     }
-    setData({ ...data, peticion: oracion });
+    setData({ peticion: oracion });
   }, [checks, text]);
 
   useEffect(() => {

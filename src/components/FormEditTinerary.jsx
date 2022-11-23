@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
+import Swal from "sweetalert2";
 import tinerariesActions from "../redux/actions/tinerariesActions";
 
 export default function FormEditTinerary() {
@@ -19,28 +20,56 @@ export default function FormEditTinerary() {
   const clear = (e) => {
     e.preventDefault();
     form.current.reset();
+    Swal.fire({
+      title: "The form is clean",
+      imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
+      width: "25rem",
+      padding: "2rem",
+    });
   };
 
   const send = (e) => {
-    e.preventDefault();
+    if (
+      id.current.value !== "" &&
+      name.current.value !== "" &&
+      description.current.value !== "" &&
+      photo1.current.value !== "" &&
+      photo2.current.value !== "" &&
+      photo3.current.value !== "" &&
+      duration.current.value !== 0
+    ) {
+      const data = {
+        id: id.current.value,
+        info: {
+          name: name.current.value,
+          description: description.current.value,
+          photo: [
+            photo1.current.value,
+            photo2.current.value,
+            photo3.current.value,
+          ],
+          price: price.current.value,
+          duration: duration.value,
+        },
+      };
 
-    const data = {
-      id: id.current.value,
-      info: {
-        name: name.current.value,
-        description: description.current.value,
-        photo: [
-          photo1.current.value,
-          photo2.current.value,
-          photo3.current.value,
-        ],
-        price: price.current.value,
-        duration: duration.value,
-      },
-    };
+      dispatch(editTinerary(data));
 
-    dispatch(editTinerary(data));
-    form.current.reset();
+      Swal.fire({
+        title: "The city has modificated",
+        imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
+        width: "25rem",
+        padding: "2rem",
+      }).then(form.current.reset());
+    } else {
+      Swal.fire({
+        title: "Cant modificate. Please complete all camps",
+        imageUrl:
+          "https://img.icons8.com/sf-black-filled/120/null/multiply.png",
+        width: "25rem",
+        padding: "2rem",
+      });
+    }
   };
 
   return (

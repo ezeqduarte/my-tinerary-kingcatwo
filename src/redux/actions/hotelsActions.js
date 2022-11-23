@@ -33,7 +33,7 @@ const getHotelsAdmin = createAsyncThunk("getHotelsAdmin", async () => {
 
 const editHotelsAdmin = createAsyncThunk("editHotelsAdmin", async (data) => {
 
-  console.log(data)
+/*   console.log(data) */
 
 
   try {

@@ -10,13 +10,15 @@ import "../MyHotels/MyHotels.css";
 import citiesActions from "../../redux/actions/citiesActions";
 import hotelsAction from "../../redux/actions/hotelsActions";
 import { useState, useRef } from "react";
+import Swal from "sweetalert2";
+import swal from "sweetalert";
 
 export default function MyHotels() {
   const dispatch = useDispatch();
   const hotelsAdmin = useSelector((store) => store.hotelsReducer.hotelsAdmin);
 
   const { getHotelsAdmin, editHotelsAdmin } = hotelsAction;
-
+  let form = useRef();
   let id = useRef();
   let nameHotel = useRef();
   let photoHotel1 = useRef();
@@ -29,11 +31,16 @@ export default function MyHotels() {
     dispatch(getHotelsAdmin());
   }, []);
 
-  // const [data, setData] = useState({});
-  // const handleForm = (e) => {
-  // setData ({...data,
-  //  [ e.target.id]:e.target.value})
-  // };
+  const clear = (event) => {
+    event.preventDefault();
+    Swal.fire({
+      title: "The form is clean",
+      imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
+      width: "25rem",
+      padding: "2rem",
+    });
+    form.current.reset();
+  };
 
   const sendData = (event) => {
     event.preventDefault();
@@ -50,8 +57,14 @@ export default function MyHotels() {
         description: descriptionHotel.current.value,
       },
     };
-
     dispatch(editHotelsAdmin(data));
+    swal.fire({
+      title: "The city has modificated",
+      imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
+      width: "25rem",
+      padding: "2rem",
+    });
+    form.current.reset();
   };
 
   return (
@@ -72,7 +85,7 @@ export default function MyHotels() {
           <h3>
             Edit Hotel<span className="rojo">.</span>
           </h3>
-          <form>
+          <form ref={form}>
             <fieldset className="editcityfieldset">
               <label>
                 Id hotel<span className="rojo">.</span>
@@ -147,7 +160,7 @@ export default function MyHotels() {
               </label>
             </fieldset>
             <fieldset>
-              <button>CLEAR</button>
+              <button onClick={clear}>CLEAR</button>
               <button onClick={sendData}>SEND</button>
             </fieldset>
           </form>

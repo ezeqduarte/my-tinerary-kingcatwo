@@ -77,9 +77,8 @@ h3 {
 .imagenesCarrousel img {
   width: 360px;
   height: 460px;
-
+  object-fit: cover;
   margin: 6px;
-
   box-shadow: rgb(200, 202, 204) 0px 20px 30px -10px;
 }
 
