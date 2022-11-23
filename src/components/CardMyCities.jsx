@@ -19,26 +19,26 @@ export default function CardMyCities(props) {
       confirmButtonColor: "#ff3648",
       cancelButtonColor: "#5e5b5b",
       confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
+        await dispatch(deleteCityAdmin({ id: city._id }));
         Swal.fire({
           title: "The city has deleted",
           imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
           width: "25rem",
           padding: "2rem",
         });
-
-        dispatch(deleteCityAdmin({ id: city._id }));
       }
     });
   }
+
   return (
     <div className="cardMyCities">
       <div className="imgCard">
         <img src={city.photo} alt="{city.name}" />
       </div>
       <h4>{city.name}</h4>
-      <h5 className="adminId">Admin: {city.userId._id || city.userId}</h5>
+      <h5 className="adminId">Created by {city.userId.name} {city.userId.lastName}</h5>
       <h5 className="cityId">City: {city._id}</h5>
       <div className="btn-details">
         <NavLink

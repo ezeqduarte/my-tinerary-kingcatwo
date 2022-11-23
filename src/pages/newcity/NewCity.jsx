@@ -96,7 +96,7 @@ export default function NewCity() {
     <>
       <div className="divTituloNewcity">
         <h2 className="tituloNewCity">
-          Create new City<span className="rojo">.</span>
+          Create New City<span className="rojo">.</span>
         </h2>
       </div>
       <div className="newcity">

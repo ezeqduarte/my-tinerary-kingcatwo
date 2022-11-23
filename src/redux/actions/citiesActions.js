@@ -2,9 +2,8 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import API from "../../api";
 
-const getCities = createAsyncThunk("getCities", async (data) => {
+const getCities = createAsyncThunk("getCities", async ({ peticion }) => {
   try {
-    const { peticion } = data;
     //console.log(peticion);
     const res = await axios.get(`${API}/cities/${peticion}`);
     //console.log(res);
@@ -14,8 +13,8 @@ const getCities = createAsyncThunk("getCities", async (data) => {
   } catch (error) {
     console.log(error.message);
     return {
-        cities: [],
-      };
+      cities: [],
+    };
   }
 });
 
@@ -34,14 +33,14 @@ const getContinent = createAsyncThunk("getContinent", async () => {
   } catch (error) {
     console.log(error.message);
     return {
-        continents: [],
-      };
+      continents: [],
+    };
   }
 });
 
 const getCitiesOfAdmin = createAsyncThunk("getCitiesOfAdmin", async (data) => {
   try {
-    const { id } = data;    
+    const { id } = data;
     //console.log(peticion);
     const res = await axios.get(`${API}/cities/?userId=${id}`);
     /* console.log(res); */
@@ -51,20 +50,20 @@ const getCitiesOfAdmin = createAsyncThunk("getCitiesOfAdmin", async (data) => {
   } catch (error) {
     console.log(error.message);
     return {
-        citiesAdmin: [],
-      };
+      citiesAdmin: [],
+    };
   }
 });
 
 const deleteCityAdmin = createAsyncThunk("deleteCityAdmin", async (data) => {
   try {
-    const { id } = data;    
+    const { id } = data;
     //console.log(peticion);
     const res = await axios.delete(`${API}/cities/${id}`);
     console.log(res);
     return {
       cityDeleted: res.data.cityDeleted,
-      succes: true
+      succes: true,
     };
   } catch (error) {
     console.log(error.message);
@@ -73,29 +72,27 @@ const deleteCityAdmin = createAsyncThunk("deleteCityAdmin", async (data) => {
 
 const editCityAdmin = createAsyncThunk("editCityAdmin", async (data) => {
   try {
-
     const { id } = data;
     const object = {
       name: data.name,
       continent: data.continent,
       photo: data.photo,
       population: data.population,
-      userId: `636d1e66dbb2d08117b1c7c2`
-    }    
+      userId: `636d1e66dbb2d08117b1c7c2`,
+    };
 
     console.log(id);
     console.log(data);
 
     //console.log(peticion);
-    const res = await axios.put(`${API}cities/${id}`, object , { new: true });
+    const res = await axios.put(`${API}cities/${id}`, object, { new: true });
     /* console.log(res); */
     if (res) {
       return {
         cityModificated: res.data.cityModificated,
-        succes: true
+        succes: true,
       };
     }
-   
   } catch (error) {
     console.log(error.message);
   }
@@ -106,7 +103,7 @@ const citiesActions = {
   getContinent,
   getCitiesOfAdmin,
   deleteCityAdmin,
-  editCityAdmin
+  editCityAdmin,
 };
 
 export default citiesActions;
