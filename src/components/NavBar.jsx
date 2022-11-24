@@ -72,6 +72,24 @@ export default function NavBar() {
             <NavLink to="/login" style={{textDecoration: 'none'}}>
                 <button>LOGIN</button>
             </NavLink>
+            <NavLink to="/mycities" style={{textDecoration: 'none'}}>
+                <button>MY CITIES</button>
+            </NavLink>
+            <NavLink to="/newcity" style={{textDecoration: 'none'}}>
+                <button>NEW CITY</button>
+            </NavLink>
+            <NavLink to="/myHotels" style={{textDecoration: 'none'}}>
+                <button>MY HOTELS</button>
+            </NavLink>
+            <NavLink to="/newhotel" style={{textDecoration: 'none'}}>
+                <button>NEW HOTEL</button>
+            </NavLink>
+            <NavLink to="/mytineraries" style={{textDecoration: 'none'}}>
+                <button>MY TINERARIES</button>
+            </NavLink>
+            <NavLink to="/myshows" style={{textDecoration: 'none'}}>
+                <button>MY SHOWS</button>
+            </NavLink>
             <NavLink to="/logout" style={{textDecoration: 'none'}}>
                 <button>LOGOUT</button>
             </NavLink>

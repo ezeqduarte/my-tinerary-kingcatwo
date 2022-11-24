@@ -33,7 +33,7 @@ const getHotelsAdmin = createAsyncThunk("getHotelsAdmin", async () => { //Esto l
 
 const editHotelsAdmin = createAsyncThunk("editHotelsAdmin", async (data) => {  //Esto lo hago para poder editar hoteles como admin.
 
-  console.log(data)
+/*   console.log(data) */
 
 
   try {

@@ -55,11 +55,7 @@ export default function EditCityAdmin() {
         photo: "",
         population: 0,
       });
-      /*  Swal.fire(
-        'Good job!',
-        'You clicked the button!',
-        'success'
-      ) */
+
       Swal.fire({
         title: "The city has modificated",
         imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",

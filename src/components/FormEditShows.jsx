@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
+import Swal from "sweetalert2/dist/sweetalert2.js";
 import showsActions from "../redux/actions/showsActions";
 
 export default function FormEditShows() {
@@ -10,8 +11,21 @@ export default function FormEditShows() {
   const date = useRef();
   const photo = useRef();
   const price = useRef();
+  const form = useRef();
   const {} = showsActions;
   const dispatch = useDispatch();
+
+
+  const clear = (event) => {
+    event.preventDefault();
+    Swal.fire({
+      title: "The form is clean",
+      imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
+      width: "25rem",
+      padding: "2rem",
+    });
+    form.current.reset();
+  };
 
   const send = (e) => {
     e.preventDefault();
@@ -25,7 +39,14 @@ export default function FormEditShows() {
         date: date.current.date,
       },
     };
-    dispatch(showsActions.editShows(data))
+    dispatch(showsActions.editShows(data));
+    Swal.fire({
+      title: "The city has modificated",
+      imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
+      width: "25rem",
+      padding: "2rem",
+    });
+    form.current.reset();
   };
 
   return (
@@ -34,7 +55,7 @@ export default function FormEditShows() {
         <h3>
           Edit Show<span className="rojo">.</span>
         </h3>
-        <form>
+        <form ref={form}>
           <fieldset className="editcityfieldset">
             <label>
               Id Show<span className="rojo">.</span>
@@ -98,7 +119,7 @@ export default function FormEditShows() {
             </label>
           </fieldset>
           <fieldset>
-            <button>CLEAR</button>
+            <button onClick={clear}>CLEAR</button>
             <button onClick={send}>SEND</button>
           </fieldset>
         </form>

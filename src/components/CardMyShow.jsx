@@ -5,43 +5,31 @@ import Swal from "sweetalert2";
 
 export default function CardMyShow(props) {
   const city = props.city;
-  const dispatch = useDispatch(); //Despacho las acciones
-  const {deleteShows} = showsActions
+  const dispatch = useDispatch();
+  const { deleteShows } = showsActions;
   const click = async () => {
+    Swal.fire({
+      title: "Are you sure to delete this tinerary?",
+      imageUrl: "https://img.icons8.com/ios-glyphs/120/000000/break.png",
+      width: "25rem",
+      padding: "2rem",
+      showCancelButton: true,
+      confirmButtonColor: "#ff3648",
+      cancelButtonColor: "#5e5b5b",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        await dispatch(deleteShows({ id: city._id }));
+        Swal.fire({
+          title: "The tinerary has deleted",
+          imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
+          width: "25rem",
+          padding: "2rem",
+        });
 
-//Sweet alert
-Swal.fire({
-    title: "Are you sure to delete this tinerary?",
-    imageUrl: "https://img.icons8.com/ios-glyphs/120/000000/break.png",
-    width: "25rem",
-    padding: "2rem",
-    showCancelButton: true,
-    confirmButtonColor: "#ff3648",
-    cancelButtonColor: "#5e5b5b",
-    confirmButtonText: "Yes, delete it!",
-  }).then((result) => {
-    if (result.isConfirmed) {
-      Swal.fire({
-        title: "The tinerary has deleted",
-        imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
-        width: "25rem",
-        padding: "2rem",
-      });
-
-      dispatch(deleteShows({id: city._id}))
-    }
-  });
-
-
-
-
-
-
-
-
-
-
-
+       
+      }
+    });
   };
 
   return (
@@ -50,7 +38,10 @@ Swal.fire({
         <img src={city.photo} alt="{city.name}" />
       </div>
       <h4>{city.name}</h4>
-      <h5 className="adminId">Admin: {city.userId._id || city.userId}</h5>
+      <h5 className="adminId">
+        Created by {city.userId.name || city.name}{" "}
+        {city.userId.lastName || city.lastName}
+      </h5>
       <h5 className="cityId">Show: {city._id}</h5>
       <div className="btn-details">
         <p>$ {city.price}</p>
