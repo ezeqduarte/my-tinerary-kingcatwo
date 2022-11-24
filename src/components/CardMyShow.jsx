@@ -5,11 +5,11 @@ import Swal from "sweetalert2";
 
 export default function CardMyShow(props) {
   const city = props.city;
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); //Despacho las acciones
   const {deleteShows} = showsActions
   const click = async () => {
 
-
+//Sweet alert
 Swal.fire({
     title: "Are you sure to delete this tinerary?",
     imageUrl: "https://img.icons8.com/ios-glyphs/120/000000/break.png",

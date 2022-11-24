@@ -7,11 +7,11 @@ import showsActions from "../../redux/actions/showsActions";
 import CardMyShow from "../../components/CardMyShow";
 
 export default function MyShows() {
-  const dispatch = useDispatch(); //Despacho la accion
-  const showcitos = useSelector((store) => store.showsReducer.showsReducer);
+  const dispatch = useDispatch(); //Despacho la accion, si no la despacho nunca mando la accion.
+  const showcitos = useSelector((store) => store.showsReducer.showsReducer); //El UseSelector me suscribe una constante a un estado de los reductores, cada vez que se actualice showReducer(mi array con shows) se me actualiza showcitos que tambiern va a ser un array con shows
   const { getShows } = showsActions;
-  useEffect(() => {
-    dispatch(getShows());
+  useEffect(() => { //
+    dispatch(getShows()); //Despacho la accoin getshows, lo pongo dentro de un useEffect para hacer la peticion una sola vez cuand ose ingrese a la pagina
   }, []);
   console.log(showcitos);
 
