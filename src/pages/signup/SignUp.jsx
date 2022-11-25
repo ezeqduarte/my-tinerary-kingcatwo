@@ -16,7 +16,7 @@ export default function SignUp() {
             <div className='form'>
                 <div className='createacc'>
                     <h2>Create your account</h2>
-                   <Form/>
+                   <Form  role="user"/>
                 </div>
                 <div className='already_acc'>
                         <h3 className='rojo'>Already has an account?</h3>
