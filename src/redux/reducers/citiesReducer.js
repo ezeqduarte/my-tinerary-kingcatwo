@@ -1,4 +1,4 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { createReducer } from "@reduxjs/toolkit"; //Me importo para crear REDUCTORES
 import citiesActions from "../actions/citiesActions";
 const {
   getCities,

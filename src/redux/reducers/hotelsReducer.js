@@ -1,6 +1,6 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { createReducer } from "@reduxjs/toolkit"; //Me importo para crear REDUCTORES
 import hotels from "../../data/hotels";
-import hotelsAction from "../actions/hotelsActions";
+import hotelsAction from "../actions/hotelsActions"; //Me importo mis acciones de HOTELS para poder pasarlas a los REDUCTORES.
 
 const initialState = {
   hotelsR: [],

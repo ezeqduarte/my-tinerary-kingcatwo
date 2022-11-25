@@ -43,7 +43,7 @@ export default function MyHotels() {
   };
 
   const sendData = (event) => {
-    event.preventDefault();
+    event.preventDefault(); //El prevent default es para que no se actualice la pagina al mandar
     let data = {
       id: id.current.value,
       objeto: {
