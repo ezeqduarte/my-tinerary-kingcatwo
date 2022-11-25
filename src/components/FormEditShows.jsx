@@ -44,6 +44,7 @@ export default function FormEditShows() {
       title: "The city has modificated",
       imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
       width: "25rem",
+      confirmButtonColor: "#ff3648",
       padding: "2rem",
     });
     form.current.reset();
