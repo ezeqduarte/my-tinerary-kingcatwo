@@ -1,7 +1,5 @@
-import Home1 from "./pages/Home1";
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
-import AutoToTop from "./components/AutoToTop";
 import Main from "./layouts/Main";
 import SignUp from "./pages/signup/SignUp";
 import NotFound from "./pages/NotFound";
@@ -12,13 +10,32 @@ import Cities from "./pages/cities/Cities";
 import Hotels from "./pages/hotels/Hotels";
 import DetailsHotel from "./pages/detailshotel/DetailsHotel";
 import DetailsCity from "./pages/detailscities/DetailsCity";
-
 import MyCities from "./pages/MyCities/MyCities";
 import MyHotels from "./pages/MyHotels/MyHotels";
 import MyTineraries from "./pages/myTineraries/MyTineraries";
 import MyShows from "./pages/MyShows/MyShows";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import userActions from "./redux/actions/userActions";
 
 function App() {
+  let { logged, role, name, photo } = useSelector((store) => store.userReducer);
+  const { reIngress } = userActions;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    let token = JSON.parse(localStorage.getItem("token"));
+
+    if (token) {
+      dispatch(reIngress(token.token.user));
+    }
+  }, []);
+
+  console.log(logged);
+  console.log(role);
+  console.log(name);
+  console.log(photo);
+
   return (
     <Main>
       <Routes>
