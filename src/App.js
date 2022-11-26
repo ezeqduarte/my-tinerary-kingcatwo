@@ -56,29 +56,7 @@ function App() {
         <Route element={<ProtectedRoute isAllowed={!!logged} reDirect={"/"} />}>
           {/* <Route path="/detailshotel" element={<DetailsHotel />} /> */}
 
-          <Route
-            path="/myshows"
-            element={
-              <ProtectedRoute
-                isAllowed={!!logged && role === "user"}
-                reDirect={"/"}
-              >
-                <MyShows />
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="/mytineraries"
-            element={
-              <ProtectedRoute
-                isAllowed={!!logged && role === "user"}
-                reDirect={"/"}
-              >
-                <MyTineraries />
-              </ProtectedRoute>
-            }
-          />
+          
 
           <Route
             path="/newcity"
