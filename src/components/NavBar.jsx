@@ -6,7 +6,7 @@ import userActions from "../redux/actions/userActions";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 
 export default function NavBar() {
-  let { logged, token, role, photo } = useSelector(
+  let { logged, token, role, photo, name } = useSelector(
     (store) => store.userReducer
   );
   const dispatch = useDispatch();
@@ -132,6 +132,10 @@ export default function NavBar() {
             )}
             {logged && role === "user" ? (
               <>
+                <button>
+                  Hello, {name}
+                  <span className="rojo"> .</span>
+                </button>
                 <NavLink to="/profile" style={{ textDecoration: "none" }}>
                   <button>PROFILE</button>
                 </NavLink>
@@ -146,6 +150,10 @@ export default function NavBar() {
             ) : null}
             {logged && role === "admin" ? (
               <>
+                <button>
+                  Hello, {name}
+                  <span className="rojo"> .</span>
+                </button>
                 <NavLink to="/profile" style={{ textDecoration: "none" }}>
                   <button>PROFILE</button>
                 </NavLink>
