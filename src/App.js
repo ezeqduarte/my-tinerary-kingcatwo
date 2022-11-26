@@ -17,6 +17,7 @@ import MyShows from "./pages/MyShows/MyShows";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import userActions from "./redux/actions/userActions";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   let { logged, role, name, photo } = useSelector((store) => store.userReducer);
@@ -41,20 +42,92 @@ function App() {
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/cities" element={<Cities />} />
-        <Route path="/hotels" element={<Hotels />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<LogIn />} />
-        <Route path="/newcity" element={<NewCity />} />
-        <Route path="/newhotel" element={<NewHotel />} />
-        <Route path="/mycities" element={<MyCities />} />
-        <Route path="/myhotels" element={<MyHotels />} />
-        <Route path="/detailshotel" element={<DetailsHotel />} />
-        <Route path="/myshows" element={<MyShows />} />
-        <Route path="/detailshotel/:id" element={<DetailsHotel />} />
-        <Route path="/mytineraries" element={<MyTineraries />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/details/:id" element={<DetailsCity />} />
+
+        <Route element={<ProtectedRoute isAllowed={!logged} reDirect={"/"} />}>
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/cities" element={<Cities />} />
+          <Route path="/hotels" element={<Hotels />} />
+          <Route path="/detailshotel/:id" element={<DetailsHotel />} />
+          <Route path="/details/:id" element={<DetailsCity />} />
+        </Route>
+
+        <Route element={<ProtectedRoute isAllowed={!!logged} reDirect={"/"} />}>
+          {/* <Route path="/detailshotel" element={<DetailsHotel />} /> */}
+
+          <Route
+            path="/myshows"
+            element={
+              <ProtectedRoute
+                isAllowed={!!logged && role === "user"}
+                reDirect={"/"}
+              >
+                <MyShows />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/mytineraries"
+            element={
+              <ProtectedRoute
+                isAllowed={!!logged && role === "user"}
+                reDirect={"/"}
+              >
+                <MyTineraries />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/newcity"
+            element={
+              <ProtectedRoute
+                isAllowed={!!logged && role === "admin"}
+                reDirect={"/"}
+              >
+                <NewCity />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/newhotel"
+            element={
+              <ProtectedRoute
+                isAllowed={!!logged && role === "admin"}
+                reDirect={"/"}
+              >
+                <NewHotel />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/mycities"
+            element={
+              <ProtectedRoute
+                isAllowed={!!logged && role === "admin"}
+                reDirect={"/"}
+              >
+                <MyCities />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/myhotels"
+            element={
+              <ProtectedRoute
+                isAllowed={!!logged && role === "admin"}
+                reDirect={"/"}
+              >
+                <MyHotels />
+              </ProtectedRoute>
+            }
+          />
+        </Route>
       </Routes>
     </Main>
   );
