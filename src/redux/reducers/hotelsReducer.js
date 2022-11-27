@@ -7,6 +7,7 @@ const initialState = {
   hotelsAdmin: [], //Esto lo haciamos antes pero ahora lo estamos haciendo en el reductor, ahora se llena cuando ejecutamos la accion getCities.
   loading: false,
   error: false,
+  allHotels: [],
 };
 
 const hotelsReducer = createReducer(initialState, (builder) => {
@@ -50,6 +51,22 @@ const hotelsReducer = createReducer(initialState, (builder) => {
         .concat(action.payload.hotelsAdmin),
     };
   });
+
+  builder.addCase(hotelsAction.getAllHotels.fulfilled, (state, action) => {
+    console.log(action.payload);
+
+    return {
+      ...state,
+      allHotels: action.payload.hotels
+     
+    };
+  });
+
+
+
+
+
+
 });
 
 export default hotelsReducer; //Hotels Reducers es un solo reductor, que dentro tiene distintos casos como por ejemplo hotelsR

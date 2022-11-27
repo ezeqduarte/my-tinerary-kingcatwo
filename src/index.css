@@ -313,6 +313,7 @@ header ul li:hover {
 
 .login img {
   width: 55px;
+  height: 50px;
   cursor: pointer;
   border-radius: 125px;
   border: 2px solid white;
