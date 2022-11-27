@@ -162,8 +162,8 @@ export default function CreateItineraryForm() {
           </label>
         </fieldset>
       </form>
-      <button onClick={clear}>CLEAR</button>
-      <button onClick={sendItinerary}>SEND</button>
+      <button className="formCityAdminButtons" onClick={clear}>CLEAR</button>
+      <button className="formCityAdminButtons" onClick={sendItinerary}>SEND</button>
     </div>
   );
 }

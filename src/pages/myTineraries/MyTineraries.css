@@ -87,6 +87,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 500px;
+  margin-top: 50px;
 }
 
 .edittineraryfieldset {
@@ -142,7 +143,7 @@
   margin: 0;
 }
 
-.formCityAdmin button {
+.formCityAdminButtons {
   background-color: #ff3648;
   color: white;
   padding: 8px 15px;

@@ -7,18 +7,26 @@ import EditCityAdmin from "../../components/EditCityAdmin";
 import GoTo from "../../components/GoTo";
 import "../MyCities/MyCities.css";
 import citiesActions from "../../redux/actions/citiesActions";
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export default function MyCities() {
   const dispatch = useDispatch();
   const citiesAdmin = useSelector((store) => store.citiesReducer.citiesOfAdmin);
+  const { id } = useSelector((store) => store.userReducer);
+  let [seeForm, setSeeForm] = useState(false);
 
   const { getCitiesOfAdmin } = citiesActions;
 
   useEffect(() => {
-    dispatch(getCitiesOfAdmin({ id: "636d1e66dbb2d08117b1c7c2" }));
+    dispatch(getCitiesOfAdmin(id));
   }, []);
 
-  console.log(citiesAdmin);
+  /* console.log(citiesAdmin); */
+
+  const see = () => {
+    setSeeForm(!seeForm);
+  };
 
   return (
     <>
@@ -33,7 +41,15 @@ export default function MyCities() {
           Choose an option<span className="rojo">.</span>
         </h2>
         {/* <CreateCityAdmin /> */}
-        <EditCityAdmin />
+        <div className="buttonsMycitiess">
+          <NavLink to="/newcity" style={{ textDecoration: "none" }}>
+            <button className="buttonMostrarActionMycities">CREATE CITY</button>
+          </NavLink>
+          <button onClick={see} className="buttonMostrarActionMycities">
+            EDIT CITY
+          </button>
+        </div>
+        {seeForm ? <EditCityAdmin /> : null}
       </div>
       <div className="bodyCities" id="MyCities">
         <h2>
@@ -41,9 +57,13 @@ export default function MyCities() {
         </h2>
 
         <div className="YourCitiesDiv">
-          {citiesAdmin.map((city) => (
-            <CardMyCities city={city} key={city.name} />
-          ))}
+          {citiesAdmin.length === 0 ? (
+            <h2 className="noMatch">There are no cities available</h2>
+          ) : (
+            citiesAdmin.map((city) => (
+              <CardMyCities city={city} key={city.name} />
+            ))
+          )}
         </div>
       </div>
     </>
