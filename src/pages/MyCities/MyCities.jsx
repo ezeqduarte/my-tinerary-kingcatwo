@@ -40,7 +40,7 @@ export default function MyCities() {
         <h2>
           Choose an option<span className="rojo">.</span>
         </h2>
-        {/* <CreateCityAdmin /> */}
+
         <div className="buttonsMycitiess">
           <NavLink to="/newcity" style={{ textDecoration: "none" }}>
             <button className="buttonMostrarActionMycities">CREATE CITY</button>
