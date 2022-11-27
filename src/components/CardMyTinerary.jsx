@@ -1,12 +1,14 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import tinerariesActions from "../redux/actions/tinerariesActions";
 import Swal from "sweetalert2";
+
 
 export default function CardMyTinerary(props) {
   const { itinerary } = props;
   const dispatch = useDispatch();
   const { deleteTinerary } = tinerariesActions;
+  const { name } = useSelector((store) => store.userReducer);
 
   const click = async () => {
     Swal.fire({
@@ -39,9 +41,8 @@ export default function CardMyTinerary(props) {
       </div>
       <h4>{itinerary.name}</h4>
       <h5 className="adminId">
-        Created by {itinerary.userId.name} {itinerary.userId.lastName}
-      </h5>
-      <h5 className="itineraryId">Tinerary: {itinerary._id}</h5>
+        Created by {name}
+      </h5>     
       <div className="btn-details">
         <p>Price: $ {itinerary.price}</p>
       </div>

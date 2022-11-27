@@ -16,7 +16,11 @@ export default function MainCities() {
   const { getCities, getContinent } = citiesActions;
 
   const citiesFiltered = useSelector((store) => store.citiesReducer.cities);
-  const allContinents = useSelector((store) => store.citiesReducer.continents);
+  let allContinents = useSelector((store) => store.citiesReducer.continents);
+
+  allContinents = [
+    ...new Set([...allContinents].map((city) => city.continent)),
+  ];
 
   
  /*  console.log(checks);

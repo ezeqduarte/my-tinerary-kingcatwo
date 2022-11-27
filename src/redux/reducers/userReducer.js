@@ -7,6 +7,7 @@ const initialState = {
   photo: "",
   logged: false,
   role: "",
+  id: "",
   token: "",
 };
 
@@ -22,6 +23,7 @@ const userReducer = createReducer(initialState, (builder) => {
         name: user.name,
         photo: user.photo,
         logged: true,
+        id: user.id,
         token: token,
         role: user.role,
       };
@@ -44,6 +46,7 @@ const userReducer = createReducer(initialState, (builder) => {
         ...state,
         name: user.name,
         photo: user.photo,
+        id: user.id,
         logged: true,
         token: token,
         role: user.role,
@@ -65,6 +68,7 @@ const userReducer = createReducer(initialState, (builder) => {
         ...state,
         name: "",
         photo: "",
+        id: "",
         logged: false,
         token: "",
         role: "",

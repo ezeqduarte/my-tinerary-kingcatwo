@@ -21,14 +21,12 @@ const getCities = createAsyncThunk("getCities", async ({ peticion }) => {
 const getContinent = createAsyncThunk("getContinent", async () => {
   try {
     const res = await axios.get(`${API}/cities/`);
-    const continents = [
-      ...new Set([...res.data.cities].map((city) => city.continent)),
-    ];
+    
 
     /* console.log(continents); */
 
     return {
-      continents: continents,
+      continents: res.data.cities,
     };
   } catch (error) {
     console.log(error.message);
