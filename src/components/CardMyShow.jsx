@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import showsActions from "../redux/actions/showsActions";
 import Swal from "sweetalert2";
 
@@ -7,6 +7,7 @@ export default function CardMyShow(props) {
   const city = props.city;
   const dispatch = useDispatch();
   const { deleteShows } = showsActions;
+  const { name } = useSelector((store) => store.userReducer);
   const click = async () => {
     Swal.fire({
       title: "Are you sure to delete this tinerary?",
@@ -39,10 +40,10 @@ export default function CardMyShow(props) {
       </div>
       <h4>{city.name}</h4>
       <h5 className="adminId">
-        Created by {city.userId.name || city.name}{" "}
-        {city.userId.lastName || city.lastName}
+        Created by {name}
+       
       </h5>
-      <h5 className="cityId">Show: {city._id}</h5>
+      
       <div className="btn-details">
         <p>$ {city.price}</p>
       </div>
