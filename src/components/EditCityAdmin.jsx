@@ -1,29 +1,22 @@
 import React, { useState } from "react";
 import { useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../redux/actions/citiesActions";
 import Swal from "sweetalert2/dist/sweetalert2.js";
+import { toast } from "react-toastify";
+import OurToastContainer from "../components/OurToastContainer";
 
 export default function EditCityAdmin() {
   let form = useRef();
+  let cityUpdate = useRef();
+  let name = useRef();
+  let continent = useRef();
+  let photo = useRef();
+  let population = useRef();
   const dispatch = useDispatch();
   const { editCityAdmin } = citiesActions;
-
-  const [data, setData] = useState({
-    id: "",
-    name: "",
-    continent: "",
-    photo: "",
-    population: 0,
-  });
-
-  function handleForm(event) {
-    let object = { ...data, [event.target.id]: event.target.value };
-
-    setData(object);
-  }
-
-  /* console.log(data); */
+  const { citiesOfAdmin } = useSelector((state) => state.citiesReducer);
+  const { id } = useSelector((store) => store.userReducer);
 
   const clear = (event) => {
     event.preventDefault();
@@ -38,37 +31,51 @@ export default function EditCityAdmin() {
 
   const send = async (event) => {
     event.preventDefault();
-    if (
-      data.id !== "" &&
-      data.name !== "" &&
-      data.continent !== "" &&
-      data.photo !== "" &&
-      data.population !== 0
-    ) {
-      console.log(data);
-      dispatch(editCityAdmin(data));
-      form.current.reset();
-      setData({
-        id: "",
-        name: "",
-        continent: "",
-        photo: "",
-        population: 0,
-      });
 
+    let data = {
+      id: cityUpdate.current.value,
+      name: name.current.value,
+      continent:
+        continent.current.value.charAt(0).toUpperCase() +
+        continent.current.value.slice(1).toLowerCase(),
+      photo: photo.current.value,
+      population: population.current.value,
+      userId: id,
+    };
+
+    try {
+      const res = await dispatch(editCityAdmin(data));
+
+      if (res.payload.success) {
+        Swal.fire({
+          title: "The city has updated",
+          imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
+          width: "25rem",
+          confirmButtonColor: "#ff3648",
+          padding: "2rem",
+        });
+        form.current.reset();
+      }  else {
+        res.payload.message.map((message) => {
+          toast.error(`${message}`, {
+            position: "top-left",
+            autoClose: false,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        });
+      }
+    } catch (error) {
       Swal.fire({
-        title: "The city has modificated",
-        imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
+        title: "Please select a tinerary",
+        imageUrl: "https://img.icons8.com/ios-glyphs/120/000000/break.png",
         width: "25rem",
         padding: "2rem",
-      });
-    } else {
-      Swal.fire({
-        title: "Cant modificate. Please complete all camps",
-        imageUrl:
-          "https://img.icons8.com/sf-black-filled/120/null/multiply.png",
-        width: "25rem",
-        padding: "2rem",
+        confirmButtonColor: "#ff3648",
       });
     }
   };
@@ -78,55 +85,57 @@ export default function EditCityAdmin() {
       <h3>
         Edit City<span className="rojo">.</span>
       </h3>
+
       <form ref={form} onSubmit={send}>
         <fieldset className="editcityfieldset">
           <label>
-            Id city<span className="rojo">.</span>
-            <input
-              type="text"
-              placeholder="Insert id of the city"
-              id="id"
-              onChange={handleForm}
-              required
-            />
+            Tinerary<span className="rojo">.</span>
+            <select ref={cityUpdate}>
+              <option value="">Choose itinerary</option>
+              {citiesOfAdmin.map((city) => (
+                <option key={city._id} value={city._id}>
+                  {city.name}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             Name<span className="rojo">.</span>
             <input
+              ref={name}
               type="text"
               placeholder="Insert name of the city"
               id="name"
-              onChange={handleForm}
               required
             />
           </label>
           <label>
             Continent<span className="rojo">.</span>
             <input
+              ref={continent}
               type="text"
               placeholder="Insert continent of the city"
               id="continent"
-              onChange={handleForm}
               required
             />
           </label>
           <label>
             Photo<span className="rojo">.</span>
             <input
+              ref={photo}
               type="text"
               placeholder="Insert photo URL of the city"
               id="photo"
-              onChange={handleForm}
               required
             />
           </label>
           <label>
             Population<span className="rojo">.</span>
             <input
+              ref={population}
               type="number"
               placeholder="Insert population of the city"
               id="population"
-              onChange={handleForm}
               required
             />
           </label>
@@ -135,6 +144,7 @@ export default function EditCityAdmin() {
           <button onClick={clear}>CLEAR</button>
           <button onClick={send}>SEND</button>
         </fieldset>
+        <OurToastContainer />
       </form>
     </div>
   );

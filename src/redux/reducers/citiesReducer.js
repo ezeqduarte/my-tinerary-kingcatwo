@@ -6,6 +6,7 @@ const {
   getCitiesOfAdmin,
   deleteCityAdmin,
   editCityAdmin,
+  createCity,
 } = citiesActions;
 
 const initialState = {
@@ -15,6 +16,16 @@ const initialState = {
 };
 
 const citiesReducer = createReducer(initialState, (builder) => {
+  builder.addCase(createCity.fulfilled, (state, action) => {
+    if (action.payload.success) {
+      return {
+        ...state,
+        continents: state.continents.concat(action.payload.cityCreated),
+      };
+    } else {
+      return { ...state };
+    }
+  });
   builder.addCase(getCities.fulfilled, (state, action) => {
     //console.log(action);
     return { ...state, cities: action.payload.cities };
@@ -38,12 +49,17 @@ const citiesReducer = createReducer(initialState, (builder) => {
     };
   });
   builder.addCase(editCityAdmin.fulfilled, (state, action) => {
-    return {
-      ...state,
-      citiesOfAdmin: state.citiesOfAdmin.filter(
-        (city) => city._id !== action.payload.cityModificated._id
-      ).concat(action.payload.cityModificated),
-    };
+    if (action.payload.success) {
+      return {
+        ...state,
+        citiesOfAdmin: state.citiesOfAdmin
+          .filter((city) => city._id !== action.payload.cityModificated._id)
+          .concat(action.payload.cityModificated),
+      };
+    } else {
+      return {...state}
+    }
+    
   });
 });
 
