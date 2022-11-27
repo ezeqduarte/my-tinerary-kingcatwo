@@ -27,16 +27,20 @@
   margin-bottom: 100px;
 }
 
+.formMyTineraries h3 {
+  margin: 0px;
+}
+
 .formMyTineraries h2 {
   margin: 0px;
   width: 100%;
   text-align: center;
 }
 
-.bodyTineraries h2{
-    width: 100%;
-    text-align: center;
-    margin: 0;
+.bodyTineraries h2 {
+  width: 100%;
+  text-align: center;
+  margin: 0;
 }
 
 .YourTinerariesDiv {
@@ -47,6 +51,30 @@
   align-items: center;
   gap: 50px;
   padding: 50px;
+}
+
+.newcityfieldset select {
+  width: 100%;
+  text-align: center;
+  padding: 7px 0px;
+  border-radius: 3px;
+  margin: 10px 0px;
+}
+
+.newcityfieldset textarea {
+  margin: 10px 0px;
+  padding: 5px 5px;
+  resize: none;
+  width: 100%;
+  height: 70px;
+}
+
+.descriptionNewTinerary {
+  width: 100%;
+  padding: 5px;
+  margin: 10px 0px;
+  height: 150px;
+  overflow: hidden;
 }
 
 /**/
@@ -100,12 +128,31 @@
   color: white;
   padding: 5px 15px;
   border-radius: 8px;
+  width: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0px;
+  cursor: pointer;
 }
 
 .formtineraryAdmin h3 {
   width: 100%;
   text-align: center;
   margin: 0;
+}
+
+.formCityAdmin button {
+  background-color: #ff3648;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  width: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0px;
+  cursor: pointer;
 }
 
 .itineraryId {
@@ -119,4 +166,20 @@
   padding: 5px 5px;
   display: flex;
   justify-content: center;
+}
+
+.formtineraryAdmin select {
+  width: 100%;
+  text-align: center;
+  padding: 7px 0px;
+  border-radius: 3px;
+  margin: 10px 0px;
+}
+
+.formtineraryAdmin textarea {
+  margin: 10px 0px;
+  padding: 5px 5px;
+  resize: none;
+  width: 100%;
+  height: 70px;
 }

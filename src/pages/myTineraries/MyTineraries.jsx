@@ -4,18 +4,28 @@ import FormEditTinerary from "../../components/FormEditTinerary";
 import GoTo from "../../components/GoTo";
 import "../myTineraries/MyTineraries.css";
 import tinerariesActions from "../../redux/actions/tinerariesActions";
+import citiesActions from "../../redux/actions/citiesActions";
 import { useEffect } from "react";
 import CardMyTinerary from "../../components/CardMyTinerary";
+import OurToastContainer from "../../components/OurToastContainer";
+import CreateItineraryForm from "../../components/CreateItineraryForm";
 
 export default function MyTineraries() {
   const dispatch = useDispatch();
+  const { id } = useSelector((store) => store.userReducer);
   const tineraries = useSelector(
     (store) => store.tineraryReducer.tinerariesUser
   );
-  const { getTinerariesUser } = tinerariesActions;
+
+  const { getTinerariesUser, newTinerary } = tinerariesActions;
+  const { getContinent } = citiesActions;
+
+  const { continents } = useSelector((store) => store.citiesReducer);
+  console.log(continents);
 
   useEffect(() => {
-    dispatch(getTinerariesUser());
+    dispatch(getContinent());
+    dispatch(getTinerariesUser(id));
   }, []);
 
   console.log(tineraries);
@@ -32,6 +42,7 @@ export default function MyTineraries() {
         <h2>
           Choose an option<span className="rojo">.</span>
         </h2>
+        <CreateItineraryForm />
         <FormEditTinerary />
       </div>
       <div className="bodyTineraries" id="MyTineraries">
@@ -44,6 +55,7 @@ export default function MyTineraries() {
             <CardMyTinerary itinerary={itinerary} key={itinerary.name} />
           ))}
         </div>
+        <OurToastContainer />
       </div>
     </>
   );
