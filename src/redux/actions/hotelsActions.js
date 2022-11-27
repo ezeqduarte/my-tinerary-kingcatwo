@@ -18,11 +18,11 @@ const getHotels = createAsyncThunk("getHotels", async (data) => {
   }
 });
 
-const getHotelsAdmin = createAsyncThunk("getHotelsAdmin", async () => { //Esto lo hago para obtener TODOS LOS HOTELES DE LOS ADMIN, pero con REDUX.
+const getHotelsAdmin = createAsyncThunk("getHotelsAdmin", async (id) => { //Esto lo hago para obtener TODOS LOS HOTELES DE LOS ADMIN, pero con REDUX.
   //En el caso de las acciones lo que llega aca (data) siempre tiene que ser un objetom, no se le puede pasar 2 parametros, tiene que ser uno solo y tiene que ser un objeto, si se quieren pasar 2 PARAMETROS O MÁS TIENEN QUE SER DENTRODE UN OBJETOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
   try {
     const respuesta = await axios.get(
-      `${API}hotels/?userId=636d1e66dbb2d08117b1c7c2` //aca no le paso data porque ya hardcodeo userid
+      `${API}hotels/?userId=${id}` //aca no le paso data porque ya hardcodeo userid
     );
 
     return { hotelsAdmin: respuesta.data.Hotels }; // si todo va bien le pido que me rettorne un objeto (PAYLOAD) hotels admin, que tiene dentro respuesta.data.hotels
@@ -64,10 +64,36 @@ const deleteHotelsAdmin = createAsyncThunk( //Esto lo hago para poder  eliminar 
   }
 );
 
+const getAllHotels = createAsyncThunk( //Esto lo hago para poder  eliminar hoteles.
+  "getAllHotels",
+  async () => {   
+   
+    try {
+      const respuesta = await axios.get(`${API}hotels/`);
+
+      return { hotels: respuesta.data.Hotels };
+    } catch (error) {
+      console.log(error.message + " ---------------> Está sucediendo otra vez");
+    }
+  }
+);
+
+
+
+
+
+
+
+
+
+
+
+
 const hotelsAction = {  //Aca basicamente estoy guardando todas las acciones que hice dentro de un objeto contenedor llamado Hotels action, entonces despues al reductor solo le paso este objeto.
   editHotelsAdmin ,
   getHotels,
   deleteHotelsAdmin,
+  getAllHotels,
   getHotelsAdmin, //Contenedor de acciones de hotels
 };
 

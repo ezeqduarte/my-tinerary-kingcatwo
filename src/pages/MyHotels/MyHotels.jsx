@@ -16,10 +16,12 @@ import swal from "sweetalert";
 export default function MyHotels() {
   const dispatch = useDispatch();
   const hotelsAdmin = useSelector((store) => store.hotelsReducer.hotelsAdmin);
+  const { id } = useSelector((store) => store.userReducer);
+
 
   const { getHotelsAdmin, editHotelsAdmin } = hotelsAction;
   let form = useRef();
-  let id = useRef();
+  let idd = useRef();
   let nameHotel = useRef();
   let photoHotel1 = useRef();
   let photoHotel2 = useRef();
@@ -28,7 +30,7 @@ export default function MyHotels() {
   let descriptionHotel = useRef();
 
   useEffect(() => {
-    dispatch(getHotelsAdmin());
+    dispatch(getHotelsAdmin(id));
   }, []);
 
   const clear = (event) => {
@@ -45,7 +47,7 @@ export default function MyHotels() {
   const sendData = (event) => {
     event.preventDefault(); //El prevent default es para que no se actualice la pagina al mandar
     let data = {
-      id: id.current.value,
+      id: idd.current.value,
       objeto: {
         name: nameHotel.current.value,
         photo: [
@@ -90,7 +92,7 @@ export default function MyHotels() {
               <label>
                 Id hotel<span className="rojo">.</span>
                 <input
-                  ref={id}
+                  ref={idd}
                   type="text"
                   placeholder="Insert id of the hotel"
                   id="id"
