@@ -44,6 +44,7 @@ export default function NavBar() {
           width: "25rem",
           padding: "2rem",
         });
+        setMostrarOcultar(!mostrar);
       }
     });
   };
@@ -57,18 +58,18 @@ export default function NavBar() {
           <img src="./img/menu-rounded.png" onClick={menu} alt="menu" />
           <div className="menu">
             <NavLink to="/home" style={{ textDecoration: "none" }}>
-              <button>
+              <button onClick={menu}>
                 HOME<span className="rojo">.</span>
               </button>
             </NavLink>
 
             <NavLink to="/cities" style={{ textDecoration: "none" }}>
-              <button>
+              <button onClick={menu}>
                 CITIES<span className="rojo">.</span>
               </button>
             </NavLink>
             <NavLink to="/hotels" style={{ textDecoration: "none" }}>
-              <button>
+              <button onClick={menu}>
                 HOTELS<span className="rojo">.</span>
               </button>
             </NavLink>
@@ -123,10 +124,10 @@ export default function NavBar() {
             {logged ? null : (
               <>
                 <NavLink to="/login" style={{ textDecoration: "none" }}>
-                  <button>SIGN IN</button>
+                  <button  onClick={change}>SIGN IN</button>
                 </NavLink>
                 <NavLink to="/signup" style={{ textDecoration: "none" }}>
-                  <button>SIGN UP</button>
+                  <button  onClick={change}>SIGN UP</button>
                 </NavLink>
               </>
             )}
@@ -137,13 +138,13 @@ export default function NavBar() {
                   <span className="rojo"> .</span>
                 </button>
                 <NavLink to="/profile" style={{ textDecoration: "none" }}>
-                  <button>PROFILE</button>
+                  <button onClick={change}>PROFILE</button>
                 </NavLink>
                 <NavLink to="/mytineraries" style={{ textDecoration: "none" }}>
-                  <button>MY TINERARIES</button>
+                  <button onClick={change}>MY TINERARIES</button>
                 </NavLink>
                 <NavLink to="/myshows" style={{ textDecoration: "none" }}>
-                  <button>MY SHOWS</button>
+                  <button onClick={change}>MY SHOWS</button>
                 </NavLink>
                 <button onClick={dispatchLogout}>LOGOUT</button>
               </>
@@ -155,19 +156,19 @@ export default function NavBar() {
                   <span className="rojo"> .</span>
                 </button>
                 <NavLink to="/profile" style={{ textDecoration: "none" }}>
-                  <button>PROFILE</button>
+                  <button  onClick={change}>PROFILE</button>
                 </NavLink>
                 <NavLink to="/mycities" style={{ textDecoration: "none" }}>
-                  <button>MY CITIES</button>
+                  <button  onClick={change}>MY CITIES</button>
                 </NavLink>
                 <NavLink to="/newcity" style={{ textDecoration: "none" }}>
-                  <button>NEW CITY</button>
+                  <button  onClick={change}>NEW CITY</button>
                 </NavLink>
                 <NavLink to="/myHotels" style={{ textDecoration: "none" }}>
-                  <button>MY HOTELS</button>
+                  <button  onClick={change}>MY HOTELS</button>
                 </NavLink>
                 <NavLink to="/newhotel" style={{ textDecoration: "none" }}>
-                  <button>NEW HOTEL</button>
+                  <button  onClick={change}>NEW HOTEL</button>
                 </NavLink>
 
                 <button onClick={dispatchLogout}>LOGOUT</button>
