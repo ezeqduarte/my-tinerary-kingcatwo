@@ -19,9 +19,9 @@ export default function MainCities() {
   const allContinents = useSelector((store) => store.citiesReducer.continents);
 
   
-  console.log(checks);
+ /*  console.log(checks);
   console.log(text);
-  console.log(data);
+  console.log(data); */
 
   useEffect(() => {
     dispatch(getContinent());

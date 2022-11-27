@@ -20,7 +20,7 @@ const ingress = createAsyncThunk("ingress", async (datos) => {
 
 const reIngress = createAsyncThunk("reIngress", async (token) => {
   let url = `${API}auth/token`;
-  let headers = { headers: { Authorization: `Bearer ${token}` } };
+  let headers = { headers: { "Authorization": `Bearer ${token}` } };
   try {
     let user = await axios.post(url, null, headers);
     console.log(user.data.response.user);
@@ -40,9 +40,32 @@ const reIngress = createAsyncThunk("reIngress", async (token) => {
   }
 });
 
+const logout = createAsyncThunk("logout", async (token) => {
+
+  let url = `${API}auth/sign-out`;
+  let headers = { headers: { "Authorization": `Bearer ${token}` } };
+  
+  try {
+    let user = await axios.post(url, null, headers);
+    console.log(user.data);
+    return {
+      success: true,
+     response: user.data.message
+    };
+  } catch (error) {
+    /* console.log(error.response); */
+    return {
+      success: false,
+      response: error.response.data.message,
+    };
+  }
+
+});
+
 const userActions = {
   ingress,
   reIngress,
+  logout,
 };
 
 export default userActions;
