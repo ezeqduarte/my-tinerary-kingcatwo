@@ -34,13 +34,13 @@ const getHotelsAdmin = createAsyncThunk("getHotelsAdmin", async (id) => { //Esto
 const editHotelsAdmin = createAsyncThunk("editHotelsAdmin", async (data) => {  //Esto lo hago para poder editar hoteles como admin.
 
 /*   console.log(data) */
-
+let headers = { headers: { Authorization: `Bearer ${data.token}` } };
 
   try {
     const respuesta = await axios.patch(
       `${API}hotels/${data.id}`,
       data.objeto,
-      { new: true } //Por lo que entendi el new true lo que hace es cuando la api responde, te va a respoder con el objeto nuevo y en el caso de false es con el objeto anterior.
+      headers //Por lo que entendi el new true lo que hace es cuando la api responde, te va a respoder con el objeto nuevo y en el caso de false es con el objeto anterior.
     );
 
     return { hotelsAdmin: respuesta.data.hotelito};
@@ -54,8 +54,9 @@ const deleteHotelsAdmin = createAsyncThunk( //Esto lo hago para poder  eliminar 
   async (data) => {
     console.log(data);
     //En el caso de las acciones lo que llega aca (data) siempre tiene que ser un objetom, no se le puede pasar 2 parametros, tiene que ser uno solo y tiene que ser un objeto, si se quieren pasar 2 PARAMETROS O MÁS TIENEN QUE SER DENTRODE UN OBJETOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+    let headers = { headers: { Authorization: `Bearer ${data.token}` } };
     try {
-      const respuesta = await axios.delete(`${API}hotels/${data.id}`);
+      const respuesta = await axios.delete(`${API}hotels/${data.id}`,headers );
 
       return { hotel: respuesta.data.hotel };
     } catch (error) {
