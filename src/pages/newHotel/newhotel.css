@@ -27,6 +27,13 @@
 
 }
 
+
+.SelectCityHotels{
+    width: 71%;
+    padding: 10px;
+    margin-left: 135px;
+}
+
 .formNewHotel label {
     display: flex;
     width: 100%;

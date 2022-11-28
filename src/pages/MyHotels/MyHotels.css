@@ -18,7 +18,7 @@
   }
   
   .formMyHotels {
-    min-height: 50vh;
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

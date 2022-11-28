@@ -45,7 +45,7 @@ export default function FormEditShows() {
  try {
   const res = await dispatch(showsActions.editShows(data));
   Swal.fire({
-    title: "The show has modificated",
+    title: "The show has been modificated",
     imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
     width: "25rem",
     confirmButtonColor: "#ff3648",
@@ -72,7 +72,7 @@ export default function FormEditShows() {
         <form ref={form}>
           <fieldset className="editcityfieldset">
             <label>
-              Id Show<span className="rojo">.</span>
+              Select the Show<span className="rojo">.</span>
               <select  ref={idd}>
                 <option>Select Show</option>
                 {showcitos.map((show)=>   <option key={show.name} value={show._id}>{show.name}</option>)}

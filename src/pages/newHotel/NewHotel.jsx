@@ -1,32 +1,36 @@
 import axios from "axios";
 import React, { useRef } from "react";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import "../newHotel/newhotel.css";
 import { ToastContainer, toast } from "react-toastify";
 import OurToastContainer from "../../components/OurToastContainer";
 import { useNavigate } from "react-router";
-
-
+import { useDispatch, useSelector } from "react-redux";
+import citiesActions from "../../redux/actions/citiesActions";
 
 //Los HOOKS SOLO SE PUEDEN USAR EN COMPONENTES DE REACT
 export default function NewHotel() {
-  let navigate = useNavigate()
+  let navigate = useNavigate();
   let form = useRef();
   let nameHotel = useRef();
   let photoHotel1 = useRef();
   let photoHotel2 = useRef();
   let photoHotel3 = useRef();
   let capacityHotel = useRef();
+  let cityId = useRef();
   let descriptionHotel = useRef();
+  let dispatch = useDispatch()
+  const { id } = useSelector((store) => store.userReducer);
+  const { continents } = useSelector((store) => store.citiesReducer);
+  useEffect(() => {
+    dispatch(citiesActions.getContinent());
+  }, []);
   let send = async function (object) {
-  
     axios
       .post("http://localhost:8000/api/hotels/", object)
       .then((response) => {
         console.log(response.data);
         if (response.data.success === false) {
-  
-          
           response.data.message.map((message) => {
             toast.error(`${message}`, {
               position: "bottom-left",
@@ -37,46 +41,33 @@ export default function NewHotel() {
               draggable: true,
               progress: undefined,
               theme: "light",
-            })
-          })
-  
-  
-  
-  
-  
-        } else {
-  
-          toast.success(`${response.data.hotelCreated.name} has created successfuly`, {
-            position: "bottom-left",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
+            });
           });
-  
+        } else {
+          toast.success(
+            `${response.data.hotelCreated.name} has created successfuly`,
+            {
+              position: "bottom-left",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            }
+          );
+
           setTimeout(function () {
             navigate(`/detailshotel/${response.data.hotelCreated._id}`);
           }, 3000);
-  
         }
-
-        
       })
 
-
-      
       .catch((error) => {
         console.log(error.message);
       });
   };
-
-
-
-
-
 
   async function newHotel(event) {
     let newHotel = {
@@ -88,8 +79,8 @@ export default function NewHotel() {
       ],
       capacity: parseFloat(capacityHotel.current.value),
       description: descriptionHotel.current.value,
-      userId: "636d1e66dbb2d08117b1c7c2",
-      cityId: "636e5eb0bbea8608a2ec4f9a",
+      userId: id,
+      cityId: cityId.current.value,
     };
 
     event.preventDefault();
@@ -100,7 +91,7 @@ export default function NewHotel() {
 
   return (
     <>
-     <OurToastContainer></OurToastContainer>
+      <OurToastContainer></OurToastContainer>
       <div className="divTituloNewhotel">
         <h2 className="tituloNewHotel">
           Create New Hotel<span className="rojo">.</span>
@@ -109,6 +100,17 @@ export default function NewHotel() {
 
       <div className="newhotel">
         <form className="formNewHotel" onSubmit={newHotel} ref={form}>
+          <label>
+            <select ref={cityId}  className="SelectCityHotels">
+              {" "}
+              <option>Select City</option>
+              {continents.map((continent) => (
+                <option value={continent._id} key={continent._id}>
+                  {continent.name}
+                </option>
+              ))}{" "}
+            </select>
+          </label>
           <label>
             Name of Hotel
             <input type="text" name="nameHotel" ref={nameHotel}></input>
@@ -160,15 +162,7 @@ export default function NewHotel() {
 
           <button className="btn-newhotel">CREATE A NEW HOTEL</button>
         </form>
-
-
-
-
-
-
       </div>
     </>
   );
-
-  
 }

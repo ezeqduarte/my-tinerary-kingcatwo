@@ -42,7 +42,7 @@ export default function CardMyHotels(props) {
         Created by {hotel.userId.name || hotel.name}{" "}
         {hotel.userId.lastName || hotel.lastName}
       </h5>
-      <h5 className="hotelId">hotel: {hotel._id}</h5>
+     
       <div className="btn-details">
         <NavLink
           to={`/detailshotel/${hotel._id}`}

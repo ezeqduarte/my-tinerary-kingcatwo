@@ -104,13 +104,13 @@ export default function Profile() {
           <form className="formProfile">
             <label>
               {" "}
-              Name <input type="text" ref={name}></input>
+              Name <input type="text" ref={name} required></input>
             </label>
             <label>
-              Last Name <input type="text" ref={lastName}></input>
+              Last Name <input type="text" ref={lastName} required></input>
             </label>
             <label>
-              Photo <input type="text" ref={photo1}></input>
+              Photo <input type="text" ref={photo1} required></input>
             </label>
             <button className="botonEditProfile" onClick={update}>Send</button>
           </form>
