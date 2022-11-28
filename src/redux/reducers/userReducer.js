@@ -1,6 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
 import userActions from "../actions/userActions";
-const { ingress, reIngress, logout } = userActions;
+const { ingress, reIngress, logout, getDatos, editProfile } = userActions;
 
 const initialState = {
   name: "",
@@ -9,6 +9,7 @@ const initialState = {
   role: "",
   id: "",
   token: "",
+  user: {},
 };
 
 const userReducer = createReducer(initialState, (builder) => {
@@ -82,6 +83,16 @@ const userReducer = createReducer(initialState, (builder) => {
       return newState;
     }
   });
+  builder.addCase(getDatos.fulfilled, (state, action) => {
+  return {...state, user:action.payload.user}
+  });
+
+  builder.addCase(editProfile.fulfilled, (state, action) => {
+    
+    return {...state, user: action.payload.response}
+    });
+
+
 });
 
 export default userReducer;
