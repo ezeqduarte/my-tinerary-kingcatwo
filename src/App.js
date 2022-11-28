@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import userActions from "./redux/actions/userActions";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Profile from "./pages/profile/Profile";
 
 function App() {
   let { logged, role, name, photo } = useSelector((store) => store.userReducer);
@@ -53,6 +54,8 @@ function App() {
           <Route path="/login" element={<LogIn />} />
         </Route>
 
+      
+
         <Route element={<ProtectedRoute isAllowed={!!logged} reDirect={"/"} />}>
           {/* <Route path="/detailshotel" element={<DetailsHotel />} /> */}
 
@@ -79,6 +82,21 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+
+
+<Route
+            path="/profile"
+            element={
+              <ProtectedRoute
+                isAllowed={logged && (role === "user" || "admin")}
+                reDirect={"/"}
+              >
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+
 
           <Route
             path="/newcity"
