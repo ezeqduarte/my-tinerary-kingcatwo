@@ -4,12 +4,14 @@ const { ingress, reIngress, logout, getDatos, editProfile } = userActions;
 
 const initialState = {
   name: "",
+  lastName: "",
   photo: "",
+  age: "",
+  email: "",
   logged: false,
   role: "",
   id: "",
   token: "",
-  user: {},
 };
 
 const userReducer = createReducer(initialState, (builder) => {
@@ -84,15 +86,50 @@ const userReducer = createReducer(initialState, (builder) => {
     }
   });
   builder.addCase(getDatos.fulfilled, (state, action) => {
-  return {...state, user:action.payload.user}
+    const { user, success } = action.payload;
+    if (success) {
+      let newState = {
+        ...state,
+        name: user.name,
+        lastName: user.lastName,
+        email: user.email,
+        age: user.age,
+        photo: user.photo,
+        id: user._id,
+        logged: user.logged,
+        role: user.role,
+      };
+      return newState;
+    } else {
+      let newState = {
+        ...state,
+      };
+      return newState;
+    }
   });
 
   builder.addCase(editProfile.fulfilled, (state, action) => {
-    
-    return {...state, user: action.payload.response}
-    });
-
-
+    const { response , success } = action.payload;
+    if (success) {
+      let newState = {
+        ...state,
+        name: response.name,
+        lastName: response.lastName,
+        email: response.email,
+        age: response.age,
+        photo: response.photo,
+        id: response._id,
+        logged: response.logged,
+        role: response.role,
+      };
+      return newState;
+    } else {
+      let newState = {
+        ...state,
+      };
+      return newState;
+    }
+  });
 });
 
 export default userReducer;

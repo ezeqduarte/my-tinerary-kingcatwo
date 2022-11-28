@@ -11,9 +11,11 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 
 export default function Profile() {
-  const { photo } = useSelector((store) => store.userReducer);
+  const { photo, id, name, email, age, lastName } = useSelector(
+    (store) => store.userReducer
+  );
   const dispatch = useDispatch();
-  const { id } = useSelector((store) => store.userReducer);
+
   useEffect(() => {
     dispatch(userActions.getDatos(id));
   }, []);
@@ -24,17 +26,17 @@ export default function Profile() {
   };
   // const navigate = useNavigate()
 
-  const name = useRef();
-  const lastName = useRef();
+  const name1 = useRef();
+  const lastName1 = useRef();
   const photo1 = useRef();
   const update = async (e) => {
     e.preventDefault();
     let data = {
       id: id,
       objectedit: {
-        name: name.current.value,
-        lastName: lastName.current.value,
-        photo: photo1.current.value
+        name: name1.current.value,
+        lastName: lastName1.current.value,
+        photo: photo1.current.value,
       },
     };
 
@@ -49,21 +51,17 @@ export default function Profile() {
       confirmButtonText: "Yes, update it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await dispatch(userActions.editProfile(data))
+        await dispatch(userActions.editProfile(data));
         Swal.fire({
           title: "Your info has been updated!",
           imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
           width: "25rem",
           padding: "2rem",
         });
-      //  navigate("/")
+        SetOculto(!oculto);
       }
     });
- 
   };
-
-  const { user } = useSelector((store) => store.userReducer);
-  console.log(user);
 
   return (
     <>
@@ -76,21 +74,21 @@ export default function Profile() {
 
         <main className="mainProfile" id="mainProfile">
           <div className="profilePhoto">
-            <img src={user.photo} />
+            <img src={photo} />
           </div>
 
           <div className="profileInfo">
             <ul>
-              Name: <span className="spanProfile">{user.name} </span>
+              Name: <span className="spanProfile">{name} </span>
             </ul>
             <ul>
-              Last Name: <span className="spanProfile"> {user.lastName} </span>
+              Last Name: <span className="spanProfile"> {lastName} </span>
             </ul>
             <ul>
-              Age: <span className="spanProfile"> {user.age} </span>
+              Age: <span className="spanProfile"> {age} </span>
             </ul>
             <ul>
-              Mail: <span className="spanProfile"> {user.email} </span>
+              Mail: <span className="spanProfile"> {email} </span>
             </ul>
             <button data-text="Awesome" class="button" onClick={mostrar}>
               <span class="actual-text">&nbsp; EDIT&nbsp;</span>
@@ -104,15 +102,17 @@ export default function Profile() {
           <form className="formProfile">
             <label>
               {" "}
-              Name <input type="text" ref={name} required></input>
+              Name <input type="text" ref={name1} required></input>
             </label>
             <label>
-              Last Name <input type="text" ref={lastName} required></input>
+              Last Name <input type="text" ref={lastName1} required></input>
             </label>
             <label>
               Photo <input type="text" ref={photo1} required></input>
             </label>
-            <button className="botonEditProfile" onClick={update}>Send</button>
+            <button className="botonEditProfile" onClick={update}>
+              Send
+            </button>
           </form>
         ) : null}
       </div>
