@@ -2,6 +2,12 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import API from "../../api";
 
+/* let token = JSON.parse(localStorage.getItem("token"));
+
+if (token) {
+  dispatch(reIngress(token.token.user));
+} */
+
 const getCities = createAsyncThunk("getCities", async ({ peticion }) => {
   try {
     //console.log(peticion);
@@ -51,11 +57,15 @@ const getCitiesOfAdmin = createAsyncThunk("getCitiesOfAdmin", async (id) => {
   }
 });
 
-const deleteCityAdmin = createAsyncThunk("deleteCityAdmin", async (id) => {
+const deleteCityAdmin = createAsyncThunk("deleteCityAdmin", async (data) => {
+
+  let { token, id } = data;
+
+  let headers = { headers: { Authorization: `Bearer ${token}` } };
+
   try {
-   
     //console.log(peticion);
-    const res = await axios.delete(`${API}/cities/${id}`);
+    const res = await axios.delete(`${API}cities/${id}`, headers);
     console.log(res);
     return {
       cityDeleted: res.data.cityDeleted,
@@ -67,32 +77,29 @@ const deleteCityAdmin = createAsyncThunk("deleteCityAdmin", async (id) => {
 });
 
 const editCityAdmin = createAsyncThunk("editCityAdmin", async (data) => {
- 
-  const { id } = data;
-    const object = {
-      name: data.name,
-      continent: data.continent,
-      photo: data.photo,
-      population: data.population,
-      userId: data.userId,
-    };
- 
+  const { id, token } = data;
+  const object = {
+    name: data.name,
+    continent: data.continent,
+    photo: data.photo,
+    population: data.population,
+    userId: data.userId,
+  };
+
+  let headers = { headers: { Authorization: `Bearer ${token}` } };
+
+  console.log(headers);
+
   try {
-    
-
-    console.log(id);
-    console.log(data);
-
     //console.log(peticion);
-    const res = await axios.put(`${API}cities/${id}`, object, { new: true });
-    console.log(res);
+    const res = await axios.put(`${API}cities/${id}`, object, headers);
+    
     if (res.data.success) {
       return {
         cityModificated: res.data.cityModificated,
         success: true,
       };
-    } 
-    else {
+    } else {
       return {
         message: res.data.message,
         success: false,

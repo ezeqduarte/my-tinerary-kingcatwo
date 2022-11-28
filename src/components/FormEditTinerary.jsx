@@ -17,6 +17,7 @@ export default function FormEditTinerary() {
   const { editTinerary } = tinerariesActions;
   const dispatch = useDispatch();
   const { tinerariesUser } = useSelector((store) => store.tineraryReducer);
+  const { token } = useSelector((store) => store.userReducer);
 
   const clear = (e) => {
     e.preventDefault();
@@ -52,6 +53,7 @@ export default function FormEditTinerary() {
           price: price.current.value,
           duration: duration.current.value,
         },
+        token: token,
       };
 
       console.log(data);

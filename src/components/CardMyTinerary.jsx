@@ -8,7 +8,7 @@ export default function CardMyTinerary(props) {
   const { itinerary } = props;
   const dispatch = useDispatch();
   const { deleteTinerary } = tinerariesActions;
-  const { name } = useSelector((store) => store.userReducer);
+  const { name , token } = useSelector((store) => store.userReducer);
 
   const click = async () => {
     Swal.fire({
@@ -22,7 +22,7 @@ export default function CardMyTinerary(props) {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        dispatch(deleteTinerary({ id: itinerary._id }));
+        dispatch(deleteTinerary({ id: itinerary._id, token: token }));
         Swal.fire({
           title: "The tinerary has deleted",
           imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
