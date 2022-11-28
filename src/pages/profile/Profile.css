@@ -107,7 +107,7 @@ color: aliceblue;
     flex-direction: column;
     gap: 5px;
     position: absolute;
-    background-color: rgba(241, 236, 236, 0.483);
+    background-color: rgba(248, 248, 248, 0.483);
     backdrop-filter: blur(9.4px);
    padding: 25px;
    border-radius: 10px;
