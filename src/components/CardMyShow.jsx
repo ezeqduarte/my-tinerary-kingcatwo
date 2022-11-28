@@ -10,7 +10,7 @@ export default function CardMyShow(props) {
   const { name } = useSelector((store) => store.userReducer);
   const click = async () => {
     Swal.fire({
-      title: "Are you sure to delete this tinerary?",
+      title: "Are you sure to delete this show?",
       imageUrl: "https://img.icons8.com/ios-glyphs/120/000000/break.png",
       width: "25rem",
       padding: "2rem",
@@ -22,7 +22,7 @@ export default function CardMyShow(props) {
       if (result.isConfirmed) {
         await dispatch(deleteShows({ id: city._id }));
         Swal.fire({
-          title: "The tinerary has deleted",
+          title: "The show has been deleted",
           imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
           width: "25rem",
           padding: "2rem",
