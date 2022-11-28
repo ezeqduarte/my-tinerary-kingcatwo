@@ -1,0 +1,194 @@
+.headerMyHotels {
+    height: 100vh;
+    background-image: url("https://image.jimcdn.com/app/cms/image/transf/none/path/sc2d8e12461d8c0c0/backgroundarea/i3aa4537f22f0d214/version/1542679188/image.jpg");
+    background-color: rgba(0, 0, 0, 0.596);
+    background-blend-mode: color;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .headerMyHotels h2 {
+    color: white;
+  }
+  
+  .formMyHotels {
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 80px;
+    gap: 50px;
+  }
+  .formMyHotels h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 35px;
+  }
+  
+  .h3Create {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    align-items: baseline;
+    height: 39.5px;
+  }
+  
+
+.bodyHotels h2{
+
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+}
+
+  .formMyHotels h3 {
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .edithotelfieldset {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+  }
+  
+  .newhotelfieldset {
+    display: flex;
+    flex-wrap: wrap;
+    height: 77%;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+  
+  .formHotelAdmin {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding: 30px;
+    border-radius: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+  }
+  
+  .formHotelAdmin label {
+    width: 100%;
+  }
+  
+  .formHotelAdmin label input {
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0px;
+  }
+  
+  .formHotelAdmin form fieldset {
+    border: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .formHotelAdmin form fieldset button {
+    background-color: #ff3648;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 8px;
+  }
+  
+  .YourHotelsDiv {
+    min-height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px;
+  }
+  
+  .cardMyHotels {
+    width: 340px;
+    height: 470px;
+    background-color: rgba(238, 238, 238, 0.315);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    position: relative;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  
+  .cardMyHotels:hover {
+    transform: scale(1.01);
+    transition: 350ms;
+  }
+  
+  .cardMyHotels h4 {
+    position: absolute;
+    top: 333px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.521);
+    width: 97.1%;
+    padding: 15px 5px;
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: space-around;
+  }
+  
+  .adminId {
+    position: absolute;
+    top: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.521);
+    left: 6.5px;
+    width: 96.45%;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .hotelId {
+    position: absolute;
+    top: 36px;
+    color: white;
+    left: 6.5px;
+    width: 96.45%;
+    background-color: rgba(0, 0, 0, 0.521);
+  
+    padding: 5px 5px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .btn-delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    font-weight: 400;
+    font-size: 1.3rem;
+    background-color: rgb(255, 54, 72);
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
