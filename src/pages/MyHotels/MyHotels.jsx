@@ -17,7 +17,7 @@ import { NavLink } from "react-router-dom";
 export default function MyHotels() {
   const dispatch = useDispatch();
   const hotelsAdmin = useSelector((store) => store.hotelsReducer.hotelsAdmin);
-  const { id } = useSelector((store) => store.userReducer);
+  const { id, token } = useSelector((store) => store.userReducer);
   let [seeForm, setSeeForm] = useState(false);
   const see = () => {
     setSeeForm(!seeForm);
@@ -63,6 +63,7 @@ export default function MyHotels() {
         capacity: capacityHotel.current.value,
         description: descriptionHotel.current.value,
       },
+      token:token
     };
     dispatch(editHotelsAdmin(data));
     Swal.fire({

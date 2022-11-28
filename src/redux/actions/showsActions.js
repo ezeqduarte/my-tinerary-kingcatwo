@@ -42,10 +42,11 @@ const createShows = createAsyncThunk("createShows", async (data) => {
 
 const deleteShows = createAsyncThunk("deleteShows", async (data) => {
   //Aca estoy haciendo una funcion para borrar shows por data le paso el ID del show especifico
-  const { id } = data; //Aca estoy desestructurando el objeto data para obtener data.id.
+  const { id, token } = data; //Aca estoy desestructurando el objeto data para obtener data.id.
+  let headers = { headers: { Authorization: `Bearer ${data.token}` } };
   try {
     //console.log(peticion);
-    const res = await axios.delete(`${API}/shows/${id}`); //Aca recibo la respuesta de la api, la cual me va a ARROJAR el id del show que queremos borrar.
+    const res = await axios.delete(`${API}/shows/${id}` ,headers); //Aca recibo la respuesta de la api, la cual me va a ARROJAR el id del show que queremos borrar.
     //console.log(res);
     return {
       idShowDeleted: res.data.idDeleted, //Aca le pedimos que en base al id de arriba me responda con el ID del show borrado es decir me va a a
@@ -60,14 +61,16 @@ const deleteShows = createAsyncThunk("deleteShows", async (data) => {
 
 const editShows = createAsyncThunk("editShows", async (data) => {
   //Aca me estoy creando una constante que va a ser igual a una accion que va a servir para editar los shows, nuevamente como la peticion es a la api es una accion ASYNCRONA, en las acciones asincronas no necesito llamar a la payload porque ya lo entiende como payload.
-  const { id, info } = data; //Aca estoy desestructurando data para que me devuelva id e info (mi formulario)
+  const { id, info, token } = data; //Aca estoy desestructurando data para que me devuelva id e info (mi formulario)
+ 
+  let headers = { headers: { Authorization: `Bearer ${token}` } }
   try {
     //console.log(peticion);
     const res = await axios.patch(
       //Aca le hago una peticion a la api para patchear los shows
       `${API}/shows/${id}`,
       info,
-      { new: true } //New true es para que me devuelva el nuevo objeto, esta noche quiero brandy
+      headers //New true es para que me devuelva el nuevo objeto, esta noche quiero brandy
     );
     //console.log(res);
     return {

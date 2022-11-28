@@ -7,7 +7,7 @@ export default function CardMyShow(props) {
   const city = props.city;
   const dispatch = useDispatch();
   const { deleteShows } = showsActions;
-  const { name } = useSelector((store) => store.userReducer);
+  const { name, token } = useSelector((store) => store.userReducer);
   const click = async () => {
     Swal.fire({
       title: "Are you sure to delete this show?",
@@ -20,7 +20,7 @@ export default function CardMyShow(props) {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await dispatch(deleteShows({ id: city._id }));
+        await dispatch(deleteShows({ id: city._id, token: token }));
         Swal.fire({
           title: "The show has been deleted",
           imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",

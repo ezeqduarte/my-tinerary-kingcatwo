@@ -15,7 +15,7 @@ export default function FormEditShows() {
   const {} = showsActions;
   const dispatch = useDispatch();
   const showcitos = useSelector((store) => store.showsReducer.showsReducer);
-  const { id } = useSelector((store) => store.userReducer);
+  const { id, token } = useSelector((store) => store.userReducer);
 
 
   const clear = (event) => {
@@ -41,6 +41,7 @@ export default function FormEditShows() {
         date: date.current.value,
         userId: id
       },
+      token:token
     };
  try {
   const res = await dispatch(showsActions.editShows(data));

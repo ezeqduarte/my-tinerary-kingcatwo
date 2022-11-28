@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import hotelsAction from "../redux/actions/hotelsActions";
 import Swal from "sweetalert2";
@@ -8,6 +8,7 @@ export default function CardMyHotels(props) {
   const hotel = props.hotel;
   const deleteHotelsAdmin = hotelsAction.deleteHotelsAdmin;
   const dispatch = useDispatch();
+  const {token } = useSelector((store) => store.userReducer);
 
   const id = hotel._id;
   let click = async function () {
@@ -22,7 +23,7 @@ export default function CardMyHotels(props) {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await dispatch(deleteHotelsAdmin({ id: id }));
+        await dispatch(deleteHotelsAdmin({ id: id, token:token }));
         Swal.fire({
           title: "The hotel was deleted",
           imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
