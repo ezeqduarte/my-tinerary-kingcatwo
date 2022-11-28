@@ -65,7 +65,7 @@ export default function MyHotels() {
       },
     };
     dispatch(editHotelsAdmin(data));
-    swal.fire({
+    Swal.fire({
       title: "The city has modificated",
       imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
       width: "25rem",
