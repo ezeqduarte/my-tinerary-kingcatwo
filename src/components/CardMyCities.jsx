@@ -8,7 +8,7 @@ export default function CardMyCities(props) {
   let { city } = props;
   const dispatch = useDispatch();
   const { deleteCityAdmin } = citiesActions;
-  const { id, name } = useSelector((store) => store.userReducer);
+  const { id, name, token } = useSelector((store) => store.userReducer);
 
   function click() {
     Swal.fire({
@@ -22,7 +22,7 @@ export default function CardMyCities(props) {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await dispatch(deleteCityAdmin(id));
+        await dispatch(deleteCityAdmin({id: city._id, token: token}));
         Swal.fire({
           title: "The city has deleted",
           imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",

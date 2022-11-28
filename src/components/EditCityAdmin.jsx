@@ -16,7 +16,7 @@ export default function EditCityAdmin() {
   const dispatch = useDispatch();
   const { editCityAdmin } = citiesActions;
   const { citiesOfAdmin } = useSelector((state) => state.citiesReducer);
-  const { id } = useSelector((store) => store.userReducer);
+  const { id , token } = useSelector((store) => store.userReducer);
 
   const clear = (event) => {
     event.preventDefault();
@@ -41,6 +41,7 @@ export default function EditCityAdmin() {
       photo: photo.current.value,
       population: population.current.value,
       userId: id,
+      token: token
     };
 
     try {
