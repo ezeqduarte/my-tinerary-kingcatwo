@@ -157,7 +157,7 @@ color: white;
 @media (max-width: 1050px) {
 
 
-    h2{display: none;}
+    .divProfile h2{display: none;}
 
     .divProfile{
         height: 150vh;

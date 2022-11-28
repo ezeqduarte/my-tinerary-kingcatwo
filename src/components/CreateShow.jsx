@@ -31,8 +31,12 @@ export default function CreateShow() {
     form.current.reset();
   };
 
+
+  
   const send = async (e) => {
     e.preventDefault();
+   
+
     const data = {
     
         hotelid: idd.current.value,
@@ -44,16 +48,14 @@ export default function CreateShow() {
         userId: id,
     };
     const res =   await dispatch(showsActions.createShows(data));
- console.log(res)
-    // console.log(data)
-    // Swal.fire({
-    //   title: "The show has been created.",
-    //   imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
-    //   width: "25rem",
-    //   confirmButtonColor: "#ff3648",
-    //   padding: "2rem",
-    // });
-    // form.current.reset();
+    if(res.payload.success){Swal.fire({
+      title: "The show has been Created",
+      imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
+      width: "25rem",
+      padding: "2rem",
+    })}
+ 
+    
   };
 
   return (

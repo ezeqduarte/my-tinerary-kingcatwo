@@ -12,12 +12,16 @@ import hotelsAction from "../../redux/actions/hotelsActions";
 import { useState, useRef } from "react";
 import Swal from "sweetalert2";
 import swal from "sweetalert";
+import { NavLink } from "react-router-dom";
 
 export default function MyHotels() {
   const dispatch = useDispatch();
   const hotelsAdmin = useSelector((store) => store.hotelsReducer.hotelsAdmin);
   const { id } = useSelector((store) => store.userReducer);
-
+  let [seeForm, setSeeForm] = useState(false);
+  const see = () => {
+    setSeeForm(!seeForm);
+  };
 
   const { getHotelsAdmin, editHotelsAdmin } = hotelsAction;
   let form = useRef();
@@ -28,6 +32,7 @@ export default function MyHotels() {
   let photoHotel3 = useRef();
   let capacityHotel = useRef();
   let descriptionHotel = useRef();
+  let idHotel = useRef()
 
   useEffect(() => {
     dispatch(getHotelsAdmin(id));
@@ -47,7 +52,7 @@ export default function MyHotels() {
   const sendData = (event) => {
     event.preventDefault(); //El prevent default es para que no se actualice la pagina al mandar
     let data = {
-      id: idd.current.value,
+      id: idHotel.current.value,
       objeto: {
         name: nameHotel.current.value,
         photo: [
@@ -81,92 +86,100 @@ export default function MyHotels() {
         <h2>
           Choose an option<span className="rojo">.</span>
         </h2>
-        {/* <CreateCityAdmin /> */}
-
-        <div className="formCityAdmin">
-          <h3>
-            Edit Hotel<span className="rojo">.</span>
-          </h3>
-          <form ref={form}>
-            <fieldset className="editcityfieldset">
-              <label>
-                Id hotel<span className="rojo">.</span>
-                <input
-                  ref={idd}
-                  type="text"
-                  placeholder="Insert id of the hotel"
-                  id="id"
-                  required
-                />
-              </label>
-              <label>
-                Name<span className="rojo">.</span>
-                <input
-                  ref={nameHotel}
-                  type="text"
-                  placeholder="Insert name of the hotel"
-                  id="name"
-                  required
-                />
-              </label>
-
-              <label>
-                Photo 1<span className="rojo">.</span>
-                <input
-                  ref={photoHotel1}
-                  type="text"
-                  placeholder="Insert photo URL of the hotel"
-                  id="photo1"
-                  required
-                />
-              </label>
-              <label>
-                Photo 2<span className="rojo">.</span>
-                <input
-                  ref={photoHotel2}
-                  type="text"
-                  placeholder="Insert photo URL of the hotel"
-                  id="photo2"
-                  required
-                />
-              </label>
-              <label>
-                Photo 3<span className="rojo">.</span>
-                <input
-                  ref={photoHotel3}
-                  type="text"
-                  placeholder="Insert photo URL of the hotel"
-                  id="photo3"
-                  required
-                />
-              </label>
-              <label>
-                Description<span className="rojo">.</span>
-                <input
-                  ref={descriptionHotel}
-                  type="text"
-                  placeholder="Description of the hotel"
-                  id="description"
-                  required
-                />
-              </label>
-              <label>
-                Capacity<span className="rojo">.</span>
-                <input
-                  ref={capacityHotel}
-                  type="number"
-                  placeholder="Insert the capacity of the hotel"
-                  id="capacity"
-                  required
-                />
-              </label>
-            </fieldset>
-            <fieldset>
-              <button onClick={clear}>CLEAR</button>
-              <button onClick={sendData}>SEND</button>
-            </fieldset>
-          </form>
+        <div className="buttonsMycitiess">
+          <NavLink to="/newhotel" style={{ textDecoration: "none" }}>
+            <button className="buttonMostrarActionMycities">
+              CREATE HOTEL
+            </button>
+          </NavLink>
+          <button onClick={see} className="buttonMostrarActionMycities">
+            EDIT HOTEL
+          </button>
         </div>
+        {seeForm ? (
+          <div className="formCityAdmin">
+            <h3>
+              Edit Hotel<span className="rojo">.</span>
+            </h3>
+
+            <form ref={form}>
+              <fieldset className="editcityfieldset">
+                <label>
+                  Id hotel<span className="rojo">.</span>
+                  <select ref={idHotel}>
+                    <option> Select Hotel </option>
+                    {hotelsAdmin.map(hotel => <option value={hotel._id} key={hotel._id}>{hotel.name}</option>)}
+                  </select>
+                </label>
+                <label>
+                  Name<span className="rojo">.</span>
+                  <input
+                    ref={nameHotel}
+                    type="text"
+                    placeholder="Insert name of the hotel"
+                    id="name"
+                    required
+                  />
+                </label>
+
+                <label>
+                  Photo 1<span className="rojo">.</span>
+                  <input
+                    ref={photoHotel1}
+                    type="text"
+                    placeholder="Insert photo URL of the hotel"
+                    id="photo1"
+                    required
+                  />
+                </label>
+                <label>
+                  Photo 2<span className="rojo">.</span>
+                  <input
+                    ref={photoHotel2}
+                    type="text"
+                    placeholder="Insert photo URL of the hotel"
+                    id="photo2"
+                    required
+                  />
+                </label>
+                <label>
+                  Photo 3<span className="rojo">.</span>
+                  <input
+                    ref={photoHotel3}
+                    type="text"
+                    placeholder="Insert photo URL of the hotel"
+                    id="photo3"
+                    required
+                  />
+                </label>
+                <label>
+                  Description<span className="rojo">.</span>
+                  <input
+                    ref={descriptionHotel}
+                    type="text"
+                    placeholder="Description of the hotel"
+                    id="description"
+                    required
+                  />
+                </label>
+                <label>
+                  Capacity<span className="rojo">.</span>
+                  <input
+                    ref={capacityHotel}
+                    type="number"
+                    placeholder="Insert the capacity of the hotel"
+                    id="capacity"
+                    required
+                  />
+                </label>
+              </fieldset>
+              <fieldset>
+                <button onClick={clear}>CLEAR</button>
+                <button onClick={sendData}>SEND</button>
+              </fieldset>
+            </form>
+          </div>
+        ) : null}
       </div>
       <div className="bodyHotels" id="MyHotels">
         <h2>
