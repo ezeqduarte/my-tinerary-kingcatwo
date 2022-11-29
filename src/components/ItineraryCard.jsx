@@ -4,11 +4,10 @@ import { useEffect } from "react";
 import { useParams } from "react-router";
 import { NavLink } from "react-router-dom";
 import hotels from "../data/hotels";
+import Comments from "./Comments";
 
 export default function ItineraryCard(props) {
-
-
-  let { itinerary } = props;  
+  let { itinerary } = props;
 
   let [mostrarComentarios, setMostrarComentarios] = useState(false);
 
@@ -18,33 +17,38 @@ export default function ItineraryCard(props) {
 
   return (
     <>
-      <div className="rowComentsCards">
-        <div className="cardItinerary">
-          <div className="imgCard">
-            <img src={itinerary.photo[0]} alt={itinerary.name} />
+      <div className="ContenedorGeneral99">
+        <div className="CardGigante99">
+          <div className="imgCardGigante99">
+            <img src={itinerary.photo[0]} alt="" srcset="" />
           </div>
-          <h3 className="tituloCardItinerary">{itinerary.name}</h3>
-
-          <div className="description">
+          <div className="infoCardGigante99">
+            <h3>
+              <span className="rojo">|</span>
+              {itinerary.name}
+            </h3>
             <p>{itinerary.description}</p>
-          </div>
-
-          <div className="btn-details" onClick={change}>
-            <p>Coments</p>
+            <div className="pd99">
+              <p>
+                {" "}
+                <span className="negrita99">Price:</span> ${itinerary.price}
+              </p>
+              <p>
+                {" "}
+                <span className="negrita99">Duration:</span>{" "}
+                {itinerary.duration}hs
+              </p>
+            </div>
+            <button className="btn-details" onClick={change}>
+              See the Comments
+            </button>
           </div>
         </div>
-
         {mostrarComentarios ? (
-          <div className="coments">
-            <p>Coments</p>
-            <div className="coment">
-              <p>Nombre Usuario</p>
-              <p>Comentario</p>
-            </div>
+          <div className="comments99">
+            <Comments></Comments>
           </div>
-        ) : (
-          <></>
-        )}
+        ) : null}
       </div>
     </>
   );
