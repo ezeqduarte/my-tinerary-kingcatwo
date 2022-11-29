@@ -9,9 +9,10 @@ import { current } from "@reduxjs/toolkit";
 import { useRef } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
+import NewReaction from "../../components/NewReaction";
 
 export default function Profile() {
-  const { photo, id, name, email, age, lastName } = useSelector(
+  const { photo, id, name, email, age, role, lastName } = useSelector(
     (store) => store.userReducer
   );
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ export default function Profile() {
     e.preventDefault();
     SetOculto(!oculto);
   };
+
   // const navigate = useNavigate()
 
   const name1 = useRef();
@@ -115,6 +117,14 @@ export default function Profile() {
             </button>
           </form>
         ) : null}
+      </div>
+      <div className="panelOfAdmin">
+        <h2>
+          Panel of {role}
+          <span className="rojo">.</span>
+        </h2>
+
+        {role === "admin" ? <NewReaction /> : null}
       </div>
     </>
   );
