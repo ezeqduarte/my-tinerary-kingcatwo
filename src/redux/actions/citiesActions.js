@@ -2,6 +2,12 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import API from "../../api";
 
+/* let token = JSON.parse(localStorage.getItem("token"));
+
+if (token) {
+  dispatch(reIngress(token.token.user));
+} */
+
 const getCities = createAsyncThunk("getCities", async ({ peticion }) => {
   try {
     //console.log(peticion);
@@ -21,14 +27,11 @@ const getCities = createAsyncThunk("getCities", async ({ peticion }) => {
 const getContinent = createAsyncThunk("getContinent", async () => {
   try {
     const res = await axios.get(`${API}/cities/`);
-    const continents = [
-      ...new Set([...res.data.cities].map((city) => city.continent)),
-    ];
 
     /* console.log(continents); */
 
     return {
-      continents: continents,
+      continents: res.data.cities,
     };
   } catch (error) {
     console.log(error.message);
@@ -38,9 +41,8 @@ const getContinent = createAsyncThunk("getContinent", async () => {
   }
 });
 
-const getCitiesOfAdmin = createAsyncThunk("getCitiesOfAdmin", async (data) => {
+const getCitiesOfAdmin = createAsyncThunk("getCitiesOfAdmin", async (id) => {
   try {
-    const { id } = data;
     //console.log(peticion);
     const res = await axios.get(`${API}/cities/?userId=${id}`);
     /* console.log(res); */
@@ -56,10 +58,14 @@ const getCitiesOfAdmin = createAsyncThunk("getCitiesOfAdmin", async (data) => {
 });
 
 const deleteCityAdmin = createAsyncThunk("deleteCityAdmin", async (data) => {
+
+  let { token, id } = data;
+
+  let headers = { headers: { Authorization: `Bearer ${token}` } };
+
   try {
-    const { id } = data;
     //console.log(peticion);
-    const res = await axios.delete(`${API}/cities/${id}`);
+    const res = await axios.delete(`${API}cities/${id}`, headers);
     console.log(res);
     return {
       cityDeleted: res.data.cityDeleted,
@@ -71,26 +77,52 @@ const deleteCityAdmin = createAsyncThunk("deleteCityAdmin", async (data) => {
 });
 
 const editCityAdmin = createAsyncThunk("editCityAdmin", async (data) => {
+  const { id, token } = data;
+  const object = {
+    name: data.name,
+    continent: data.continent,
+    photo: data.photo,
+    population: data.population,
+    userId: data.userId,
+  };
+
+  let headers = { headers: { Authorization: `Bearer ${token}` } };
+
+  console.log(headers);
+
   try {
-    const { id } = data;
-    const object = {
-      name: data.name,
-      continent: data.continent,
-      photo: data.photo,
-      population: data.population,
-      userId: `636d1e66dbb2d08117b1c7c2`,
-    };
-
-    console.log(id);
-    console.log(data);
-
     //console.log(peticion);
-    const res = await axios.put(`${API}cities/${id}`, object, { new: true });
-    /* console.log(res); */
-    if (res) {
+    const res = await axios.put(`${API}cities/${id}`, object, headers);
+    
+    if (res.data.success) {
       return {
         cityModificated: res.data.cityModificated,
-        succes: true,
+        success: true,
+      };
+    } else {
+      return {
+        message: res.data.message,
+        success: false,
+      };
+    }
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
+const createCity = createAsyncThunk("createCity", async (data) => {
+  try {
+    const res = await axios.post(`${API}cities/`, data);
+
+    if (res.data.success) {
+      return {
+        cityCreated: res.data.id,
+        success: true,
+      };
+    } else {
+      return {
+        success: false,
+        message: res.data.message,
       };
     }
   } catch (error) {
@@ -104,6 +136,7 @@ const citiesActions = {
   getCitiesOfAdmin,
   deleteCityAdmin,
   editCityAdmin,
+  createCity,
 };
 
 export default citiesActions;

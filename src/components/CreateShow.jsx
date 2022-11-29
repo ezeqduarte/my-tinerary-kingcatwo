@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import showsActions from "../redux/actions/showsActions";
 
-export default function FormEditShows() {
+export default function CreateShow() {
   const idd = useRef();
   const name = useRef();
   const description = useRef();
@@ -12,10 +12,12 @@ export default function FormEditShows() {
   const photo = useRef();
   const price = useRef();
   const form = useRef();
-  const {} = showsActions;
+  const {createShows} = showsActions;
   const dispatch = useDispatch();
-  const showcitos = useSelector((store) => store.showsReducer.showsReducer);
-  const { id, token } = useSelector((store) => store.userReducer);
+  const hotels = useSelector((state) => state.hotelsReducer.allHotels);
+  console.log(hotels)
+  const { id } = useSelector((store) => store.userReducer);
+
 
 
   const clear = (event) => {
@@ -29,38 +31,30 @@ export default function FormEditShows() {
     form.current.reset();
   };
 
+
+  
   const send = async (e) => {
     e.preventDefault();
+   
+
     const data = {
-      id: idd.current.value,
-      info: {
+    
+        hotelid: idd.current.value,
         name: name.current.value,
         description: description.current.value,
         photo: photo.current.value,
         price: price.current.value,
         date: date.current.value,
-        userId: id
-      },
-      token:token
+        userId: id,
     };
- try {
-  const res = await dispatch(showsActions.editShows(data));
-  Swal.fire({
-    title: "The show has been modificated",
-    imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
-    width: "25rem",
-    confirmButtonColor: "#ff3648",
-    padding: "2rem",
-  });
-  form.current.reset();
- } catch (error) {
-  Swal.fire({
-    title: "Please select a Show!",
-    imageUrl: "https://img.icons8.com/ios-glyphs/120/000000/break.png",
-    width: "25rem",
-    padding: "2rem",
-  });
- }
+    const res =   await dispatch(showsActions.createShows(data));
+    if(res.payload.success){Swal.fire({
+      title: "The show has been Created",
+      imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
+      width: "25rem",
+      padding: "2rem",
+    })}
+ 
     
   };
 
@@ -68,18 +62,20 @@ export default function FormEditShows() {
     <div>
       <div className="formCityAdmin">
         <h3>
-          Edit Show<span className="rojo">.</span>
+         Create Show<span className="rojo">.</span>
         </h3>
         <form ref={form}>
           <fieldset className="editcityfieldset">
-            <label>
-              Select the Show<span className="rojo">.</span>
-              <select  ref={idd}>
-                <option>Select Show</option>
-                {showcitos.map((show)=>   <option key={show.name} value={show._id}>{show.name}</option>)}
+            <label >
+              City Show<span className="rojo">.</span>
+             <select ref={idd}>
+                <option>Select Hotel</option>
+                {hotels.map((hotel)=>   <option key={hotel.name} value={hotel._id}>{hotel.name}</option>)}
                 
 
              </select>
+
+
             </label>
             <label>
               Name<span className="rojo">.</span>
@@ -88,7 +84,7 @@ export default function FormEditShows() {
                 type="text"
                 placeholder="Insert name of the Show"
                 id="name"
-                required="required"
+                required
               />
             </label>
             <label>
@@ -96,9 +92,9 @@ export default function FormEditShows() {
               <input
                 ref={description}
                 type="text"
-                placeholder="Insert continent of the Show"
+                placeholder="Insert description of the Show"
                 id="continent"
-                required="required"
+                required
               />
             </label>
             <label>
@@ -108,7 +104,7 @@ export default function FormEditShows() {
                 type="text"
                 placeholder="Insert photo URL of the Show"
                 id="photo"
-                required="required"
+                required
               />
             </label>
             <label>
@@ -118,7 +114,7 @@ export default function FormEditShows() {
                 type="date"
                 placeholder="Insert date of the Show"
                 id="photo"
-                required="required"
+                required
               />
             </label>
             <label>
@@ -128,7 +124,7 @@ export default function FormEditShows() {
                 type="number"
                 placeholder="Insert price of the Show"
                 id="population"
-                required="required"
+                required
               />
             </label>
           </fieldset>

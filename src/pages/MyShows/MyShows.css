@@ -55,6 +55,14 @@
   flex-wrap: wrap;
   width: 500px;
 }
+
+.editcityfieldset label select {
+  width: 100%;
+  padding: 5px;
+  margin: 10px 0px;
+
+}
+
 .edittineraryfieldset {
   display: flex;
   flex-wrap: wrap;
@@ -89,4 +97,10 @@
   color: white;
   padding: 5px 15px;
   border-radius: 8px;
+  width: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0px;
+  cursor: pointer;
 }

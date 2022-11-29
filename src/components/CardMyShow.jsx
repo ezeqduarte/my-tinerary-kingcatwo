@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import showsActions from "../redux/actions/showsActions";
 import Swal from "sweetalert2";
 
@@ -7,9 +7,10 @@ export default function CardMyShow(props) {
   const city = props.city;
   const dispatch = useDispatch();
   const { deleteShows } = showsActions;
+  const { name, token } = useSelector((store) => store.userReducer);
   const click = async () => {
     Swal.fire({
-      title: "Are you sure to delete this tinerary?",
+      title: "Are you sure to delete this show?",
       imageUrl: "https://img.icons8.com/ios-glyphs/120/000000/break.png",
       width: "25rem",
       padding: "2rem",
@@ -19,9 +20,9 @@ export default function CardMyShow(props) {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await dispatch(deleteShows({ id: city._id }));
+        await dispatch(deleteShows({ id: city._id, token: token }));
         Swal.fire({
-          title: "The tinerary has deleted",
+          title: "The show has been deleted",
           imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
           width: "25rem",
           padding: "2rem",
@@ -39,10 +40,10 @@ export default function CardMyShow(props) {
       </div>
       <h4>{city.name}</h4>
       <h5 className="adminId">
-        Created by {city.userId.name || city.name}{" "}
-        {city.userId.lastName || city.lastName}
+        Created by {name}
+       
       </h5>
-      <h5 className="cityId">Show: {city._id}</h5>
+      
       <div className="btn-details">
         <p>$ {city.price}</p>
       </div>

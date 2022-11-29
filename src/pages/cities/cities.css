@@ -1,11 +1,10 @@
 .headerCities {
   height: 100vh;
-  
- 
+
   background-image: url("https://s1.1zoom.me/big3/809/France_Houses_Monuments_Louvre_Museum_Paris_Museum_609130_3000x2000.jpg");
   background-color: rgba(0, 0, 0, 0.596);
   background-blend-mode: color;
-  background-attachment: fixed;  
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -25,30 +24,22 @@
 }
 
 .citiesPhrase {
-
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 0px;
-    
-
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0px;
 }
 
 .citiesPhrase p {
-
-    font-style: italic;
-    font-size: 2rem;
-    font-weight: 100;
-
+  font-style: italic;
+  font-size: 2rem;
+  font-weight: 100;
 }
 
 .spanpunto {
-
-    font-weight: 500;
-
+  font-weight: 500;
 }
-
 
 .mainCities {
   padding: 20px;
@@ -59,8 +50,6 @@
   align-items: center;
   gap: 70px;
   margin-bottom: 100px;
-
-  
 }
 
 /*/ arranca card /*/
@@ -75,14 +64,13 @@
   align-items: center;
   padding: 5px;
   position: relative;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .cardCity:hover {
-
-    transform: scale(1.01);
-    transition: 350ms;
-
+  transform: scale(1.01);
+  transition: 350ms;
 }
 
 .inputs {
@@ -94,15 +82,12 @@
   margin: 40px 0px;
 }
 
-.inputs fieldset{
-
+.inputs fieldset {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
   border: none;
-  
-
 }
 
 .checkboxs {
@@ -110,7 +95,6 @@
   flex-direction: row;
   gap: 20px;
   flex-wrap: wrap;
-  
 }
 
 .searchForText {
@@ -118,39 +102,32 @@
 }
 
 .inputs {
-
   padding: 0px;
-
 }
 
 .inputs fieldset label {
-
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-
 }
 
 .inputs input {
-
   margin: 0px 10px;
   padding: 5px;
-
 }
 
 .cardCity h4 {
-    text-align: center;
-    font-size: 1.4rem;
-    padding: 15px;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.521);
-    width: 96%;
-    color: white;
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 15px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.521);
+  width: 96%;
+  color: white;
 }
 
 .cardCity h5 {
-
   position: absolute;
   bottom: 78px;
   right: 6px;
@@ -160,31 +137,22 @@
   padding: 5px 5px;
   display: flex;
   justify-content: flex-end;
-
 }
 
-
 .imgCard img {
-    
-    width: 328px;
-    height: 382px;
-    object-fit: cover;
-    flex-grow: 1;
-
+  width: 328px;
+  height: 382px;
+  object-fit: cover;
+  flex-grow: 1;
 }
 
 .noMatch {
-
-  display: flex;
   justify-content: center;
   align-items: center;
   color: rgb(32, 32, 32);
-
 }
 
-
 .btn-details {
-
   color: white;
   font-weight: 400;
   font-size: 1.3rem;
@@ -196,17 +164,12 @@
   align-items: center;
   margin-top: 4px;
   cursor: pointer;
-
 }
 
-@media (max-width: 1176px) { 
-
+@media (max-width: 1176px) {
   .inputs {
-    align-items: center;   
-    gap: 15px;   
+    align-items: center;
+    gap: 15px;
     flex-direction: column;
-   
-    
   }
 }
-

@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import tinerariesActions from "../redux/actions/tinerariesActions";
 
@@ -16,12 +16,14 @@ export default function FormEditTinerary() {
   const duration = useRef();
   const { editTinerary } = tinerariesActions;
   const dispatch = useDispatch();
+  const { tinerariesUser } = useSelector((store) => store.tineraryReducer);
+  const { token } = useSelector((store) => store.userReducer);
 
   const clear = (e) => {
     e.preventDefault();
     form.current.reset();
     Swal.fire({
-      title: "The form is clean",
+      title: "The edit form is clean",
       imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
       width: "25rem",
       padding: "2rem",
@@ -49,14 +51,17 @@ export default function FormEditTinerary() {
             photo3.current.value,
           ],
           price: price.current.value,
-          duration: duration.value,
+          duration: duration.current.value,
         },
+        token: token,
       };
+
+      console.log(data);
 
       dispatch(editTinerary(data));
 
       Swal.fire({
-        title: "The city has modificated",
+        title: "The tinerary has modificated",
         imageUrl: "https://img.icons8.com/sf-regular/120/null/ok.png",
         width: "25rem",
         padding: "2rem",
@@ -79,17 +84,15 @@ export default function FormEditTinerary() {
       </h3>
       <form ref={form}>
         <fieldset className="edittineraryfieldset">
-          <label>
-            Id tinerary<span className="rojo">.</span>
-            <input
-              type="text"
-              placeholder="Insert id of the tinerary"
-              id="id"
-              /*  onChange={handleForm} */
-              required
-              ref={id}
-            />
-          </label>
+          <label>Itinerary.</label>
+          <select ref={id}>
+            <option value="">Choose itinerary</option>
+            {tinerariesUser.map((tinerary) => (
+              <option key={tinerary.name} value={tinerary._id}>
+                {tinerary.name}
+              </option>
+            ))}
+          </select>
           <label>
             Name<span className="rojo">.</span>
             <input
@@ -97,17 +100,6 @@ export default function FormEditTinerary() {
               placeholder="Insert name of the tinerary"
               id="name"
               ref={name}
-              /*  onChange={handleForm} */
-              required
-            />
-          </label>
-          <label>
-            Description<span className="rojo">.</span>
-            <input
-              ref={description}
-              type="text"
-              placeholder="Insert Description of the tinerary"
-              id="Description"
               /*  onChange={handleForm} */
               required
             />
@@ -146,15 +138,8 @@ export default function FormEditTinerary() {
             />
           </label>
           <label>
-            Price<span className="rojo">.</span>
-            <input
-              ref={price}
-              type="number"
-              placeholder="Insert price of the tinerary"
-              id="price"
-              /*  onChange={handleForm} */
-              required
-            />
+            Description.
+            <textarea ref={description} maxLength={150}></textarea>
           </label>
           <label>
             Duration<span className="rojo">.</span>
@@ -163,6 +148,17 @@ export default function FormEditTinerary() {
               type="number"
               placeholder="Insert duration of the tinerary"
               id="duration"
+              /*  onChange={handleForm} */
+              required
+            />
+          </label>
+          <label>
+            Price<span className="rojo">.</span>
+            <input
+              ref={price}
+              type="number"
+              placeholder="Insert price of the tinerary"
+              id="price"
               /*  onChange={handleForm} */
               required
             />

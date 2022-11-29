@@ -5,15 +5,23 @@ import FormEditShows from "../../components/FormEditShows";
 import { useDispatch, useSelector } from "react-redux";
 import showsActions from "../../redux/actions/showsActions";
 import CardMyShow from "../../components/CardMyShow";
+import CreateShow from "../../components/CreateShow";
+import hotelsAction from "../../redux/actions/hotelsActions";
 
 export default function MyShows() {
-  const dispatch = useDispatch(); //Despacho la accion
+  const dispatch = useDispatch(); //Despacho la accion, si no la despacho nunca mando la accion.
   const showcitos = useSelector((store) => store.showsReducer.showsReducer);
+  const { id } = useSelector((store) => store.userReducer);
+  //El UseSelector me suscribe una constante a un estado de los reductores, cada vez que se actualice showReducer(mi array con shows) se me actualiza showcitos que tambiern va a ser un array con shows
   const { getShows } = showsActions;
-  useEffect(() => {
-    dispatch(getShows());
+  const { getAllHotels } = hotelsAction;
+  useEffect(() => { //
+    dispatch(getShows(id)); //Despacho la accoin getshows, lo pongo dentro de un useEffect para hacer la peticion una sola vez cuand ose ingrese a la pagina
   }, []);
-  console.log(showcitos);
+  useEffect(() => { //
+    dispatch(getAllHotels()); //Despacho la accoin getshows, lo pongo dentro de un useEffect para hacer la peticion una sola vez cuand ose ingrese a la pagina
+  }, []);
+
 
   return (
     <>
@@ -27,8 +35,10 @@ export default function MyShows() {
         <h2>
           Choose an option<span className="rojo">.</span>
         </h2>
-        {/* <CreateCityAdmin /> */}
-        <FormEditShows></FormEditShows>
+        <CreateShow></CreateShow>
+            <FormEditShows></FormEditShows>
+     
+        
       </div>
       <div className="bodyShows" id="MyShows">
         <h2>
@@ -37,7 +47,7 @@ export default function MyShows() {
         {console.log(showcitos)}
         <div className="YourShowsDiv">
           {showcitos.map((shows) => (
-            <CardMyShow city={shows} key={shows.name} />
+            <CardMyShow city={shows} key={shows._id} />
           ))}
         </div>
       </div>
