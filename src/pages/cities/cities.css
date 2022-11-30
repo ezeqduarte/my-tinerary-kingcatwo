@@ -69,8 +69,10 @@
 }
 
 .cardCity:hover {
-  transform: scale(1.01);
-  transition: 350ms;
+  transform: scale(1.08);
+  transition: 850ms;
+  box-shadow: rgba(38, 57, 77, 0.342) 0px 20px 30px -10px;
+
 }
 
 .inputs {

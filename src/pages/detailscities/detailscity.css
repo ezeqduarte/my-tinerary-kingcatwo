@@ -365,7 +365,33 @@ font-weight: 200;
   align-items: center;
   gap: 10px;
   padding: 16px;
-  }
+
+  } 
+
+
+
+
+.iconitos100{
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: flex-end;
+
+  height: 100px;
+  gap: 3px;
+}
+
+.iconitos100 img{
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.iconitos100 img:hover{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+
 
   .photo100{
 background-color: rgb(255, 255, 255);
@@ -393,3 +419,113 @@ min-height: 100px;
     font-weight: 500;
     
   }
+
+
+  .btn.details{
+    transition: ease-out 0.3s;
+    box-shadow: inset 0 0 0 0 #ffffff;
+    transition: ease-out 0.3s;
+    outline: none;
+  }
+.btn-details:hover{
+  color: #ffffff;
+
+  
+  transition: ease-out 0.6s;
+  box-shadow: inset 0px 100px 100px 0 #f03050f3;
+
+
+
+
+ 
+}
+
+
+/* //////////////////////mediaqueriup////////////////// */
+
+
+
+
+
+
+@media (max-width: 1060px) {
+  .headerCities h2{
+    
+      margin-left: 40px; 
+    }
+    
+
+}
+
+
+@media (max-width: 768px) {
+  .informationCities h2{
+    
+      margin-bottom: 15px; 
+    }
+    
+
+}
+
+
+
+@media (max-width: 680px) {
+  .headerCities h2{
+    
+      margin-left: 40px; 
+    }
+    
+    .detailscity h2{
+      font-size: 35px !important;
+    }
+
+    .detailscity h2::first-letter{
+      font-size: 50px;
+    }
+
+
+
+    .comments100 p{
+      font-size: 8px;
+     
+    }
+
+    .photo100{
+      /* display: none; */
+    
+      min-width:40px;
+      min-height: 40px;
+    
+    }
+    .parrafo101{
+      /* display: none; */
+    
+      display: none;
+    
+    }
+
+
+
+
+}
+
+
+
+@media (max-width: 490px) {
+ .infoCardGigante99 h3{
+  font-size: 10px;
+ }
+
+ .infoCardGigante99 p{
+  font-size: 12px;
+ }
+    
+ .infoCardGigante99 button {
+  font-size: 10px;
+  border-radius: 10px;
+ }
+
+ .footereano{
+margin-top: 40px;
+ }
+}
