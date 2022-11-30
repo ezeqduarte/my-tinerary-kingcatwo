@@ -6,6 +6,7 @@
   display: flex;
   color: white;
   border-radius: 20px;
+  z-index: 500;
 }
 
 .cardItinerary {
@@ -28,8 +29,10 @@
 }
 
 .detailscity {
-  background-image: url("https://s1.1zoom.me/big3/645/339631-svetik.jpg");
-  background-color: rgba(0, 0, 0, 0.596);
+
+  background-color: rgba(0, 0, 0, 0.74);
+ z-index: -1;
+
   background-blend-mode: color;
   background-attachment: fixed;
   display: flex;
@@ -71,14 +74,35 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 100%;
+ height: 400px;
   gap: 40px;
+  /* background-color: #fc4252; */
 }
 
-.informacionCardDetails h3 {
+.informacionCardDetails h2 {
   margin: 0;
+  color: aliceblue;
+ font-size: 150px;
+  text-align: center;
 }
 
+.informacionCardDetails h2::first-letter {
+font-weight: 700;
+font-size: 170px;
+color: #fc4252;
+
+}
+
+
+
+.informacionCardDetails p {
+  margin: 0;
+  color: aliceblue;
+ font-size: 20px;
+  text-align: center;
+  font-style: italic;
+}
 .buttonBackCity {
   border-radius: 400px;
   background-color: red;
@@ -157,10 +181,8 @@
   }
 
   .imagenCardDetails img {
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 25px;
-    border: wheat 1px solid;
-    width: auto;
     height: auto;
   }
 
@@ -214,11 +236,13 @@ display: flex;
 flex-direction: column;
 box-shadow: rgba(0, 0, 0, 0.171) 0px 3px 8px;
 border-radius: 0px 10px 10px 10px;
+width: 70%;
+
 }
 
 
 .CardGigante99{
-width: 80vw;
+width: 100%;
 height: 50vh;
 background-color: rgba(247, 243, 243, 0.486);
 display: flex;
@@ -236,7 +260,8 @@ border-radius: 0px 10px 10px 10px;
 .imgCardGigante99 img{
   width: 100%;
   height: 100%;
-  border-right: 4px rgba(39, 38, 38, 0.979) solid;
+  border-right: 4px rgb(68, 66, 66)solid;
+  object-fit: cover;
 }
 
 .infoCardGigante99{
@@ -272,18 +297,53 @@ gap: 20px;
 
 .comments99{
 
-background-color: rgba(241, 234, 234, 0.774);
-min-height: 40vh;
+
+min-height: 10vh;
+max-height: 35vh;
 border-radius: 0px 0px 10px 10px;
-
-
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+padding: 20px;
+width: 70%;
+align-items: center;
+margin-top: -45px;
+overflow-y: scroll;
 
 
 
 }
+.comments99::-webkit-scrollbar{
+
+background-color: rgb(255, 255, 255);
+width: 7px;
+height: 20px;
+  
+  }
+
+
+.comments99::-webkit-scrollbar-thumb{
+
+  background-color: #fc4252;
+  border-radius: 20px;
+  
+}
+
+
+
 
 .negrita99{
   font-weight: 700;
+}
+
+.comments99 h3{
+  width: 100%;
+  text-align: center;
+  margin: 0px;
+margin-bottom: 10px;
+font-weight: 200;
+
 }
 
 
@@ -291,9 +351,45 @@ border-radius: 0px 0px 10px 10px;
 
 /* //////////////////////////////////////////COMMENTSCOMPONENT */
 
+
+
+
 .comments100{
 
-font-size: 200px;
-font-weight: 900;
 
-}
+  background-color: rgb(61, 60, 60);
+  border-radius: 5px;
+  width: 550px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  }
+
+  .photo100{
+background-color: rgb(255, 255, 255);
+border-radius:180px;
+min-width: 100px;
+min-height: 100px;
+
+
+  }
+
+  .parrafo100{
+    color: white !important;
+    font-size: 14px;
+    font-weight: 200;
+    font-style: italic;
+    
+  }
+
+  .parrafo101{
+    color: white !important;
+    font-size: 14px;
+    font-weight: 200;
+    font-style: italic;
+    margin: 10px;
+    font-weight: 500;
+    
+  }

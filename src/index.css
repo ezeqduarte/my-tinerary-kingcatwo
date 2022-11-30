@@ -5,6 +5,17 @@
   font-family: "Montserrat", sans-serif;
 }
 
+::-webkit-scrollbar{
+  background-color: #d4cfcf;
+  width: 7px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #575656;
+}
+
+
 .main {
   min-height: 100vh;
 }

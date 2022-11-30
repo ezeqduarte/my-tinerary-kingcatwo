@@ -17,6 +17,7 @@ export default function ItineraryCard(props) {
 
   return (
     <>
+  
       <div className="ContenedorGeneral99">
         <div className="CardGigante99">
           <div className="imgCardGigante99">
@@ -44,12 +45,30 @@ export default function ItineraryCard(props) {
             </button>
           </div>
         </div>
-        {mostrarComentarios ? (
+       
+      </div>
+       {mostrarComentarios ? (
           <div className="comments99">
+            <h3> Comments of our Travelers</h3>
             <Comments></Comments>
+            <Comments></Comments>
+            <Comments></Comments>
+            <Comments></Comments> 
+            <Comments></Comments>
+            <Comments></Comments>     
+            <Comments></Comments>
+            <Comments></Comments>
+            <Comments></Comments>
+            <Comments></Comments>    
+            <Comments></Comments>
+            <Comments></Comments>       
+                 
+             
+        
+         
           </div>
         ) : null}
-      </div>
+      
     </>
   );
 }
