@@ -27,6 +27,16 @@
   transition: 350ms;
 }
 
+.divReactionImg {
+  display: flex;
+  flex-direction: row;
+}
+
+.divReactionImg img {
+  width: 25px;
+  height: 25px;
+}
+
 .detailscity {
   background-image: url("https://s1.1zoom.me/big3/645/339631-svetik.jpg");
   background-color: rgba(0, 0, 0, 0.596);

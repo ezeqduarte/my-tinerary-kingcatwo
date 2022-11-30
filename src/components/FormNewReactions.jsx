@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 
 export default function FormNewReactions() {
   const { id } = useSelector((store) => store.userReducer);
+  console.log(id);
 
   let [tineraries, setTineraries] = useState([]);
   useEffect(() => {
@@ -34,7 +35,7 @@ export default function FormNewReactions() {
       name: name.current.value,
       icon: activeIcon.current.value,
       iconBack: iconBack.current.value,
-      userId: [id],
+      userId: [],
     };
 
     Swal.fire({
@@ -45,7 +46,7 @@ export default function FormNewReactions() {
       showCancelButton: true,
       confirmButtonColor: "#ff3648",
       cancelButtonColor: "#5e5b5b",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Yes, create it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
         const peticion = await axios.post(`${API}reactions`, newReaction);
@@ -74,6 +75,8 @@ export default function FormNewReactions() {
         }
       }
     });
+
+    console.log(newReaction);
   };
 
   return (
@@ -84,10 +87,6 @@ export default function FormNewReactions() {
         </h3>
         <form ref={form}>
           <label>
-            Name of reaction
-            <input ref={name} type="text" />
-          </label>
-          <label>
             Itinerary
             <select ref={tinerary}>
               <option value="">Select itinerary</option>
@@ -97,6 +96,10 @@ export default function FormNewReactions() {
                 </option>
               ))}
             </select>
+          </label>
+          <label>
+            Name of reaction
+            <input ref={name} type="text" />
           </label>
           <label>
             Active icon

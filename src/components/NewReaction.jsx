@@ -17,7 +17,6 @@ export default function NewReaction() {
         >
           New reaction
         </button>
-        <button className="buttonMostrarActionMycities">Edit reaction</button>
       </div>
       <div className="newReaction">
         {formActive ? <FormNewReactions /> : <null />}
