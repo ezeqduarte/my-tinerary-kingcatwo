@@ -438,7 +438,7 @@ font-weight: 200;
 .comments100logged{
 
 
-  background-color: rgb(136, 136, 136);
+  background-color: rgb(61, 60, 60);
   border-radius: 5px;
   width: 550px;
   height: 150px;
@@ -479,17 +479,18 @@ background-color: rgb(255, 255, 255);
 border-radius:180px;
 width: 100px;
 height: 100px;
-
-
+object-fit: cover;
+border: #c7c7c7 3px solid;
   }
 
 
   .photo100logged{
     background-color: rgb(255, 255, 255);
-    border: #76f596 5px solid;
+    border: #36eb63 4px solid;
     border-radius:180px;
     width: 100px;
     height: 100px;
+    object-fit: cover;
     
     
       }

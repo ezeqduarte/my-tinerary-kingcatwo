@@ -13,7 +13,7 @@ import NewComment from "./NewComment";
 export default function ItineraryCard(props) {
   let { itinerary } = props;
   const dispatch = useDispatch();
-  const [reload, setReload] = useState(true)
+  const [reload, setReload] = useState(false)
   
   let { getComments } = commentsActions;
   let [comments, setComments] = useState([]);
