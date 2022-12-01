@@ -34,7 +34,7 @@ export default function CardDetailsCity() {
         <span className="rojo"></span>
         {place.name}
       </h2>
-      <p>This places is ubicated in <span className="negrita99">{place.continent}</span>.</p>
+      <p>This place is ubicated in <span className="negrita99">{place.continent}</span>.</p>
       <p>Have a population of <span className="negrita99">{place.population}</span> people.</p>
       <GoTo anchor="#itineraries" />
     </div>
