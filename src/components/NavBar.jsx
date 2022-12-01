@@ -6,13 +6,14 @@ import userActions from "../redux/actions/userActions";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 
 export default function NavBar() {
-  let { logged, token, role, photo, name } = useSelector(
+  let { logged, token, role, photo, name , id } = useSelector(
     (store) => store.userReducer
   );
   const dispatch = useDispatch();
   let { logout } = userActions;
-  console.log(token);
-
+/*   console.log(token); */
+ /*  console.log(id); */
+  
   let [mostrar, setMostrarOcultar] = useState(true);
   let change = () => {
     setMostrarOcultar(!mostrar);
