@@ -13,8 +13,8 @@ export default function LikeDislike(props) {
 
   const dispatch = useDispatch();
 
-  console.log(itineraryId);
-  /* console.log(reactionProp.name);  */
+
+ 
 
   const like = async (e) => {
     const res = await dispatch(
@@ -25,22 +25,13 @@ export default function LikeDislike(props) {
       }),
       /* setReload(!reload) */
     );
-
-    console.log(res);
-
-    console.log(res.payload.reaction);
+  
     setReaction(res.payload.reaction);
-    /* setReload(!reload) */
 
-    /* setReload(!reload); */
-    /* console.log(reaction.ItineraryId); */
 
   };
 
 
-
-  /* console.log(reaction);
-  console.log(props); */
 
   return (
     <div className="rowReactions99">

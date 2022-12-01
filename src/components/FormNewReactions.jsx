@@ -9,9 +9,7 @@ import API from "../api";
 import { useSelector } from "react-redux";
 
 export default function FormNewReactions() {
-  const { id } = useSelector((store) => store.userReducer);
-  /* console.log(id);
- */
+  const { id } = useSelector((store) => store.userReducer); 
   let [tineraries, setTineraries] = useState([]);
   useEffect(() => {
     async function set() {
@@ -58,7 +56,7 @@ export default function FormNewReactions() {
             width: "25rem",
             padding: "2rem",
           });
-          /* form.current.reset(); */
+          form.current.reset();
         } else {
           peticion.data.message.map((message) =>
             toast.error(`${message}`, {
@@ -76,7 +74,7 @@ export default function FormNewReactions() {
       }
     });
 
-    /* console.log(newReaction); */
+   
   };
 
   return (

@@ -11,12 +11,7 @@ export default function Reaction(props) {
   let { itinerary } = props;
   let { likeDislike } = reactionsActions;
   let [reactionss, setReactionss] = useState([]);
-  /* console.log(reaction); */
-  
 
-  /*  useEffect(() => {
-    dispatch(reactions());
-  }, [reload]); */
 
   const { reactions } = reactionsActions;
 
@@ -35,7 +30,7 @@ export default function Reaction(props) {
   return (
     <div className="rowReactions99">
       {reactionss.map((reaction) => (
-       <LikeDislike reaction={reaction} /* setReload={setReload} reload={reload} */ itineraryId={itinerary}></LikeDislike>
+       <LikeDislike reaction={reaction}  key={reaction._id}  itineraryId={itinerary}></LikeDislike>
       ))}
     </div>
   );

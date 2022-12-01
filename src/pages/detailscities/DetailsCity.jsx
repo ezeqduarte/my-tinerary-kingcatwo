@@ -14,24 +14,14 @@ export default function DetailsCity() {
   
   let [itineraries, setItineraries] = useState([]);
   const dispatch = useDispatch();
- /*  let [reload, setReload] = useState(false) */
+
 
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/itineraries?cityId=${id}`)
       .then((response) => setItineraries(response.data.searched));
   }, []);
-/*   const { reactions } = reactionsActions; */
 
-/*   let [reactionss, setReactionss] = useState(reactions)
-
-  useEffect(() => {
-    dispatch(reactions());
-  }, []); */
-
-
-
-  /* console.log(itineraries); */
 
   return (
     <>

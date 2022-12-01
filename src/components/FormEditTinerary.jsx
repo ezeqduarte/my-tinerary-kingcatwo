@@ -56,7 +56,7 @@ export default function FormEditTinerary() {
         token: token,
       };
 
-      /* console.log(data); */
+
 
       dispatch(editTinerary(data));
 

@@ -23,9 +23,7 @@ export default function MainCities() {
   ];
 
   
- /*  console.log(checks);
-  console.log(text);
-  console.log(data); */
+
 
   useEffect(() => {
     dispatch(getContinent());

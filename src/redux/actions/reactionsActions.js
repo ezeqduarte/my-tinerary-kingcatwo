@@ -18,10 +18,7 @@ const reactions = createAsyncThunk("reactionOfTinerary", async (id) => {
 const likeDislike = createAsyncThunk("likeDislike", async (data) => {
 
   const { token, id, name } = data;
-
-  console.log(token);
-  console.log(id);
-  console.log(name);
+  
 
   let headers = { headers: { Authorization: `Bearer ${token}` } };
 
@@ -31,7 +28,7 @@ const likeDislike = createAsyncThunk("likeDislike", async (data) => {
       null,
       headers
     );
-      console.log(respuesta.data.reaction);
+    
     return {
       success: true,
       reaction: respuesta.data.reaction,
