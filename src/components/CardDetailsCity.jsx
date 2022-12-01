@@ -18,19 +18,15 @@ export default function CardDetailsCity() {
   }, []);
 
   return (
-    <div className="cardDetailsCity">
-      <div className="imagenCardDetails">
-        <img src={place.photo} alt="" />
-      </div>
-      <div className="informacionCardDetails">
-        <h3>
-          <span className="rojo">|</span>
-          {place.name}
-        </h3>
-        <p>This places is ubicated in {place.continent}.</p>
-        <p>Have a population of {place.population} peoples.</p>
-        <GoTo anchor="#itineraries" />
-      </div>
+    
+    <div className="informacionCardDetails">
+      <h2>
+        <span className="rojo"></span>
+        {place.name}
+      </h2>
+      <p>This place is ubicated in <span className="negrita99">{place.continent}</span>.</p>
+      <p>Have a population of <span className="negrita99">{place.population}</span> people.</p>
+      <GoTo anchor="#itineraries" />
     </div>
   );
 }
