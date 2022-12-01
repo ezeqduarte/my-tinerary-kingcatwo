@@ -10,8 +10,8 @@ import { useSelector } from "react-redux";
 
 export default function FormNewReactions() {
   const { id } = useSelector((store) => store.userReducer);
-  console.log(id);
-
+  /* console.log(id);
+ */
   let [tineraries, setTineraries] = useState([]);
   useEffect(() => {
     async function set() {
@@ -32,7 +32,7 @@ export default function FormNewReactions() {
 
     const newReaction = {
       itineraryId: tinerary.current.value,
-      name: name.current.value,
+      name: name.current.value+tinerary.current.value,
       icon: activeIcon.current.value,
       iconBack: iconBack.current.value,
       userId: [],
@@ -58,7 +58,7 @@ export default function FormNewReactions() {
             width: "25rem",
             padding: "2rem",
           });
-          form.current.reset();
+          /* form.current.reset(); */
         } else {
           peticion.data.message.map((message) =>
             toast.error(`${message}`, {
@@ -76,7 +76,7 @@ export default function FormNewReactions() {
       }
     });
 
-    console.log(newReaction);
+    /* console.log(newReaction); */
   };
 
   return (

@@ -1,11 +1,10 @@
-import { createAsyncThunk } from "@reduxjs/toolkit"; //Me importo createAsyncThunk ya que
-// voy a utuilizar una accion que tiene que ser asincrona porque hago una peticion a la api
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import API from "../../api";
 
-const reactions = createAsyncThunk("reactionOfTinerary", async () => {
+const reactions = createAsyncThunk("reactionOfTinerary", async (id) => {
   try {
-    const respuesta = await axios.get(`${API}reactions/`);
+    const respuesta = await axios.get(`${API}reactions/?itineraryId=${id}`);
 
     return {
       success: true,
@@ -18,12 +17,21 @@ const reactions = createAsyncThunk("reactionOfTinerary", async () => {
 
 const likeDislike = createAsyncThunk("likeDislike", async (data) => {
 
-  const {token, id, name} = data
+  const { token, id, name } = data;
+
+  console.log(token);
+  console.log(id);
+  console.log(name);
+
   let headers = { headers: { Authorization: `Bearer ${token}` } };
 
   try {
-    const respuesta = await axios.put(`${API}reactions/?ItineraryId=${id}&name=${name}`, null, headers);
-
+    const respuesta = await axios.patch(
+      `${API}reactions/?ItineraryId=${id}&name=${name}`,
+      null,
+      headers
+    );
+      console.log(respuesta.data.reaction);
     return {
       success: true,
       reaction: respuesta.data.reaction,

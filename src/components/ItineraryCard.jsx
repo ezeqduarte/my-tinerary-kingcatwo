@@ -8,17 +8,9 @@ import hotels from "../data/hotels";
 import Reaction from "./Reaction";
 
 export default function ItineraryCard(props) {
+  let { itinerary, reload, setReload } = props;
 
-
-  let { itinerary , reload , setReload } = props;  
-
-  const { allReactions } = useSelector((store) => store.reactionsReducer);
-  console.log(allReactions);
-
-  const reactions = allReactions.filter(reaction=> reaction.itineraryId === itinerary._id )
-
-  console.log(reactions);
-  
+ /*  const { allReactions } = useSelector((store) => store.reactionsReducer); */
 
   let [mostrarComentarios, setMostrarComentarios] = useState(false);
 
@@ -30,9 +22,8 @@ export default function ItineraryCard(props) {
     <>
       <div className="rowComentsCards">
         <div className="cardItinerary">
-          <div  className="divReactionImg">
-          {reactions.map(reaction=><Reaction reaction={reaction}  reload={reload} setReload={setReload}></Reaction>)}
-
+          <div className="divReactionImg">
+            <Reaction itinerary={itinerary._id}></Reaction>
           </div>
           <div className="imgCard">
             <img src={itinerary.photo[0]} alt={itinerary.name} />

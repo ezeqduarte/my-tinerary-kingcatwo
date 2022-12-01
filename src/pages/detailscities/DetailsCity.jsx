@@ -11,20 +11,25 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function DetailsCity() {
   const { id } = useParams();
-  const { reactions } = reactionsActions;
+  
   let [itineraries, setItineraries] = useState([]);
   const dispatch = useDispatch();
-  let [reload, setReload] = useState(false)
+ /*  let [reload, setReload] = useState(false) */
 
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/itineraries?cityId=${id}`)
       .then((response) => setItineraries(response.data.searched));
   }, []);
+/*   const { reactions } = reactionsActions; */
+
+/*   let [reactionss, setReactionss] = useState(reactions)
 
   useEffect(() => {
     dispatch(reactions());
-  }, []);
+  }, []); */
+
+
 
   /* console.log(itineraries); */
 
@@ -45,7 +50,7 @@ export default function DetailsCity() {
             </h2>
           ) : (
             itineraries.map((itinerary) => (
-              <ItineraryCard reload={reload} setReload={setReload} itinerary={itinerary} />
+              <ItineraryCard itinerary={itinerary} key={itinerary.name} />
             ))
           )}
         </div>

@@ -19,7 +19,7 @@ export default function CardDetailsCity() {
       .then((response) => setPlace(response.data.cities))
   }, []);
 
-  console.log(place);
+ /*  console.log(place); */
 
   
 

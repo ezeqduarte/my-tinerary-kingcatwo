@@ -11,7 +11,7 @@ export default function NavBar() {
   );
   const dispatch = useDispatch();
   let { logout } = userActions;
-  console.log(logged, token);
+  console.log(token);
 
   let [mostrar, setMostrarOcultar] = useState(true);
   let change = () => {

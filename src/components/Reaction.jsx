@@ -1,35 +1,42 @@
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import reactionsActions from "../redux/actions/reactionsActions";
+import LikeDislike from "./LikeDislike";
 
 export default function Reaction(props) {
   const { id, token } = useSelector((store) => store.userReducer);
   const dispatch = useDispatch();
-  let { reaction, reload, setReload } = props;
-  let { itineraryId, userId } = reaction;
+  let { itinerary } = props;
   let { likeDislike } = reactionsActions;
+  let [reactionss, setReactionss] = useState([]);
+  /* console.log(reaction); */
+  
 
-  const like = async () => {
-    dispatch(
-      likeDislike({
-        token: token,
-        ItineraryId: itineraryId,
-        name: reaction.name,
-      })
-    );
-    console.log(reaction.ItineraryId);
-    setReload(!reload)
-  };
-  console.log(props);
-  console.log(itineraryId);
+  /*  useEffect(() => {
+    dispatch(reactions());
+  }, [reload]); */
+
+  const { reactions } = reactionsActions;
+
+  async function reactionsfunction() {
+    const res = await dispatch(reactions(itinerary));
+    setReactionss(res.payload.reactions);
+  }
+
+  useEffect(() => {
+    reactionsfunction();
+  }, []);
+
+
+ 
 
   return (
-    <div>
-      {userId.includes(id) ? (
-        <img onClick={like} src={reaction.icon} alt={reaction._id} />
-      ) : (
-        <img onClick={like} src={reaction.iconBack} alt={reaction._id} />
-      )}
+    <div className="rowReactions99">
+      {reactionss.map((reaction) => (
+       <LikeDislike reaction={reaction} /* setReload={setReload} reload={reload} */ itineraryId={itinerary}></LikeDislike>
+      ))}
     </div>
   );
 }

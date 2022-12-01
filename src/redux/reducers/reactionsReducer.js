@@ -4,7 +4,6 @@ const { reactions, likeDislike } = reactionsActions;
 
 const initialState = {
   allReactions: [],
-  reactionsOfTinerary: [],
 };
 
 const reactionsReducer = createReducer(initialState, (builder) => {
@@ -15,8 +14,16 @@ const reactionsReducer = createReducer(initialState, (builder) => {
       return { ...state };
     }
   });
+
   builder.addCase(likeDislike.fulfilled, (state, action) => {
-    return { ...state, allReactions: state.allReactions.filter(reaction=>reaction._id!==action.payload._id).concat(action.payload.reaction) };
+    let filter = state.allReactions.filter(
+      (reaction) => reaction._id !== action.payload.reaction._id
+    );
+
+    return {
+      ...state,
+      allReactions: [...state.allReactions, filter],
+    };
   });
 });
 

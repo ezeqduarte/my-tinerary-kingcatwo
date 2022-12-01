@@ -18,12 +18,12 @@ export default function Hotels() {
   let [data, setData] = useState({inputText:"", option: ""}); //Data es el parametro que pasamos a las acciones, si una accion tiene que tener 2 parametros los mismos van dentro de un objeto 
   let [option, setOption] = useState("");
   const hotels = useSelector((store) => store.hotelsReducer.hotelsR); // Aca me suscribo al estado de los HOTELES que están en mi Reducer/hotelsReducer
-console.log(hotels)
+/* console.log(hotels) */
 
   let renderInput = (e) => {
     setInputText(e.target.value);
     setData({ ...data, inputText: e.target.value });
-    console.log(e.target.value);
+    /* console.log(e.target.value); */
   };
 
   async function mayor(evento) {
@@ -36,7 +36,7 @@ console.log(hotels)
     // }
     setOption(evento.target.value)
 setData({...data, option: evento.target.value})  }
-  console.log(data);
+  /* console.log(data); */
   const form = useRef();
 
   useEffect(() => {

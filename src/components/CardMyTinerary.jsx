@@ -32,7 +32,7 @@ export default function CardMyTinerary(props) {
       }
     });
   };
-  console.log(itinerary);
+  /* console.log(itinerary); */
 
   return (
     <div className="cardMyCities">

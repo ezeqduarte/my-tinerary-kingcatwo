@@ -33,10 +33,10 @@ function App() {
     }
   }, []);
 
-  console.log(logged);
+/*   console.log(logged);
   console.log(role);
   console.log(name);
-  console.log(photo);
+  console.log(photo); */
 
   return (
     <Main>

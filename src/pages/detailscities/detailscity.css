@@ -30,6 +30,12 @@
 .divReactionImg {
   display: flex;
   flex-direction: row;
+  padding: 15px;
+}
+
+.rowReactions99 {
+  display: flex;
+  gap: 10px;
 }
 
 .divReactionImg img {

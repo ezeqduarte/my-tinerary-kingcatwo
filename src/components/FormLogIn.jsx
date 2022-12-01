@@ -26,7 +26,7 @@ export default function FormLogIn() {
     await axios
       .post(`${API}auth/sign-in`, user, { new: true })
       .then((response) => {
-        console.log(response.data);
+      /*   console.log(response.data); */
 
         if (response.data.success === false) {
           response.data.message.map((message) => {
