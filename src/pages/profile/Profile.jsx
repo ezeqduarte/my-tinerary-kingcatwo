@@ -120,12 +120,9 @@ export default function Profile() {
         ) : null}
       </div>
       <div className="panelOfAdmin">
-        <h2>
-          Panel of {role}
-          <span className="rojo">.</span>
-        </h2>
+        <h2>Panel of {role}</h2>
 
-        {role === "admin" ? <NewReaction /> : <MyReactions/>}
+        {role === "admin" ? <NewReaction /> : <MyReactions />}
       </div>
     </>
   );

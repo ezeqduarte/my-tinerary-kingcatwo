@@ -1,6 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit"; //Me importo para crear REDUCTORES
 import reactionsActions from "../actions/reactionsActions";
-const { reactions, likeDislike, getReactionsOfUser } = reactionsActions;
+const { reactions, likeDislike, getReactionsOfUser, deleteReaction } =
+  reactionsActions;
 
 const initialState = {
   allReactionsOfUser: [],
@@ -15,7 +16,19 @@ const reactionsReducer = createReducer(initialState, (builder) => {
     }
   });
 
-
+  builder.addCase(deleteReaction.fulfilled, (state, action) => {
+    if (action.payload.success) {
+      let stateFiltered = state.allReactionsOfUser.filter(
+        (reaction) => reaction._id !== action.payload.reaction._id
+      );
+      return {
+        ...state,
+        allReactionsOfUser: stateFiltered,
+      };
+    } else {
+      return { ...state };
+    }
+  });
 });
 
 export default reactionsReducer;
