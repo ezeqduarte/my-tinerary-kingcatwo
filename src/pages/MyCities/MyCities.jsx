@@ -22,7 +22,7 @@ export default function MyCities() {
     dispatch(getCitiesOfAdmin(id));
   }, []);
 
-  /* console.log(citiesAdmin); */
+  
 
   const see = () => {
     setSeeForm(!seeForm);

@@ -10,9 +10,9 @@ if (token) {
 
 const getCities = createAsyncThunk("getCities", async ({ peticion }) => {
   try {
-    //console.log(peticion);
+    
     const res = await axios.get(`${API}/cities/${peticion}`);
-    //console.log(res);
+    
     return {
       cities: res.data.cities,
     };
@@ -28,7 +28,7 @@ const getContinent = createAsyncThunk("getContinent", async () => {
   try {
     const res = await axios.get(`${API}/cities/`);
 
-    /* console.log(continents); */
+   
 
     return {
       continents: res.data.cities,
@@ -43,9 +43,9 @@ const getContinent = createAsyncThunk("getContinent", async () => {
 
 const getCitiesOfAdmin = createAsyncThunk("getCitiesOfAdmin", async (id) => {
   try {
-    //console.log(peticion);
+   
     const res = await axios.get(`${API}/cities/?userId=${id}`);
-    /* console.log(res); */
+    
     return {
       citiesOfAdmin: res.data.cities,
     };
@@ -64,9 +64,9 @@ const deleteCityAdmin = createAsyncThunk("deleteCityAdmin", async (data) => {
   let headers = { headers: { Authorization: `Bearer ${token}` } };
 
   try {
-    //console.log(peticion);
+    
     const res = await axios.delete(`${API}cities/${id}`, headers);
-    console.log(res);
+    
     return {
       cityDeleted: res.data.cityDeleted,
       succes: true,
@@ -87,11 +87,10 @@ const editCityAdmin = createAsyncThunk("editCityAdmin", async (data) => {
   };
 
   let headers = { headers: { Authorization: `Bearer ${token}` } };
-
-  console.log(headers);
+ 
 
   try {
-    //console.log(peticion);
+   
     const res = await axios.put(`${API}cities/${id}`, object, headers);
     
     if (res.data.success) {

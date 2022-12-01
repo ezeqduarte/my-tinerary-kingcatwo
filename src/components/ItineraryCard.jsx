@@ -1,14 +1,16 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { NavLink } from "react-router-dom";
 import hotels from "../data/hotels";
+import Reaction from "./Reaction";
 
 export default function ItineraryCard(props) {
+  let { itinerary, reload, setReload } = props;
 
-
-  let { itinerary } = props;  
+ /*  const { allReactions } = useSelector((store) => store.reactionsReducer); */
 
   let [mostrarComentarios, setMostrarComentarios] = useState(false);
 
@@ -20,6 +22,9 @@ export default function ItineraryCard(props) {
     <>
       <div className="rowComentsCards">
         <div className="cardItinerary">
+          <div className="divReactionImg">
+            <Reaction itinerary={itinerary._id}></Reaction>
+          </div>
           <div className="imgCard">
             <img src={itinerary.photo[0]} alt={itinerary.name} />
           </div>

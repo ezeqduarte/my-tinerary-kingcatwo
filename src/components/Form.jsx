@@ -28,12 +28,12 @@ export default function Form(props) {
       role: `${role}`,
     };
 
-    console.log(newUser);
+
 
     await axios
       .post("http://localhost:8000/api/auth/sign-up", newUser)
       .then((response) => {
-        console.log(response.data);
+
 
         if (response.data.success === false) {
           response.data.message.map((message) => {

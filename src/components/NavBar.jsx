@@ -11,7 +11,7 @@ export default function NavBar() {
   );
   const dispatch = useDispatch();
   let { logout } = userActions;
-  console.log(logged, token);
+  console.log(token);
 
   let [mostrar, setMostrarOcultar] = useState(true);
   let change = () => {
@@ -51,7 +51,7 @@ export default function NavBar() {
 
   return (
     <header>
-      <img className="logo-grande" src="./img/logo_grande.png" alt="" />
+      <img className="logo-grande" src="https://cdn.discordapp.com/attachments/1026888381814288424/1047704745147633745/logo_grande.png" alt="" />
 
       {mostrarMenu ? (
         <div className="flex-menu">

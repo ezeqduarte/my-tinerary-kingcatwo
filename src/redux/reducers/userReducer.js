@@ -17,7 +17,7 @@ const initialState = {
 const userReducer = createReducer(initialState, (builder) => {
   builder.addCase(ingress.fulfilled, (state, action) => {
     const { success, response } = action.payload;
-    console.log(action.payload);
+   
     if (success) {
       let { user, token } = response.response;
       localStorage.setItem("token", JSON.stringify({ token: { user: token } }));
@@ -41,7 +41,7 @@ const userReducer = createReducer(initialState, (builder) => {
   });
   builder.addCase(reIngress.fulfilled, (state, action) => {
     const { success, response } = action.payload;
-    console.log(action.payload);
+   
     if (success) {
       let { user, token } = response;
 

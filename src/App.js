@@ -33,11 +33,6 @@ function App() {
     }
   }, []);
 
-  console.log(logged);
-  console.log(role);
-  console.log(name);
-  console.log(photo);
-
   return (
     <Main>
       <Routes>
@@ -53,8 +48,6 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn />} />
         </Route>
-
-      
 
         <Route element={<ProtectedRoute isAllowed={!!logged} reDirect={"/"} />}>
           {/* <Route path="/detailshotel" element={<DetailsHotel />} /> */}
@@ -83,9 +76,7 @@ function App() {
             }
           />
 
-
-
-<Route
+          <Route
             path="/profile"
             element={
               <ProtectedRoute
@@ -96,7 +87,6 @@ function App() {
               </ProtectedRoute>
             }
           />
-
 
           <Route
             path="/newcity"
