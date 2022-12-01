@@ -1,5 +1,5 @@
 import React from "react";
-import { Link as NavLink } from "react-router-dom";
+import { Link as NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import userActions from "../redux/actions/userActions";
@@ -23,6 +23,7 @@ export default function NavBar() {
   let menu = () => {
     setMostrarMenu(!mostrarMenu);
   };
+  const navigate = useNavigate();
 
   const dispatchLogout = async () => {
     Swal.fire({
@@ -46,13 +47,18 @@ export default function NavBar() {
           padding: "2rem",
         });
         setMostrarOcultar(!mostrar);
+        navigate("/");
       }
     });
   };
 
   return (
     <header>
-      <img className="logo-grande" src="https://cdn.discordapp.com/attachments/1026888381814288424/1047704745147633745/logo_grande.png" alt="" />
+      <img
+        className="logo-grande"
+        src="https://cdn.discordapp.com/attachments/1026888381814288424/1047704745147633745/logo_grande.png"
+        alt=""
+      />
 
       {mostrarMenu ? (
         <div className="flex-menu">
@@ -125,10 +131,10 @@ export default function NavBar() {
             {logged ? null : (
               <>
                 <NavLink to="/login" style={{ textDecoration: "none" }}>
-                  <button  onClick={change}>SIGN IN</button>
+                  <button onClick={change}>SIGN IN</button>
                 </NavLink>
                 <NavLink to="/signup" style={{ textDecoration: "none" }}>
-                  <button  onClick={change}>SIGN UP</button>
+                  <button onClick={change}>SIGN UP</button>
                 </NavLink>
               </>
             )}
@@ -157,19 +163,19 @@ export default function NavBar() {
                   <span className="rojo"> .</span>
                 </button>
                 <NavLink to="/profile" style={{ textDecoration: "none" }}>
-                  <button  onClick={change}>PROFILE</button>
+                  <button onClick={change}>PROFILE</button>
                 </NavLink>
                 <NavLink to="/mycities" style={{ textDecoration: "none" }}>
-                  <button  onClick={change}>MY CITIES</button>
+                  <button onClick={change}>MY CITIES</button>
                 </NavLink>
                 <NavLink to="/newcity" style={{ textDecoration: "none" }}>
-                  <button  onClick={change}>NEW CITY</button>
+                  <button onClick={change}>NEW CITY</button>
                 </NavLink>
                 <NavLink to="/myHotels" style={{ textDecoration: "none" }}>
-                  <button  onClick={change}>MY HOTELS</button>
+                  <button onClick={change}>MY HOTELS</button>
                 </NavLink>
                 <NavLink to="/newhotel" style={{ textDecoration: "none" }}>
-                  <button  onClick={change}>NEW HOTEL</button>
+                  <button onClick={change}>NEW HOTEL</button>
                 </NavLink>
 
                 <button onClick={dispatchLogout}>LOGOUT</button>

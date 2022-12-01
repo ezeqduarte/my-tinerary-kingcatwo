@@ -11,8 +11,9 @@ import Comments from "./Comments";
 import NewComment from "./NewComment";
 
 export default function ItineraryCard(props) {
-  let { itinerary, reload, setReload } = props;
+  let { itinerary } = props;
   const dispatch = useDispatch();
+  const [reload, setReload] = useState(false)
   
   let { getComments } = commentsActions;
   let [comments, setComments] = useState([]);
@@ -29,7 +30,7 @@ export default function ItineraryCard(props) {
     }
     peticion99();
     // console.log(res.payload)
-  }, []);
+  }, [reload]);
   const createComment = (e) => {
     setnewcomment(!newcomment);
   };
@@ -74,7 +75,7 @@ export default function ItineraryCard(props) {
               +
             </div>
             {newcomment ? (
-              <NewComment itinerary={itinerary._id}></NewComment>
+              <NewComment itinerary={itinerary._id} reload={reload} setreload={setReload}></NewComment>
             ) : null}
             <h3> Create a new comment!</h3>
 
