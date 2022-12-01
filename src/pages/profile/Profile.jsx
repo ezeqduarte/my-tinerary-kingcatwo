@@ -10,6 +10,7 @@ import { useRef } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 import NewReaction from "../../components/NewReaction";
+import MyReactions from "../../components/MyReactions";
 
 export default function Profile() {
   const { photo, id, name, email, age, role, lastName } = useSelector(
@@ -124,7 +125,7 @@ export default function Profile() {
           <span className="rojo">.</span>
         </h2>
 
-        {role === "admin" ? <NewReaction /> : null}
+        {role === "admin" ? <NewReaction /> : <MyReactions/>}
       </div>
     </>
   );
