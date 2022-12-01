@@ -5,7 +5,7 @@ import API from "../../api";
 const getComments = createAsyncThunk("getComments", async (itineraryId) => {
   console.log(itineraryId);
   try {
-    const res = await axios.get(`${API}/comments/?userId=${itineraryId}`);
+    const res = await axios.get(`${API}/comments/?itineraryId=${itineraryId}`);
 
     return {
       commentsItineraries: res.data.comments,

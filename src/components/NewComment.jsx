@@ -4,9 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import commentsActions from "../redux/actions/commentsActions";
 
+
 export default function NewComment(props) {
   let textarea = useRef();
-  let { itinerary } = props;
+  let { itinerary, reload, setreload } = props;
   const dispatch = useDispatch();
   const date = "2024-12-15T00:30:00.000Z";
   const { postComments } = commentsActions;
@@ -41,6 +42,7 @@ export default function NewComment(props) {
           padding: "2rem",
         });
         textarea.current.reset()
+        setreload(!reload)
       }
     });
   };
