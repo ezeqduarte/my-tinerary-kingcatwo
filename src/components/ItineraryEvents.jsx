@@ -6,7 +6,6 @@ import events from "../data/events";
 export default function ItineraryEvents(props) {
   let object = props.object;
 
-  console.log(object);
 
   let [mostrarComentarios, setMostrarComentarios] = useState(false);
   let change = () => {

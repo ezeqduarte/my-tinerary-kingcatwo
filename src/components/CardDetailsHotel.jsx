@@ -22,20 +22,20 @@ export default function CardDetailsHotel() {
 
   return (
 
-    <div className="cardDetailsHotel">
+    <div className="informacionCardDetails">
         
-      <div className="imagenCardDetailsHotel">
+      {/* <div className="imagenCardDetailsHotel">
         <img src={hotel.photo} alt=""/>
 
-      </div>
+      </div> */}
       
 
 
 
       <div className="informacionCardDetailsHotel">   
-      <h3>{hotel.name}</h3>
-      <p>{hotel.description}</p>
-      <p>The hotel capacity is: {hotel.capacity}</p>
+      <h2>{hotel.name}</h2>
+      <p> <span className="negrita99">{hotel.description}</span></p>
+      <p>The hotel capacity is: <span className="negrita99">{hotel.capacity}</span> </p>
 
       <GoTo anchor="#showsss"/>
 

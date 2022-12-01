@@ -9,12 +9,12 @@ const initialState = {
 
 const tineraryReducer = createReducer(initialState, (builder) => {
   builder.addCase(getTinerariesUser.fulfilled, (state, action) => {
-    //console.log(action);
+    
     return { ...state, tinerariesUser: action.payload.itinerariesUser };
   });
 
   builder.addCase(deleteTinerary.fulfilled, (state, action) => {
-    //console.log(action);
+    
     return {
       ...state,
       tinerariesUser: state.tinerariesUser.filter(
@@ -24,7 +24,7 @@ const tineraryReducer = createReducer(initialState, (builder) => {
   });
 
   builder.addCase(editTinerary.fulfilled, (state, action) => {
-    //console.log(action);
+    
     return {
       ...state,
       tinerariesUser: state.tinerariesUser
@@ -34,7 +34,7 @@ const tineraryReducer = createReducer(initialState, (builder) => {
   });
 
   builder.addCase(newTinerary.fulfilled, (state, action) => {
-    //console.log(action);
+    
     if (action.payload.success) {
       return {
         ...state,

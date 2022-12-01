@@ -42,7 +42,7 @@ const hotelsReducer = createReducer(initialState, (builder) => {
   });
 
   builder.addCase(hotelsAction.editHotelsAdmin.fulfilled, (state, action) => {
-    console.log(action.payload);
+    
 
     return {
       ...state,
@@ -53,7 +53,7 @@ const hotelsReducer = createReducer(initialState, (builder) => {
   });
 
   builder.addCase(hotelsAction.getAllHotels.fulfilled, (state, action) => {
-    console.log(action.payload);
+ 
 
     return {
       ...state,

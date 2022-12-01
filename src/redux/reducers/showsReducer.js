@@ -10,12 +10,12 @@ const showsReducer = createReducer(initialState, (builder) => {
   //Aca me creo el reductor de Showsm donde colocare todos los casos con la accion correspondiente.
   builder.addCase(getShows.fulfilled, (state, action) => {
     //Aca le digo que en este caso cuando getShows este fullfiled
-    //console.log(action);
+    
     return { ...state, showsReducer: action.payload.showsUser }; //Me mantenga todo lo que tiene el estaod inicial y me modifique algo puntual
   });
 
   builder.addCase(deleteShows.fulfilled, (state, action) => {
-    //console.log(action);
+    
     return {
       ...state,
       showsReducer: state.showsReducer.filter(
@@ -25,7 +25,7 @@ const showsReducer = createReducer(initialState, (builder) => {
   });
 
   builder.addCase(editShows.fulfilled, (state, action) => {
-    //console.log(action);
+    
     return {
       ...state,
       showsReducer: state.showsReducer
@@ -35,7 +35,7 @@ const showsReducer = createReducer(initialState, (builder) => {
   });
 
   builder.addCase(createShows.fulfilled, (state, action) => {
-    //console.log(action);
+    
     if (action.payload.success) {
       return {
         ...state,

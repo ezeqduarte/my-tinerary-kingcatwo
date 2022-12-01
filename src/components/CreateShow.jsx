@@ -15,7 +15,7 @@ export default function CreateShow() {
   const {createShows} = showsActions;
   const dispatch = useDispatch();
   const hotels = useSelector((state) => state.hotelsReducer.allHotels);
-  console.log(hotels)
+
   const { id } = useSelector((store) => store.userReducer);
 
 

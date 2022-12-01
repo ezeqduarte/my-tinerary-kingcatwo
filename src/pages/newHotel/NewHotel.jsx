@@ -29,7 +29,7 @@ export default function NewHotel() {
     axios
       .post("http://localhost:8000/api/hotels/", object)
       .then((response) => {
-        console.log(response.data);
+        
         if (response.data.success === false) {
           response.data.message.map((message) => {
             toast.error(`${message}`, {

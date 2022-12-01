@@ -5,7 +5,7 @@ import API from "../../api";
 const ingress = createAsyncThunk("ingress", async (datos) => {
   try {
     const res = await axios.post(`${API}/auth/sign-in`, datos);
-    console.log(res);
+  
     return {
       success: true,
       response: res.data,
@@ -25,7 +25,7 @@ const editProfile = createAsyncThunk("editProfile", async (datos) => {
       datos.objectedit,
       { new: true }
     );
-    console.log(res);
+   
 
   
 
@@ -46,7 +46,7 @@ const reIngress = createAsyncThunk("reIngress", async (token) => {
   let headers = { headers: { Authorization: `Bearer ${token}` } };
   try {
     let user = await axios.post(url, null, headers);
-    console.log(user.data.response.user);
+   
     return {
       success: true,
       response: {
@@ -69,13 +69,13 @@ const logout = createAsyncThunk("logout", async (token) => {
 
   try {
     let user = await axios.post(url, null, headers);
-    console.log(user.data);
+  
     return {
       success: true,
       response: user.data.message,
     };
   } catch (error) {
-    /* console.log(error.response); */
+    
     return {
       success: false,
       response: error.response.data.message,
@@ -88,13 +88,13 @@ const getDatos = createAsyncThunk("getDatos", async (id) => {
 
   try {
     let user = await axios.get(url);
-    console.log(user.data.user);
+    
     return {
       success: true,
       user: user.data.user,
     };
   } catch (error) {
-    /* console.log(error.response); */
+   
     return {
       success: false,
       response: error.response.data.message,

@@ -27,19 +27,19 @@ const citiesReducer = createReducer(initialState, (builder) => {
     }
   });
   builder.addCase(getCities.fulfilled, (state, action) => {
-    //console.log(action);
+    
     return { ...state, cities: action.payload.cities };
   });
   builder.addCase(getContinent.fulfilled, (state, action) => {
-    //console.log(action);
+    
     return { ...state, continents: action.payload.continents };
   });
   builder.addCase(getCitiesOfAdmin.fulfilled, (state, action) => {
-    //console.log(action);
+    
     return { ...state, citiesOfAdmin: action.payload.citiesOfAdmin };
   });
   builder.addCase(deleteCityAdmin.fulfilled, (state, action) => {
-    /*   console.log(initialState.citiesOfAdmin); */
+    
 
     return {
       ...state,
