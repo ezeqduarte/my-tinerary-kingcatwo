@@ -15,15 +15,28 @@ export default function MyReactions() {
     dispatch(getReactionsOfUser({ id, token }));
   }, []);
 
+  const reactionsShows = allReactionsOfUser.filter(
+    (reaction) => reaction.userId === null
+  );
+
+  const reactionsOfTineraries = allReactionsOfUser.filter(
+    (reaction) => reaction.itineraryId
+  );
+  console.log(reactionsOfTineraries);
+
   return (
     <>
-      <h3>Your reactions are here<span className="negrita99 rojo">:</span></h3>
+      <h3>
+        Your reactions of tineraries are here<span className="rojo">.</span>
+      </h3>
       <div className="ContainerReactionUser999">
-        {allReactionsOfUser.length>0 ?allReactionsOfUser.map((reaction) => (
-          <ReactionUser reaction={reaction} />
-        ))
-        : <h2>You dont have reactions</h2>
-        }
+        {reactionsOfTineraries.length > 0 ? (
+          reactionsOfTineraries.map((reaction) => (
+            <ReactionUser reaction={reaction} />
+          ))
+        ) : (
+          <h2>You dont have reactions of Tineraries</h2>
+        )}
       </div>
     </>
   );

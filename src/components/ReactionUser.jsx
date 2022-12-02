@@ -36,11 +36,11 @@ export default function ReactionUser({ reaction }) {
 
   return (
     <div className="ReactionUser999">
-      <img src={reaction.itineraryId.photo[0]} alt="" />
+      <img src={reaction?.itineraryId.photo[0]} alt="" />
       <div className="infoReaction99">
-        <p className="negrita99">{reaction.itineraryId.name}</p>
+        <p className="negrita99">{reaction?.itineraryId.name}</p>
 
-        <p>Your reaction in the {reaction.itineraryId.name} was </p>
+        <p>Your reaction in the {reaction?.itineraryId.name} was </p>
 
         <img src={reaction.icon} alt="" />
       </div>
