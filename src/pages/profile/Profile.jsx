@@ -11,11 +11,14 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 import NewReaction from "../../components/NewReaction";
 import MyReactions from "../../components/MyReactions";
+import NewReactionShows from "../../components/NewReactionShows";
 
 export default function Profile() {
-  const { photo, id, name, email, age, role, lastName } = useSelector(
+  const { photo, id, name, email, token, age, role, lastName } = useSelector(
     (store) => store.userReducer
   );
+
+  console.log(token);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,8 +29,6 @@ export default function Profile() {
     e.preventDefault();
     SetOculto(!oculto);
   };
-
-  // const navigate = useNavigate()
 
   const name1 = useRef();
   const lastName1 = useRef();
@@ -122,7 +123,17 @@ export default function Profile() {
       <div className="panelOfAdmin">
         <h2>Panel of {role}</h2>
 
-        {role === "admin" ? <NewReaction /> : <MyReactions />}
+        {role === "admin" ? (
+          <>
+            {" "}
+            <div>
+              <NewReaction />{/*  <NewReactionShows /> */}
+            </div>{" "}
+            <MyReactions />{" "}
+          </>
+        ) : (
+          <MyReactions />
+        )}
       </div>
     </>
   );

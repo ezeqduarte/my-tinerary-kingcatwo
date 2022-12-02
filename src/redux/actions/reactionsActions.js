@@ -87,6 +87,28 @@ const deleteReaction = createAsyncThunk("deleteReaction", async (data) => {
   }
 });
 
+const reactionsShow = createAsyncThunk("reactionsShow", async (data) => {
+  const { token, id } = data;
+  console.log(token);
+  /* console.log(id); */
+  let headers = { headers: { Authorization: `Bearer ${token}` } };
+
+  try {
+    const respuesta = await axios.get(
+      `${API}reactions/?showId=${id}`,
+
+      headers
+    );
+
+    return {
+      success: true,
+      reactions: respuesta.data.reactions,
+    };
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
 
 
 const reactionsActions = {
@@ -94,6 +116,7 @@ const reactionsActions = {
   likeDislike,
   getReactionsOfUser,
   deleteReaction,
+  reactionsShow
 };
 
 export default reactionsActions;
