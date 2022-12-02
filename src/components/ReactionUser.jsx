@@ -44,8 +44,8 @@ export default function ReactionUser({ reaction }) {
 
         <img src={reaction.icon} alt="" />
       </div>
-      <button onClick={deleteReactionFunction} className="btn-details">
-        DELETE
+      <button onClick={deleteReactionFunction} className="negrita99 btn-details" >
+        Delete
       </button>
     </div>
   );
