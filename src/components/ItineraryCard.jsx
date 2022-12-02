@@ -45,13 +45,6 @@ export default function ItineraryCard(props) {
   const { postComments } = commentsActions;
   const { id, token, logged } = useSelector((store) => store.userReducer);
 
-  /*  async function peticion99() {
-    dispatch(getComments(itinerary._id));
-  } */
-
-  /*   useEffect(() => {
-    peticion99();
-  }, [reload]); */
 
   const sendComment = (e) => {
     let newCommentObject2 = {
