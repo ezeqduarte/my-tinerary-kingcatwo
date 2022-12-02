@@ -21,7 +21,7 @@ export default function CreateItineraryForm() {
     dispatch(getContinent());
   }, []);
 
-  console.log(tineraries);
+
 
   const form = useRef();
   const city = useRef();
@@ -87,7 +87,7 @@ export default function CreateItineraryForm() {
       console.log(error.message);
     }
 
-    /* console.log(newItinerary); */
+
   };
 
   return (

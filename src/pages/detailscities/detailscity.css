@@ -6,6 +6,7 @@
   display: flex;
   color: white;
   border-radius: 20px;
+  z-index: 500;
 }
 
 .cardItinerary {
@@ -27,9 +28,28 @@
   transition: 350ms;
 }
 
+.divReactionImg {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  background-color:  rgba(247, 243, 243, 0.486);
+}
+
+.rowReactions99 {
+  display: flex;
+  gap: 10px;
+}
+
+.divReactionImg img {
+  width: 25px;
+  height: 25px;
+}
+
 .detailscity {
-  background-image: url("https://s1.1zoom.me/big3/645/339631-svetik.jpg");
-  background-color: rgba(0, 0, 0, 0.596);
+
+  background-color: rgba(0, 0, 0, 0.74);
+ z-index: -1;
+
   background-blend-mode: color;
   background-attachment: fixed;
   display: flex;
@@ -71,14 +91,35 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 100%;
+ height: 400px;
   gap: 40px;
+  /* background-color: #fc4252; */
 }
 
-.informacionCardDetails h3 {
+.informacionCardDetails h2 {
   margin: 0;
+  color: aliceblue;
+ font-size: 150px;
+  text-align: center;
 }
 
+.informacionCardDetails h2::first-letter {
+font-weight: 700;
+font-size: 170px;
+color: #fc4252;
+
+}
+
+
+
+.informacionCardDetails p {
+  margin: 0;
+  color: aliceblue;
+ font-size: 20px;
+  text-align: center;
+  font-style: italic;
+}
 .buttonBackCity {
   border-radius: 400px;
   background-color: red;
@@ -157,10 +198,8 @@
   }
 
   .imagenCardDetails img {
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 25px;
-    border: wheat 1px solid;
-    width: auto;
     height: auto;
   }
 
@@ -199,4 +238,399 @@
     border-radius: 0px;
     width: 340px;
   }
+}
+
+
+
+/* ///////////////////NEW DESCRIPTION */
+
+
+
+.ContenedorGeneral99{
+
+
+display: flex;
+flex-direction: column;
+box-shadow: rgba(0, 0, 0, 0.171) 0px 3px 8px;
+border-radius: 0px 5px 5px 5px;
+width: 70%;
+
+}
+
+
+.CardGigante99{
+width: 100%;
+height: 50vh;
+background-color: rgba(247, 243, 243, 0.486);
+display: flex;
+border-radius: 0px 10px 10px 10px;
+
+
+}
+
+
+.imgCardGigante99{
+  width: 50%;
+  height: 96%;
+  margin-left: 18px;
+}
+
+.imgCardGigante99 img{
+  width: 100%;
+  height: 100%;
+  border-right: 4px rgb(68, 66, 66)solid;
+  object-fit: cover;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.infoCardGigante99{
+
+width: 50%;
+height: 100%;
+display: flex;
+flex-direction: column;
+padding: 20px;
+justify-content: space-between;
+align-items: center;
+
+
+}
+.infoCardGigante99 h3{
+
+ font-weight: 700;
+ letter-spacing: 4px;
+ margin: 0px;
+  
+  }
+
+
+
+
+.pd99{
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+
+}
+
+
+.newComment{
+
+top: 10px;
+right: 425px;
+  width: 50px;
+  height: 50px;
+  border-radius: 180px;
+  background-color: rgb(34, 36, 34);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.newComment:hover{
+  background-color: #55ee7c;
+  transition-duration: 400ms;
+}
+
+
+.textArea99{
+  width: 700px;
+  height: 80px;
+  border-radius: 10px;
+  resize: none;
+  margin: 10px;
+}
+.button102{
+  padding: 5px;
+  border-radius: 8px;
+  background-color: #fc4252;
+  color: #ffffff;
+  margin-left: 10px;
+}
+.textArea99::placeholder{
+ padding-left: 10px;
+ padding-top: 5px;
+ font-style: italic;
+}
+
+
+.button102:hover{
+ 
+  background-color: #55ee7c;
+  transition-duration: 400ms;
+  cursor: pointer;
+}
+.comments99{
+
+
+min-height: 10vh;
+max-height: 35vh;
+border-radius: 0px 0px 10px 10px;
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+padding: 20px;
+width: 70%;
+align-items: center;
+margin-top: -45px;
+overflow-y: scroll;
+
+
+
+}
+.comments99::-webkit-scrollbar{
+
+background-color: rgb(255, 255, 255);
+width: 7px;
+height: 20px;
+  
+  }
+
+
+.comments99::-webkit-scrollbar-thumb{
+
+  background-color: #fc4252;
+  border-radius: 20px;
+  
+}
+
+
+
+
+.negrita99{
+  font-weight: 700;
+}
+
+.comments99 h3{
+  width: 100%;
+  text-align: center;
+  margin: 0px;
+margin-bottom: 10px;
+font-weight: 200;
+
+}
+
+
+
+
+/* //////////////////////////////////////////COMMENTSCOMPONENT */
+
+
+
+
+.comments100{
+
+
+  background-color: rgb(61, 60, 60);
+  border-radius: 5px;
+  width: 550px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  justify-content: space-between;
+
+  } 
+
+  
+.comments100logged{
+
+
+  background-color: rgb(61, 60, 60);
+  border-radius: 5px;
+  width: 550px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  justify-content: space-between;
+
+  } 
+
+  
+ 
+
+
+
+.iconitos100{
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: flex-end;
+
+  height: 100px;
+  gap: 3px;
+}
+
+.iconitos100 img{
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+  .photo100{
+background-color: rgb(255, 255, 255);
+border-radius:180px;
+width: 100px;
+height: 100px;
+object-fit:cover;
+border: #c7c7c7 3px solid;
+  }
+
+
+  .photo100logged{
+    background-color: rgb(255, 255, 255);
+    border: #36eb63 4px solid;
+    border-radius:180px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    
+    
+      }
+    
+  
+
+  .parrafo100{
+    color: white !important;
+    font-size: 14px;
+    font-weight: 200;
+    font-style: italic;
+    
+  }
+
+  .parrafo101{
+    color: white !important;
+    font-size: 14px;
+    font-weight: 200;
+    font-style: italic;
+    margin: 10px;
+    font-weight: 500;
+    
+  }
+
+
+  .btn.details{
+    transition: ease-out 0.3s;
+    box-shadow: inset 0 0 0 0 #ffffff;
+    transition: ease-out 0.3s;
+    outline: none;
+  }
+.btn-details:hover{
+  color: #ffffff;
+
+  
+  transition: ease-out 0.6s;
+  box-shadow: inset 0px 100px 100px 0 #f03050f3;
+
+
+
+
+ 
+}
+
+
+/* //////////////////////mediaqueriup////////////////// */
+
+
+
+
+
+
+@media (max-width: 1060px) {
+  .headerCities h2{
+    
+      margin-left: 40px; 
+    }
+    
+
+}
+
+
+@media (max-width: 768px) {
+  .informationCities h2{
+    
+      margin-bottom: 15px; 
+    }
+    
+
+}
+
+
+
+@media (max-width: 680px) {
+  .headerCities h2{
+    
+      margin-left: 40px; 
+    }
+    
+    .detailscity h2{
+      font-size: 35px !important;
+    }
+
+    .detailscity h2::first-letter{
+      font-size: 50px;
+    }
+
+
+    .comments100 p{
+      font-size: 8px;
+     
+    }
+
+    .comments100 img{
+      width: 7px;
+      height: 7px;
+     
+    }
+
+    .photo100{
+      /* display: none; */
+    
+      min-width:40px;
+      min-height: 40px;
+    
+    }
+    .parrafo101{
+      /* display: none; */
+    
+      display: none;
+    
+    }
+
+
+
+
+}
+
+
+
+@media (max-width: 490px) {
+ .infoCardGigante99 h3{
+  font-size: 10px;
+ }
+
+ .infoCardGigante99 p{
+  font-size: 12px;
+ }
+    
+ .infoCardGigante99 button {
+  font-size: 10px;
+  border-radius: 10px;
+ }
+
+ .footereano{
+margin-top: 40px;
+ }
 }

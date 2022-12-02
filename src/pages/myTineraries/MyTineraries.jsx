@@ -21,14 +21,14 @@ export default function MyTineraries() {
   const { getContinent } = citiesActions;
 
   const { continents } = useSelector((store) => store.citiesReducer);
-  console.log(continents);
+ 
 
   useEffect(() => {
     dispatch(getContinent());
     dispatch(getTinerariesUser(id));
   }, []);
 
-  console.log(tineraries);
+ 
 
   return (
     <>

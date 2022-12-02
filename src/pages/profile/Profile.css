@@ -1,246 +1,331 @@
-
-
-
-.divProfile{
-
-
-  
-        height: 100vh;
-        background-image: url("https://hdwallpaperim.com/wp-content/uploads/2017/08/22/340053-airplane-aircraft-space-minimalism.jpg");
-        background-color: rgba(17, 17, 17, 0.247);
-        background-blend-mode: color;
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        
-        
-      
-
+.divProfile {
+  height: 100vh;
+  background-image: url("https://hdwallpaperim.com/wp-content/uploads/2017/08/22/340053-airplane-aircraft-space-minimalism.jpg");
+  background-color: rgba(17, 17, 17, 0.247);
+  background-blend-mode: color;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-
 
 .divProfile h2 {
-    color: white;
-    text-align: center;
-    margin-bottom: 35px;
-    /* letter-spacing: 15px; */
-
+  color: white;
+  text-align: center;
+  margin-bottom: 35px;
+  /* letter-spacing: 15px; */
 }
 
+.mainProfile {
+  background-color: rgba(22, 22, 22, 0.281);
+  width: 48%;
+  min-height: 40vh;
+  background: rgba(17, 7, 7, 0.17);
+  border-radius: 35px 0px 35px 0px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
-
-.mainProfile{
-    background-color: rgba(22, 22, 22, 0.281);
-    width: 48%;
-      min-height: 40vh;
-      background: rgba(17, 7, 7, 0.17);
-      border-radius: 35px 0px 35px 0px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      
-    
-    
-      display: flex;
-      justify-content: center;
-      align-items: center;
-   
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.profilePhoto{
-   
-    height: 100%;
-    width: 50%;
-    display: flex;
-   justify-content: end;
-    align-items: center;
-    backdrop-filter: blur(3.4px);
+.profilePhoto {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  backdrop-filter: blur(3.4px);
 }
 .profilePhoto img {
-    border-radius: 25px 0px 0px 25px;
-   width:70%;
-    height: 80%;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(30%);
-    object-fit: cover;
- 
+  border-radius: 25px 0px 0px 25px;
+  width: 70%;
+  height: 80%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(30%);
+  object-fit: cover;
 }
 
-
-.profileInfo ul{
-font-size: 20px;
-font-weight: 700;
-color: aliceblue;
-
-
+.profileInfo ul {
+  font-size: 20px;
+  font-weight: 700;
+  color: aliceblue;
 }
 
-.profileInfo{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 50%;
-    height: 100%;
-    border-radius: 0px 0px 35px 0px;
-    background-color: rgba(8, 6, 6, 0.466);
-    justify-content: center;
-    align-items: flex-start;
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 50%;
+  height: 100%;
+  border-radius: 0px 0px 35px 0px;
+  background-color: rgba(8, 6, 6, 0.466);
+  justify-content: center;
+  align-items: flex-start;
   padding-left: 35px;
-    border-left: 1px solid rgba(245, 245, 245, 0.568);
-   
-    backdrop-filter: blur(7.4px);
-  
+  border-left: 1px solid rgba(245, 245, 245, 0.568);
+
+  backdrop-filter: blur(7.4px);
 }
 
-.spanProfile{
-    font-weight: 300;
-    font-style: normal;
+.spanProfile {
+  font-weight: 300;
+  font-style: normal;
 }
 
-
-.formProfile{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    position: absolute;
-    background-color: rgba(248, 248, 248, 0.483);
-    backdrop-filter: blur(9.4px);
-   padding: 25px;
-   border-radius: 10px;
+.formProfile {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  background-color: rgba(248, 248, 248, 0.483);
+  backdrop-filter: blur(9.4px);
+  padding: 25px;
+  border-radius: 10px;
 }
 
 .formProfile label input {
-    color: rgb(29, 29, 29);
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    border: none;
-    outline-color: 0px;
-    outline: none;
-    background-color: rgb(250, 250, 250);
-   
-    
+  color: rgb(29, 29, 29);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: none;
+  outline-color: 0px;
+  outline: none;
+  background-color: rgb(250, 250, 250);
 }
 
-.botonEditProfile{
-    margin-top: 20px;
-    padding: 1px;
-    background-color: rgb(35, 35, 35);
-color: white;
-    border-radius: 10px;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    font-weight: 500;
-    padding: 5px;
+.botonEditProfile {
+  margin-top: 20px;
+  padding: 1px;
+  background-color: rgb(35, 35, 35);
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  font-weight: 500;
+  padding: 5px;
 }
 
-.botonEditProfile:hover{
-    background-color:#f03d3d;
-    transition-duration: 500ms;
-    cursor: pointer;
+.botonEditProfile:hover {
+  background-color: #f03d3d;
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+
+.formNewReaction {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 25px;
+  border-radius: 25px;
+  width: 100%;
+}
+
+.formNewReaction h3 {
+  margin: 0px;
+}
+
+.panelOfAdmin h2 {
+  margin-top: 35px;
+  text-align: center;
+  color: rgb(32, 32, 32);
+}
+
+.panelOfAdmin h3 {
+  text-align: center;
+  margin: 0px;
+}
+
+.formNewReaction label select {
+  margin-left: 30px;
+  padding: 8px 0px;
+  width: 173px;
+}
+
+.newReaction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.buttonsReactions {
+  display: flex;
+  flex-direction: row;
+  margin-top: 55px;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.newReaction form {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.newReaction form label {
+  margin: 6px 0px;
+}
+
+.newReaction form label input {
+  margin-left: 30px;
+  padding: 5px;
+}
+
+/*/reaction/*/
+
+.ReactionUser999 {
+  width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 200px;
+  background-color: rgb(238, 237, 237);
+  margin: 30px 0px ;
+}
+
+.ReactionUser999:hover {
+ transform: scale(1.01);
+ transition: 300ms;
+ 
+}
+
+.ReactionUser999 img {
+  width: 50%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.infoReaction99 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  flex-wrap: wrap;
+}
+
+.infoReaction99 img {
+  width: 105px;
+  height: 105px;
+}
+
+.infoReaction99 p {
+  text-align: center;
+  width: 100%;
+}
+
+.ContainerReactionUser999 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 80px 0px ;
+  gap: 50px;
+  min-height: 30vh;
+  margin-top: 7px;
+}
+
+.ContainerReactionUser999 h3 {
+  margin: 0px;
+  text-align: left;
 }
 
 @media (max-width: 1400px) {
-    .profileInfo ul{
-        font-size:12px;
-    }
-     
-
+  .profileInfo ul {
+    font-size: 12px;
+  }
 }
-
 
 @media (max-width: 1050px) {
+  .divProfile h2 {
+    display: none;
+  }
 
-
-    .divProfile h2{display: none;}
-
-    .divProfile{
-        height: 150vh;
-    }
-    .mainProfile{flex-direction: column;
+  .divProfile {
+    height: 150vh;
+  }
+  .mainProfile {
+    flex-direction: column;
     margin-top: 0px;
     margin-bottom: 50px;
-    
-   
+  }
+  .profileInfo ul {
+    font-size: 12px;
+  }
+
+  .profilePhoto {
+    width: 340px;
+    margin: 0px;
+  }
+
+  .profilePhoto img {
+    width: 340px;
+    margin: 0px;
+    height: 100%;
+    border-radius: 25px 25px 0px 0px;
+    border-left: 1px solid rgba(255, 255, 255, 0.842);
+  }
+
+  .profileInfo {
+    width: 340px;
+    height: 50vh;
+    margin: 0px;
+  }
 }
-    .profileInfo ul{
-        font-size:12px;
-        
-    }
-
-    .profilePhoto{
-        width: 340px;
-        margin: 0px;
-    }
-
-    .profilePhoto img{
-        width: 340px;
-        margin: 0px;
-        height: 100%;
-        border-radius: 25px 25px 0px  0px;
-        border-left: 1px solid rgba(255, 255, 255, 0.842);
-    }
-
-    .profileInfo{
-        width: 340px;
-        height: 50vh;
-        margin: 0px;
-    }
-
-       
-
-}
-
-
 
 /* === removing default button style ===*/
 .button {
-    margin: 0;
-    height: auto;
-    background: transparent;
-    padding: 0;
-    border: none;
-  }
-  
-  /* button styling */
-  .button {
-    cursor: pointer;
-    margin-top: 10px;
-    --border-right: 6px;
-    --text-stroke-color: rgba(255, 255, 255, 0.966);
-    --animation-color: #f03d3d;
-    --fs-size: 10px;
-    letter-spacing: 3px;
-    text-decoration: none;
-    font-size: var(--fs-size);
-   font-family: monospace;
-    position: relative;
-   
-    color: transparent;
-    -webkit-text-stroke: 1px var(--text-stroke-color);
-  }
-  /* this is the text, when you hover on button */
-  .hover-text {
-    position: absolute;
-    box-sizing: border-box;
-    content: attr(data-text);
-    color: var(--animation-color);
-    width: 0%;
-    inset: 0;
-    border-right: var(--border-right) solid var(--animation-color);
-    overflow: hidden;
-    transition: 0.5s;
-    -webkit-text-stroke: 1px var(--animation-color);
-  }
-  /* hover */
-  .button:hover .hover-text {
-    width: 100%;
-    filter: drop-shadow(0 0 23px var(--animation-color))
-  }
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
 
+/* button styling */
+.button {
+  cursor: pointer;
+  margin-top: 10px;
+  --border-right: 6px;
+  --text-stroke-color: rgba(255, 255, 255, 0.966);
+  --animation-color: #f03d3d;
+  --fs-size: 10px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: monospace;
+  position: relative;
 
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}

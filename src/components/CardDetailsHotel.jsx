@@ -5,6 +5,7 @@ import { useParams } from "react-router";
 import hotels from "../data/hotels"
 import axios from "axios";
 import GoTo from "./GoTo";
+import API from "../api";
 
 
 
@@ -15,27 +16,27 @@ export default function CardDetailsHotel() {
   let [hotel, setHotel] = useState({})
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/hotels/${id}`)
+      .get(`${API}hotels/${id}`)
       .then((response) => setHotel(response.data.hotel));
   }, []);
 
 
   return (
 
-    <div className="cardDetailsHotel">
+    <div className="informacionCardDetails">
         
-      <div className="imagenCardDetailsHotel">
+      {/* <div className="imagenCardDetailsHotel">
         <img src={hotel.photo} alt=""/>
 
-      </div>
+      </div> */}
       
 
 
 
       <div className="informacionCardDetailsHotel">   
-      <h3>{hotel.name}</h3>
-      <p>{hotel.description}</p>
-      <p>The hotel capacity is: {hotel.capacity}</p>
+      <h2>{hotel.name}</h2>
+      <p> <span className="negrita99">{hotel.description}</span></p>
+      <p>The hotel capacity is: <span className="negrita99">{hotel.capacity}</span> </p>
 
       <GoTo anchor="#showsss"/>
 

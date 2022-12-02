@@ -7,6 +7,7 @@ import OurToastContainer from "../../components/OurToastContainer";
 import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../../redux/actions/citiesActions";
+import API from "../../api";
 
 //Los HOOKS SOLO SE PUEDEN USAR EN COMPONENTES DE REACT
 export default function NewHotel() {
@@ -27,9 +28,9 @@ export default function NewHotel() {
   }, []);
   let send = async function (object) {
     axios
-      .post("http://localhost:8000/api/hotels/", object)
+      .post(`${API}hotels/`, object)
       .then((response) => {
-        console.log(response.data);
+        
         if (response.data.success === false) {
           response.data.message.map((message) => {
             toast.error(`${message}`, {

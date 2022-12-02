@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router";
+import API from "../../api";
 import CardDetailsHotel from "../../components/CardDetailsHotel";
 import ItineraryEvents from "../../components/ItineraryEvents";
 import events from "../../data/events";
@@ -13,7 +14,7 @@ export default function () {
   let [itineraryEventsX, setItineraryEventsX] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/shows?hotelId=${id}`)
+      .get(`${API}shows?hotelId=${id}`)
       .then((Response) => setItineraryEventsX(Response.data.searched));
   }, []);
 

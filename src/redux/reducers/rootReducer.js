@@ -3,6 +3,8 @@ import hotelsReducer from "./hotelsReducer"; //Aca me estoy importando los reduc
 import tineraryReducer from "./tinerariesReducer";
 import showsReducer from "./showsReducer";
 import userReducer from "./userReducer";
+import reactionsReducer from "./reactionsReducer";
+import commentsReducer from "./commentsReducer";
 
 //Aca es donde juntamos todos los reductores, se hace por más prolijidad.
 
@@ -12,6 +14,8 @@ const rootReducer = { //En root reducer tengo un objeto con todos mis reductores
   tineraryReducer,
   showsReducer,
   userReducer,
+  reactionsReducer,
+  commentsReducer
 };
 
 export default rootReducer;
