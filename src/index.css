@@ -332,6 +332,7 @@ header ul li:hover {
   cursor: pointer;
   border-radius: 125px;
   border: 2px solid white;
+  object-fit: cover;
 }
 
 #normalUserImg {

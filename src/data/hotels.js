@@ -3,9 +3,9 @@ let hotels = [
     id: "ho1",
     name: "The Harbourview",
     photo: [
-      "https://images.pexels.com/photos/1001965/pexels-photo-1001965.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      " https://images.pexels.com/photos/2034335/pexels-photo-2034335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "https://images.pexels.com/photos/460537/pexels-photo-460537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/5563472/pexels-photo-5563472.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      " https://i.natgeofe.com/n/108a3edc-7197-46bd-8baa-7367d30e39a6/book-and-bed-bookstoe-hotel-tokyo-japan.jpg?w=795&h=530",
+      "https://images.adsttc.com/media/images/563c/db64/e58e/ce00/0f00/0002/large_jpg/TOM_ROE_SENSE_OF_PLACE.jpg?1446828875",
     ],
     capacity: 40000,
     description:
@@ -17,9 +17,9 @@ let hotels = [
     id: "ho2",
     name: "Hyatt Place Bangkok Sukhumvit",
     photo: [
-      "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://i.natgeofe.com/n/5adfa643-6722-4fc3-ab7b-301d7d2050ad/igloo-golden-crown-levin-iglut-levi-finland.jpg?w=795&h=528.75",
       " https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg?auto=compress&cs=tinysrgb&w=1600 ",
-      "https://images.pexels.com/photos/189333/pexels-photo-189333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 ",
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hoshinoya-kyoto-floating-tearoom-3-1549906559.jpg ",
     ],
     capacity: 10000,
     description:
@@ -31,9 +31,9 @@ let hotels = [
     id: "ho3",
     name: "Cisne Azul",
     photo: [
-      "https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      " https://cdn.pixabay.com/photo/2018/06/14/21/15/bedroom-3475656__340.jpg",
-      "https://cdn.pixabay.com/photo/2018/11/09/09/25/interior-3804121_960_720.jpg",
+      "https://www.travelandleisure.com/thmb/rXM-f7JouFgixkf3kxqWRObf4YE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/burj-al-arab-jumeirah-dubai-lead-AMECITYHOTELSWB20-1e5d98ddfbd441bba2df31ddb839108f.jpg",
+      "https://media.cntraveller.com/photos/611beb3280db5ca184e70cf5/master/w_1920%2Cc_limit/wickannish.jpg",
+      "https://www.travelandleisure.com/thmb/HaAgtnns6Cp6Tb08MJq8xXOHzH0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/soneva-jani-sunset-view-maldives-SONEVA0421-74b37591d80441ce87831a41da518e49.jpg",
     ],
     capacity: 10000,
     description:
@@ -45,9 +45,9 @@ let hotels = [
     id: "ho4",
     name: "Steigenberger Hotel El Tahrir Cairo",
     photo: [
-      "https://images.pexels.com/photos/261101/pexels-photo-261101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 ",
-      " https://cdn.pixabay.com/photo/2016/10/18/09/02/hotel-1749602_960_720.jpg",
-      "https://cdn.pixabay.com/photo/2020/01/15/18/02/room-4768553_960_720.jpg",
+      "https://i.natgeofe.com/n/108a3edc-7197-46bd-8baa-7367d30e39a6/book-and-bed-bookstoe-hotel-tokyo-japan.jpg?w=795&h=530",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/34687298.jpg?k=95558a4f06c02cf922911301c846d382eafe1a091b088918d798e7cd5ecf3bad&o=&hp=1",
+      "https://img.freepik.com/free-photo/leisure-beautiful-health-garden-landscape_1203-4856.jpg?w=2000",
     ],
     capacity: 25000,
     description:
@@ -59,9 +59,9 @@ let hotels = [
     id: "ho5",
     name: "Tea-Time",
     photo: [
-      "https://cdn.pixabay.com/photo/2020/01/15/18/01/room-4768551_960_720.jpg ",
+      "https://img.freepik.com/free-photo/leisure-beautiful-health-garden-landscape_1203-4856.jpg?w=2000",
       " https://cdn.pixabay.com/photo/2017/05/31/10/23/manor-house-2359884_960_720.jpg ",
-      "https://cdn.pixabay.com/photo/2019/12/26/18/41/lamp-4720975_960_720.jpg",
+      "https://cdn.cnn.com/cnnnext/dam/assets/160509165851-1--monastero-sta-rosa-super-169.jpg",
     ],
     capacity: 8000,
     description:

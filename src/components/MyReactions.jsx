@@ -17,7 +17,7 @@ export default function MyReactions() {
 
   return (
     <>
-      <h3>Your reactions are here<span className="rojo">.</span></h3>
+      <h3>Your reactions are here<span className="negrita99 rojo">:</span></h3>
       <div className="ContainerReactionUser999">
         {allReactionsOfUser.length>0 ?allReactionsOfUser.map((reaction) => (
           <ReactionUser reaction={reaction} />
