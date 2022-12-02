@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { toast } from "react-toastify";
 import OurToastContainer from "../components/OurToastContainer";
 import Swal from "sweetalert2/dist/sweetalert2.js";
+import API from "../api";
 
 export default function Form(props) {
   let { role } = props;
@@ -31,7 +32,7 @@ export default function Form(props) {
 
 
     await axios
-      .post("http://localhost:8000/api/auth/sign-up", newUser)
+      .post(`${API}auth/sign-up`, newUser)
       .then((response) => {
 
 

@@ -3,6 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router";
+import API from "../api";
 import places from "../data/cities";
 import GoTo from "./GoTo";
 
@@ -13,7 +14,7 @@ export default function CardDetailsCity() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/cities/${id}`)
+      .get(`${API}cities/${id}`)
       .then((response) => setPlace(response.data.cities));
   }, []);
 
