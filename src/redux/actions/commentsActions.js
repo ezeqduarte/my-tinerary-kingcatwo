@@ -3,7 +3,7 @@ import axios from "axios";
 import API from "../../api";
 
 const getComments = createAsyncThunk("getComments", async (itineraryId) => {
-  console.log(itineraryId);
+ 
   try {
     const res = await axios.get(`${API}/comments/?itineraryId=${itineraryId}`);
 
@@ -20,7 +20,7 @@ const getComments = createAsyncThunk("getComments", async (itineraryId) => {
 const postComments = createAsyncThunk(
   "postComments",
   async ({ token, newCommentObject }) => {
-    let headers = { headers: { Authorization: `Bearer ${token}` } };
+    let headers = { headers: { Authorization: `Bearer ${token}`} };
     try {
       const res = await axios.post(
         `${API}/comments/`,
@@ -40,9 +40,27 @@ const postComments = createAsyncThunk(
   }
 );
 
+const deleteComment = createAsyncThunk("deleteComment", async (data) => {
+  const { token, id } = data;
+
+  let headers = { headers: { Authorization: `Bearer ${token}` } };
+
+  try {
+    const respuesta = await axios.delete(`${API}comments/${id}`, headers);
+
+    return {
+      success: true,
+      reaction: respuesta.data.reaction,
+    };
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
 const commentsActions = {
   getComments,
   postComments,
+  deleteComment,
 };
 
 export default commentsActions;

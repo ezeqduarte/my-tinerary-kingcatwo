@@ -9,7 +9,7 @@ export default function MyReactions() {
   const dispatch = useDispatch();
   const { getReactionsOfUser } = reactionsActions;
   const { allReactionsOfUser } = useSelector((store) => store.reactionsReducer);
-  console.log(allReactionsOfUser);
+  
 
   useEffect(() => {
     dispatch(getReactionsOfUser({ id, token }));

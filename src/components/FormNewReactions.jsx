@@ -48,7 +48,7 @@ export default function FormNewReactions() {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const peticion = await axios.post(`${API}reactions`, newReaction);
-        console.log(peticion);
+        
         if (peticion.data.success) {
           Swal.fire({
             title: "The reaction has created",

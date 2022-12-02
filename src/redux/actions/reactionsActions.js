@@ -4,7 +4,7 @@ import API from "../../api";
 
 const reactions = createAsyncThunk("reactionOfTinerary", async (data) => {
   const { token, id } = data;
-  console.log(token);
+  // console.log(token);
   /* console.log(id); */
   let headers = { headers: { Authorization: `Bearer ${token}` } };
 

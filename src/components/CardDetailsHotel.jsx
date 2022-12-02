@@ -5,6 +5,7 @@ import { useParams } from "react-router";
 import hotels from "../data/hotels"
 import axios from "axios";
 import GoTo from "./GoTo";
+import API from "../api";
 
 
 
@@ -15,7 +16,7 @@ export default function CardDetailsHotel() {
   let [hotel, setHotel] = useState({})
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/hotels/${id}`)
+      .get(`${API}hotels/${id}`)
       .then((response) => setHotel(response.data.hotel));
   }, []);
 

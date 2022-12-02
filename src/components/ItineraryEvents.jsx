@@ -29,7 +29,7 @@ export default function ItineraryEvents(props) {
       setComments(res.payload.commentsItineraries);
     }
     peticion99();
-    // console.log(res.payload)
+    
   }, [reload]);
   const createComment = (e) => {
     setnewcomment(!newcomment);

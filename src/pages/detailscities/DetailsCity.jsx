@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigation, useParams } from "react-router";
+import API from "../../api";
 import CardDetailsCity from "../../components/CardDetailsCity";
 import GoTo from "../../components/GoTo";
 import ItineraryCard from "../../components/ItineraryCard";
@@ -19,13 +20,13 @@ export default function DetailsCity() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/itineraries?cityId=${id}`)
+      .get(`${API}itineraries?cityId=${id}`)
       .then((response) => setItineraries(response.data.searched));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/cities/${id}`)
+      .get(`${API}cities/${id}`)
       .then((response) => setCity(response.data.cities));
   }, []);
 
