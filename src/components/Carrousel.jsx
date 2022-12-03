@@ -37,7 +37,7 @@ export default function Carrousel() {
 
   return (
     <div className="carrouselEstilo">
-      <button className="botonCarrousel2" onClick={anterior}></button>
+      {/* <button className="botonCarrousel2" onClick={anterior}></button> */}
 
       <div className="imagenesCarrousel">
         <div>
@@ -54,7 +54,7 @@ export default function Carrousel() {
         </div>
       </div>
 
-      <button className="botonCarrousel" onClick={siguiente}></button>
+      {/* <button className="botonCarrousel" onClick={siguiente}></button> */}
     </div>
   );
 }
