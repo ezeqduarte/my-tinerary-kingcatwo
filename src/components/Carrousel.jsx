@@ -41,16 +41,16 @@ export default function Carrousel() {
 
       <div className="imagenesCarrousel">
         <div>
-          <img src={hotels[0].photo[numberPhotoToChange]} alt="" srcset="" />
+          <img src={hotels[0].photo[numberPhotoToChange]}/>
         </div>
         <div>
-          <img src={hotels[1].photo[numberPhotoToChange]} alt="" srcset="" />
+          <img src={hotels[1].photo[numberPhotoToChange]}/>
         </div>
         <div>
-          <img src={hotels[2].photo[numberPhotoToChange]} alt="" srcset="" />
+          <img src={hotels[2].photo[numberPhotoToChange]}/>
         </div>
         <div>
-          <img src={hotels[3].photo[numberPhotoToChange]} alt="" srcset="" />
+          <img src={hotels[3].photo[numberPhotoToChange]}/>
         </div>
       </div>
 

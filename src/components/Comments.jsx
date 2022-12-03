@@ -47,11 +47,11 @@ export default function Comments(props) {
           <div className="iconitos100">
             {comment.userId._id === id ? (
               <>
-                <img
+               {/*  <img
                   src="https://img.icons8.com/ios-glyphs/30/CCC6C6/pencil-tip.png"
                   alt=""
                   srcset=""
-                />
+                /> */}
                 <img
                   src="https://img.icons8.com/ios-glyphs/30/CCC6C6/multiply.png"
                   alt=""

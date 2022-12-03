@@ -68,7 +68,7 @@ export default function NewComment(props) {
     });
   };
   return (
-    <div>
+    <div className="divNewComment">
       <textarea
         className="textArea99"
         ref={textarea}

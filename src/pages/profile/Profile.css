@@ -157,7 +157,7 @@
   justify-content: center;
   align-items: center;
   min-height: 10vh;
-  flex-direction: column;
+  flex-wrap: wrap;
   padding: 30px;
 }
 
@@ -194,13 +194,12 @@
   flex-wrap: wrap;
   height: 200px;
   background-color: rgb(238, 237, 237);
-  margin: 30px 0px ;
+  margin: 30px 0px;
 }
 
 .ReactionUser999:hover {
- transform: scale(1.01);
- transition: 300ms;
- 
+  transform: scale(1.01);
+  transition: 300ms;
 }
 
 .ReactionUser999 img {
@@ -231,7 +230,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 80px 0px ;
+  align-items: center;
+  margin: 80px 0px;
   gap: 50px;
   min-height: 30vh;
   margin-top: 7px;

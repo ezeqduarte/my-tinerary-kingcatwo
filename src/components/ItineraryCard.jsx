@@ -19,6 +19,7 @@ export default function ItineraryCard(props) {
   let { getComments } = commentsActions;
   let [comments, setComments] = useState([]);
   let [mostrarComentarios, setMostrarComentarios] = useState(false);
+  let [open, setOpen] = useState(true);
 
   let [newcomment, setnewcomment] = useState(false);
   let change = () => {
@@ -36,6 +37,7 @@ export default function ItineraryCard(props) {
 
   const createComment = (e) => {
     setnewcomment(!newcomment);
+    setOpen(!open);
   };
 
   let textarea = useRef();
@@ -44,7 +46,6 @@ export default function ItineraryCard(props) {
 
   const { postComments } = commentsActions;
   const { id, token, logged } = useSelector((store) => store.userReducer);
-
 
   const sendComment = (e) => {
     let newCommentObject2 = {
@@ -131,9 +132,20 @@ export default function ItineraryCard(props) {
       {mostrarComentarios ? (
         <>
           <div className="comments99">
-            <div className="newComment" onClick={createComment}>
-              +
+            {open ? (
+              <div className="buttonNewComment00">
+                <div className="newComment" onClick={createComment}>
+                  <p>+</p>
+                </div>
+              </div>
+            ) : (
+              <div className="buttonNewComment00">
+              <div className="newComment" onClick={createComment}>
+                <p>x</p>
+              </div>
             </div>
+            )}
+
             {newcomment ? (
               <div>
                 <textarea
@@ -146,7 +158,6 @@ export default function ItineraryCard(props) {
                 </button>
               </div>
             ) : null}
-            <h3> Create a new comment!</h3>
 
             {comments?.map((comment) => (
               <Comments comment={comment}></Comments>

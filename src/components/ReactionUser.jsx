@@ -40,7 +40,7 @@ export default function ReactionUser({ reaction }) {
       <div className="infoReaction99">
         <p className="negrita99">{reaction?.itineraryId.name}</p>
 
-        <p>Your reaction in the {reaction?.itineraryId.name} was </p>
+        <p>Your reaction in {reaction?.itineraryId.name} was </p>
 
         <img src={reaction.icon} alt="" />
       </div>

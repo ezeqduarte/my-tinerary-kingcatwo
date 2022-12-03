@@ -127,7 +127,7 @@ export default function Profile() {
           <>
             {" "}
             <div>
-              <NewReaction />{/*  <NewReactionShows /> */}
+              <NewReaction /> 
             </div>{" "}
             <MyReactions />{" "}
           </>

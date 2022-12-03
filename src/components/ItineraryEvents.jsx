@@ -14,6 +14,7 @@ export default function ItineraryEvents(props) {
 
   const dispatch = useDispatch();
   const [reload, setReload] = useState(false);
+  let [open, setOpen] = useState(true);
 
   let { getComments } = commentsActions;
   let [comments, setComments] = useState([]);
@@ -29,10 +30,10 @@ export default function ItineraryEvents(props) {
       setComments(res.payload.commentsItineraries);
     }
     peticion99();
-    
   }, [reload]);
   const createComment = (e) => {
     setnewcomment(!newcomment);
+    setOpen(!open);
   };
 
   return (
@@ -71,9 +72,19 @@ export default function ItineraryEvents(props) {
       {mostrarComentarios ? (
         <>
           <div className="comments99">
-            <div className="newComment" onClick={createComment}>
-              +
-            </div>
+            {open ? (
+              <div className="buttonNewComment00">
+                <div className="newComment" onClick={createComment}>
+                  <p>+</p>
+                </div>
+              </div>
+            ) : (
+              <div className="buttonNewComment00">
+                <div className="newComment" onClick={createComment}>
+                  <p>x</p>
+                </div>
+              </div>
+            )}
             {newcomment ? (
               <NewComment
                 itinerary={object._id}
@@ -81,7 +92,6 @@ export default function ItineraryEvents(props) {
                 setreload={setReload}
               ></NewComment>
             ) : null}
-            <h3> Create a new comment!</h3>
 
             {comments?.map((comment) => (
               <Comments comment={comment}></Comments>

@@ -79,11 +79,11 @@ export default function NewReactionShows() {
     <div className="newReaction">
       <div className="formNewReaction">
         <h3>
-          New reaction<span className="rojo">.</span>
+          Reaction of show<span className="rojo">.</span>
         </h3>
         <form ref={form}>
           <label>
-            Itinerary
+            Shows
             <select ref={show}>
               <option value="">Select itinerary</option>
               {shows.map((show) => (
