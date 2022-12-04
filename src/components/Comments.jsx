@@ -5,6 +5,7 @@ import Swal from "sweetalert2/dist/sweetalert2.js";
 
 export default function Comments(props) {
   let { logged, id, token } = useSelector((store) => store.userReducer);
+
   let { comment } = props;
   let { deleteComment } = commentsActions;
 
@@ -47,11 +48,11 @@ export default function Comments(props) {
           <div className="iconitos100">
             {comment.userId._id === id ? (
               <>
-                <img
+                {/*  <img
                   src="https://img.icons8.com/ios-glyphs/30/CCC6C6/pencil-tip.png"
                   alt=""
                   srcset=""
-                />
+                /> */}
                 <img
                   src="https://img.icons8.com/ios-glyphs/30/CCC6C6/multiply.png"
                   alt=""

@@ -32,7 +32,7 @@
   display: flex;
   flex-direction: row;
   padding: 15px;
-  background-color:  rgba(247, 243, 243, 0.486);
+  background-color: rgba(247, 243, 243, 0.486);
 }
 
 .rowReactions99 {
@@ -46,9 +46,8 @@
 }
 
 .detailscity {
-
   background-color: rgba(0, 0, 0, 0.74);
- z-index: -1;
+  z-index: -1;
 
   background-blend-mode: color;
   background-attachment: fixed;
@@ -92,7 +91,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
- height: 400px;
+  height: 400px;
   gap: 40px;
   /* background-color: #fc4252; */
 }
@@ -100,23 +99,20 @@
 .informacionCardDetails h2 {
   margin: 0;
   color: aliceblue;
- font-size: 150px;
+  font-size: 100px;
   text-align: center;
 }
 
 .informacionCardDetails h2::first-letter {
-font-weight: 700;
-font-size: 170px;
-color: #fc4252;
-
+  font-weight: 700;
+  font-size: 170px;
+  color: #fc4252;
 }
-
-
 
 .informacionCardDetails p {
   margin: 0;
   color: aliceblue;
- font-size: 20px;
+  font-size: 20px;
   text-align: center;
   font-style: italic;
 }
@@ -240,84 +236,62 @@ color: #fc4252;
   }
 }
 
-
-
 /* ///////////////////NEW DESCRIPTION */
 
-
-
-.ContenedorGeneral99{
-
-
-display: flex;
-flex-direction: column;
-box-shadow: rgba(0, 0, 0, 0.171) 0px 3px 8px;
-border-radius: 0px 5px 5px 5px;
-width: 70%;
-
+.ContenedorGeneral99 {
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.171) 0px 3px 8px;
+  border-radius: 0px 5px 5px 5px;
+  width: 70%;
 }
 
-
-.CardGigante99{
-width: 100%;
-height: 50vh;
-background-color: rgba(247, 243, 243, 0.486);
-display: flex;
-border-radius: 0px 10px 10px 10px;
-
-
+.CardGigante99 {
+  width: 100%;
+  height: 50vh;
+  background-color: rgba(247, 243, 243, 0.486);
+  display: flex;
+  border-radius: 0px 10px 10px 10px;
 }
 
-
-.imgCardGigante99{
+.imgCardGigante99 {
   width: 50%;
   height: 96%;
   margin-left: 18px;
 }
 
-.imgCardGigante99 img{
+.imgCardGigante99 img {
   width: 100%;
   height: 100%;
-  border-right: 4px rgb(68, 66, 66)solid;
+  border-right: 4px rgb(68, 66, 66) solid;
   object-fit: cover;
   border-radius: 5px 0px 0px 5px;
 }
 
-.infoCardGigante99{
-
-width: 50%;
-height: 100%;
-display: flex;
-flex-direction: column;
-padding: 20px;
-justify-content: space-between;
-align-items: center;
-
-
+.infoCardGigante99 {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
 }
-.infoCardGigante99 h3{
-
- font-weight: 700;
- letter-spacing: 4px;
- margin: 0px;
-  
-  }
-
-
-
-
-.pd99{
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
-
+.infoCardGigante99 h3 {
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin: 0px;
 }
 
+.pd99 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-.newComment{
-
-top: 10px;
-right: 425px;
+.newComment {
+  top: 10px;
+  right: 425px;
   width: 50px;
   height: 50px;
   border-radius: 180px;
@@ -326,106 +300,99 @@ right: 425px;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 25px;
+  padding-bottom: 0px;
   color: rgb(255, 255, 255);
   cursor: pointer;
 }
 
-.newComment:hover{
+.newComment:hover {
   background-color: #55ee7c;
   transition-duration: 400ms;
 }
 
-
-.textArea99{
+.textArea99 {
   width: 700px;
   height: 80px;
   border-radius: 10px;
   resize: none;
   margin: 10px;
 }
-.button102{
+.button102 {
   padding: 5px;
   border-radius: 8px;
   background-color: #fc4252;
   color: #ffffff;
   margin-left: 10px;
 }
-.textArea99::placeholder{
- padding-left: 10px;
- padding-top: 5px;
- font-style: italic;
+.textArea99::placeholder {
+  padding-left: 10px;
+  padding-top: 5px;
+  font-style: italic;
 }
 
-
-.button102:hover{
- 
+.button102:hover {
   background-color: #55ee7c;
   transition-duration: 400ms;
   cursor: pointer;
 }
-.comments99{
-
-
-min-height: 10vh;
-max-height: 35vh;
-border-radius: 0px 0px 10px 10px;
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
-justify-content: center;
-padding: 20px;
-width: 70%;
-align-items: center;
-margin-top: -45px;
-overflow-y: scroll;
-
-
-
+.comments99 {
+  min-height: 10vh;
+  max-height: 45vh;
+  border-radius: 0px 0px 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  width: 70%;
+  align-items: center;
+  margin-top: -35px;
+  overflow-y: scroll;
+  box-shadow: rgba(0, 0, 0, 0.171) 0px 3px 8px;
 }
-.comments99::-webkit-scrollbar{
 
-background-color: rgb(255, 255, 255);
-width: 7px;
-height: 20px;
-  
-  }
+.buttonNewComment00 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.divNewComment{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-.comments99::-webkit-scrollbar-thumb{
+.comments99::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0);
+  width: 7px;
+  height: 20px;
+}
 
+.comments99::-webkit-scrollbar-thumb {
   background-color: #fc4252;
   border-radius: 20px;
-  
 }
 
-
-
-
-.negrita99{
+.negrita99 {
   font-weight: 700;
 }
 
-.comments99 h3{
+.comments99 h3 {
   width: 100%;
   text-align: center;
   margin: 0px;
-margin-bottom: 10px;
-font-weight: 200;
-
+  margin-bottom: 10px;
+  font-weight: 200;
 }
-
-
-
 
 /* //////////////////////////////////////////COMMENTSCOMPONENT */
 
-
-
-
-.comments100{
-
-
+.comments100 {
   background-color: rgb(61, 60, 60);
   border-radius: 5px;
   width: 550px;
@@ -435,13 +402,9 @@ font-weight: 200;
   gap: 10px;
   padding: 16px;
   justify-content: space-between;
+}
 
-  } 
-
-  
-.comments100logged{
-
-
+.comments100logged {
   background-color: rgb(61, 60, 60);
   border-radius: 5px;
   width: 550px;
@@ -451,15 +414,9 @@ font-weight: 200;
   gap: 10px;
   padding: 16px;
   justify-content: space-between;
+}
 
-  } 
-
-  
- 
-
-
-
-.iconitos100{
+.iconitos100 {
   /* background-color: aqua; */
   display: flex;
   justify-content: flex-end;
@@ -468,169 +425,123 @@ font-weight: 200;
   gap: 3px;
 }
 
-.iconitos100 img{
+.iconitos100 img {
   width: 15px;
   height: 15px;
   cursor: pointer;
 }
 
-
-
-
-
-
-  .photo100{
-background-color: rgb(255, 255, 255);
-border-radius:180px;
-width: 100px;
-height: 100px;
-object-fit:cover;
-border: #c7c7c7 3px solid;
-  }
-
-
-  .photo100logged{
-    background-color: rgb(255, 255, 255);
-    border: #36eb63 4px solid;
-    border-radius:180px;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    
-    
-      }
-    
-  
-
-  .parrafo100{
-    color: white !important;
-    font-size: 14px;
-    font-weight: 200;
-    font-style: italic;
-    
-  }
-
-  .parrafo101{
-    color: white !important;
-    font-size: 14px;
-    font-weight: 200;
-    font-style: italic;
-    margin: 10px;
-    font-weight: 500;
-    
-  }
-
-
-  .btn.details{
-    transition: ease-out 0.3s;
-    box-shadow: inset 0 0 0 0 #ffffff;
-    transition: ease-out 0.3s;
-    outline: none;
-  }
-.btn-details:hover{
-  color: #ffffff;
-
-  
-  transition: ease-out 0.6s;
-  box-shadow: inset 0px 100px 100px 0 #f03050f3;
-
-
-
-
- 
+.photo100 {
+  background-color: rgb(255, 255, 255);
+  border-radius: 180px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: #c7c7c7 3px solid;
 }
 
+.photo100logged {
+  background-color: rgb(255, 255, 255);
+  border: #36eb63 4px solid;
+  border-radius: 180px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.parrafo100 {
+  color: white !important;
+  font-size: 14px;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.parrafo101 {
+  color: white !important;
+  font-size: 14px;
+  font-weight: 200;
+  font-style: italic;
+  margin: 10px;
+  font-weight: 500;
+}
+
+.btn.details {
+  transition: ease-out 0.3s;
+  box-shadow: inset 0 0 0 0 #ffffff;
+  transition: ease-out 0.3s;
+  outline: none;
+}
+.btn-details:hover {
+  color: #ffffff;
+
+  transition: ease-out 0.6s;
+  box-shadow: inset 0px 100px 100px 0 #f03050f3;
+}
 
 /* //////////////////////mediaqueriup////////////////// */
 
-
-
-
-
-
 @media (max-width: 1060px) {
-  .headerCities h2{
-    
-      margin-left: 40px; 
-    }
-    
-
+  .headerCities h2 {
+    margin-left: 40px;
+  }
 }
-
 
 @media (max-width: 768px) {
-  .informationCities h2{
-    
-      margin-bottom: 15px; 
-    }
-    
-
+  .informationCities h2 {
+    margin-bottom: 15px;
+  }
 }
-
-
 
 @media (max-width: 680px) {
-  .headerCities h2{
-    
-      margin-left: 40px; 
-    }
-    
-    .detailscity h2{
-      font-size: 35px !important;
-    }
+  .headerCities h2 {
+    margin-left: 40px;
+  }
 
-    .detailscity h2::first-letter{
-      font-size: 50px;
-    }
+  .detailscity h2 {
+    font-size: 35px !important;
+  }
 
+  .detailscity h2::first-letter {
+    font-size: 50px;
+  }
 
-    .comments100 p{
-      font-size: 8px;
-     
-    }
+  .comments100 p {
+    font-size: 8px;
+  }
 
-    .comments100 img{
-      width: 7px;
-      height: 7px;
-     
-    }
+  .comments100 img {
+    width: 7px;
+    height: 7px;
+  }
 
-    .photo100{
-      /* display: none; */
-    
-      min-width:40px;
-      min-height: 40px;
-    
-    }
-    .parrafo101{
-      /* display: none; */
-    
-      display: none;
-    
-    }
+  .photo100 {
+    /* display: none; */
 
+    min-width: 40px;
+    min-height: 40px;
+  }
+  .parrafo101 {
+    /* display: none; */
 
-
-
+    display: none;
+  }
 }
 
-
-
 @media (max-width: 490px) {
- .infoCardGigante99 h3{
-  font-size: 10px;
- }
+  .infoCardGigante99 h3 {
+    font-size: 10px;
+  }
 
- .infoCardGigante99 p{
-  font-size: 12px;
- }
-    
- .infoCardGigante99 button {
-  font-size: 10px;
-  border-radius: 10px;
- }
+  .infoCardGigante99 p {
+    font-size: 12px;
+  }
 
- .footereano{
-margin-top: 40px;
- }
+  .infoCardGigante99 button {
+    font-size: 10px;
+    border-radius: 10px;
+  }
+
+  .footereano {
+    margin-top: 40px;
+  }
 }

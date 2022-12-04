@@ -58,6 +58,8 @@ h3 {
   flex-direction: column;
 }
 
+.subtitulosMain h3 { margin-left: 0px; margin-top: 8px;}
+
 .carrouselEstilo {
   min-height: 35vh;
   display: flex;
@@ -93,7 +95,7 @@ h3 {
   height: 0;
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
-
+  display: none;
   border-left: 25px solid rgb(212, 212, 212);
   margin-right: 40px;
   background-color: rgb(255, 255, 255);
@@ -105,7 +107,7 @@ h3 {
   height: 0;
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
-
+  display: none;
   border-right: 25px solid rgb(212, 212, 212);
   margin-left: 40px;
   background-color: rgb(255, 255, 255);
@@ -199,6 +201,7 @@ h3 {
   justify-content: space-around;
   align-items: center;
   padding-right: 80px;
+  margin-top: 55px;
 }
 
 .footereano h4 {
@@ -224,6 +227,11 @@ h3 {
 .footereano li {
   margin: 10px;
   color: #eeeeee;
+}
+
+.footereano li:hover {
+  color: #ff3648;
+  transition: 300ms;
 }
 
 /* /////////////////////////ACA TERMINA EL FOOTEREANO/////////////////////////////////////// */

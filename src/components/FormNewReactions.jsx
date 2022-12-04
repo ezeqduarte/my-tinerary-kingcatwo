@@ -81,7 +81,7 @@ export default function FormNewReactions() {
     <div className="newReaction">
       <div className="formNewReaction">
         <h3>
-          New reaction<span className="rojo">.</span>
+         Reaction of tinerary<span className="rojo">.</span>
         </h3>
         <form ref={form}>
           <label>

@@ -12,15 +12,23 @@ export default function () {
   const { id } = useParams();
   // let itineraryEventsX = events.filter(event=>event.hotelId === id)
   let [itineraryEventsX, setItineraryEventsX] = useState([]);
+  let [hotel, setHotel] = useState()
   useEffect(() => {
     axios
       .get(`${API}shows?hotelId=${id}`)
       .then((Response) => setItineraryEventsX(Response.data.searched));
   }, []);
 
+  useEffect(() => {
+    axios
+      .get(`${API}hotels/${id}`)
+      .then((response) => setHotel(response.data.hotel));
+  }, []);
+  
+
   return (
     <div>
-      <div className="detailshotel">
+      <div className="detailshotel" style={{ backgroundImage: `url(${hotel?.photo[0]}) ` }}>
         <CardDetailsHotel></CardDetailsHotel>
       </div>
 

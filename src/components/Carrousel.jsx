@@ -37,24 +37,24 @@ export default function Carrousel() {
 
   return (
     <div className="carrouselEstilo">
-      <button className="botonCarrousel2" onClick={anterior}></button>
+      {/* <button className="botonCarrousel2" onClick={anterior}></button> */}
 
       <div className="imagenesCarrousel">
         <div>
-          <img src={hotels[0].photo[numberPhotoToChange]} alt="" srcset="" />
+          <img src={hotels[0].photo[numberPhotoToChange]}/>
         </div>
         <div>
-          <img src={hotels[1].photo[numberPhotoToChange]} alt="" srcset="" />
+          <img src={hotels[1].photo[numberPhotoToChange]}/>
         </div>
         <div>
-          <img src={hotels[2].photo[numberPhotoToChange]} alt="" srcset="" />
+          <img src={hotels[2].photo[numberPhotoToChange]}/>
         </div>
         <div>
-          <img src={hotels[3].photo[numberPhotoToChange]} alt="" srcset="" />
+          <img src={hotels[3].photo[numberPhotoToChange]}/>
         </div>
       </div>
 
-      <button className="botonCarrousel" onClick={siguiente}></button>
+      {/* <button className="botonCarrousel" onClick={siguiente}></button> */}
     </div>
   );
 }

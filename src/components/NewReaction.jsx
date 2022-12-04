@@ -1,25 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import FormNewReactions from "../components/FormNewReactions";
+import NewReactionShows from "./NewReactionShows";
 
 export default function NewReaction() {
-  let [formActive, setFormActive] = useState(false);
-  const formActiveClick = (e) => {
-    setFormActive(!formActive);
-  };
-
   return (
     <>
       <div className="buttonsReactions">
-        <button
-          className="buttonMostrarActionMycities"
-          onClick={formActiveClick}
-        >
-          New reaction
-        </button>
+        <h3>Create new reactions<span className="rojo">.</span></h3>
       </div>
       <div className="newReaction">
-        {formActive ? <FormNewReactions /> : <null />}
+        <FormNewReactions /> <NewReactionShows /> 
       </div>
     </>
   );

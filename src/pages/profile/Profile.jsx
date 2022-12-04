@@ -18,7 +18,7 @@ export default function Profile() {
     (store) => store.userReducer
   );
 
-  console.log(token);
+  /* console.log(token); */
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -127,7 +127,7 @@ export default function Profile() {
           <>
             {" "}
             <div>
-              <NewReaction />{/*  <NewReactionShows /> */}
+              <NewReaction /> 
             </div>{" "}
             <MyReactions />{" "}
           </>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import places from "../data/cities";
 
-
 export default function CarrouselCities() {
   let [numberPhotoToChange, setnumberPhotoToChange] = useState(0);
   let [id, setId] = useState(0);
@@ -9,7 +8,6 @@ export default function CarrouselCities() {
     let idInterval = setInterval(
       () => {
         siguiente();
-      
       },
 
       4000
@@ -18,18 +16,13 @@ export default function CarrouselCities() {
     return clearInterval(id);
   }, [numberPhotoToChange]);
 
-
-
-
-
-
-  
   let anterior = function () {
-    if (numberPhotoToChange > 0 ) {
+    if (numberPhotoToChange > 0) {
       setnumberPhotoToChange(--numberPhotoToChange);
     } else {
       setnumberPhotoToChange(2);
-    } clearInterval(id)
+    }
+    clearInterval(id);
   };
 
   let siguiente = function () {
@@ -42,24 +35,24 @@ export default function CarrouselCities() {
 
   return (
     <div className="carrouselEstilo">
-      <button className="botonCarrousel2" onClick={anterior}></button>
+      {/* <button className="botonCarrousel2" onClick={anterior}></button> */}
 
       <div className="imagenesCarrousel">
         <div>
-          <img src={places[0+numberPhotoToChange].photo} alt="" srcset="" />
+          <img src={places[0 + numberPhotoToChange].photo} />
         </div>
         <div>
-          <img src={places[1+numberPhotoToChange].photo} alt="" srcset="" />
+          <img src={places[1 + numberPhotoToChange].photo} />
         </div>
         <div>
-          <img src={places[2+numberPhotoToChange].photo} alt="" srcset="" />
+          <img src={places[2 + numberPhotoToChange].photo} />
         </div>
         <div>
-          <img src={places[3+numberPhotoToChange].photo} alt="" srcset="" />
+          <img src={places[3 + numberPhotoToChange].photo} />
         </div>
       </div>
 
-      <button className="botonCarrousel" onClick={siguiente}></button>
+      {/* <button className="botonCarrousel" onClick={siguiente}></button> */}
     </div>
   );
 }

@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import reactionsActions from "../redux/actions/reactionsActions";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 
-export default function ReactionUser({ reaction }) {
+export default function ReactionsUserShows({ reaction }) {
   const { token } = useSelector((store) => store.userReducer);
-  let { _id, itineraryId } = reaction;
+  let { _id, showId } = reaction;
   const dispatch = useDispatch();
   const { deleteReaction } = reactionsActions;
 
@@ -13,7 +13,7 @@ export default function ReactionUser({ reaction }) {
     e.preventDefault();
 
     Swal.fire({
-      title: `Are you sure to delete this reaction in ${itineraryId.name}?`,
+      title: `Are you sure to delete this reaction in ${showId.name}?`,
       imageUrl: "https://img.icons8.com/ios-glyphs/120/000000/break.png",
       width: "25rem",
       padding: "2rem",
@@ -36,15 +36,18 @@ export default function ReactionUser({ reaction }) {
 
   return (
     <div className="ReactionUser999">
-      <img src={reaction?.itineraryId.photo[0]} alt="" />
+      <img src={reaction?.showId.photo} alt="" />
       <div className="infoReaction99">
-        <p className="negrita99">{reaction?.itineraryId.name}</p>
+        <p className="negrita99">{reaction?.showId.name}</p>
 
-        <p>Your reaction in {reaction?.itineraryId.name} was </p>
+        <p>Your reaction in {reaction?.showId.name} was </p>
 
         <img src={reaction.icon} alt="" />
       </div>
-      <button onClick={deleteReactionFunction} className="negrita99 btn-details" >
+      <button
+        onClick={deleteReactionFunction}
+        className="negrita99 btn-details"
+      >
         Delete
       </button>
     </div>
