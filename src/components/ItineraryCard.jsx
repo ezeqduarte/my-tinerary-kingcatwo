@@ -15,6 +15,7 @@ export default function ItineraryCard(props) {
   let { itinerary } = props;
   const dispatch = useDispatch();
   const [reload, setReload] = useState(true);
+  let { refresh } = useSelector((store) => store.commentsReducer);
 
   let { getComments } = commentsActions;
   let [comments, setComments] = useState([]);
@@ -33,7 +34,7 @@ export default function ItineraryCard(props) {
 
   useEffect(() => {
     peticion99();
-  }, [reload]);
+  }, [refresh]);
 
   const createComment = (e) => {
     setnewcomment(!newcomment);

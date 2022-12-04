@@ -26,8 +26,6 @@ export default function FormLogIn() {
     await axios
       .post(`${API}auth/sign-in`, user, { new: true })
       .then((response) => {
-  
-
         if (response.data.success === false) {
           response.data.message.map((message) => {
             toast.error(`${message}`, {
@@ -89,14 +87,14 @@ export default function FormLogIn() {
       </label>
 
       <button className="btn-enviar">Send</button>
-      <NavLink to="/signin" style={{ textDecoration: "none" }}>
-        <button className="buttonlogin">
-          {" "}
-          Sign in with  
-          <img src="https://img.icons8.com/color/28/null/google-logo.png" />
-          oogle
-        </button>
-      </NavLink>
+
+      <button className="buttonlogin">
+        {" "}
+        Sign in with  
+        <img src="https://img.icons8.com/color/28/null/google-logo.png" />
+        oogle
+      </button>
+
       <OurToastContainer />
     </form>
   );

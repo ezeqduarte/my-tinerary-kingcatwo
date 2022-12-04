@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import events from "../data/events";
 import Comments from "./Comments";
@@ -11,7 +11,7 @@ import ReactionsShows from "./ReactionsShows";
 
 export default function ItineraryEvents(props) {
   let object = props.object;
-
+  let { refresh } = useSelector((store) => store.commentsReducer);
   const dispatch = useDispatch();
   const [reload, setReload] = useState(false);
   let [open, setOpen] = useState(true);
@@ -30,7 +30,7 @@ export default function ItineraryEvents(props) {
       setComments(res.payload.commentsItineraries);
     }
     peticion99();
-  }, [reload]);
+  }, [refresh]);
   const createComment = (e) => {
     setnewcomment(!newcomment);
     setOpen(!open);
