@@ -19,7 +19,7 @@ export default function ItineraryEvents(props) {
   let { getComments } = commentsActions;
   let [comments, setComments] = useState([]);
   let [mostrarComentarios, setMostrarComentarios] = useState(false);
-  console.log(comments);
+  
   let [newcomment, setnewcomment] = useState(false);
   let change = () => {
     setMostrarComentarios(!mostrarComentarios);

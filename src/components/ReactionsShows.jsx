@@ -13,17 +13,17 @@ export default function ReactionsShows(props) {
   let { itinerary: show } = props;
   let { likeDislike } = reactionsActions;
   let [reactionss, setReactionss] = useState([]);
-  console.log(id);
+ 
 
   const { reactionsShow } = reactionsActions;
-  console.log(token);
+ 
 
   async function reactionsfunction() {
     const res = await dispatch(reactionsShow({ id: show, token: token }));
     setReactionss(res.payload.reactions);
   }
 
-  console.log(reactionss);
+  
 
   useEffect(() => {
     reactionsfunction();

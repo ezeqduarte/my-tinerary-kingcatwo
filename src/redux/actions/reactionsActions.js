@@ -89,7 +89,7 @@ const deleteReaction = createAsyncThunk("deleteReaction", async (data) => {
 
 const reactionsShow = createAsyncThunk("reactionsShow", async (data) => {
   const { token, id } = data;
-  console.log(token);
+  
   /* console.log(id); */
   let headers = { headers: { Authorization: `Bearer ${token}` } };
 
