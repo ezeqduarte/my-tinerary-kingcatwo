@@ -58,6 +58,8 @@ h3 {
   flex-direction: column;
 }
 
+.subtitulosMain h3 { margin-left: 0px; margin-top: 8px;}
+
 .carrouselEstilo {
   min-height: 35vh;
   display: flex;
