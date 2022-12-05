@@ -62,7 +62,7 @@ export default function NavBar() {
 
       {mostrarMenu ? (
         <div className="flex-menu">
-          <img src="./img/menu-rounded.png" onClick={menu} alt="menu" />
+          <img src="/img/menu-rounded.png" onClick={menu} alt="menu" />
           <div className="menu">
             <NavLink to="/home" style={{ textDecoration: "none" }}>
               <button onClick={menu}>
@@ -84,7 +84,7 @@ export default function NavBar() {
         </div>
       ) : (
         <div className="flex-menu">
-          <img src="./img/menu-rounded.png" onClick={menu} alt="" />
+          <img src="/img/menu-rounded.png" onClick={menu} alt="" />
         </div>
       )}
 
