@@ -31,7 +31,7 @@ export default function DetailsCity() {
   }, []);
 
 
-  /* console.log(itineraries); */
+
 
   return (
     <>

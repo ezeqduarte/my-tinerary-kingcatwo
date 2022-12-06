@@ -14,7 +14,7 @@ export default function Reaction(props) {
   
 
   const { reactions } = reactionsActions;
-  // console.log(token);
+
 
   async function reactionsfunction() {
     const res = await dispatch(reactions({id: itinerary, token: token}));

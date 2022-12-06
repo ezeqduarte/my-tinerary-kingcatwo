@@ -32,7 +32,7 @@ const postComments = createAsyncThunk(
         commentPost: res.data.id,
       };
     } catch (error) {
-      console.log(error.message);
+      console.log("");
       return {
         cities: [],
       };
@@ -53,7 +53,7 @@ const deleteComment = createAsyncThunk("deleteComment", async (data) => {
       reaction: respuesta.data.reaction,
     };
   } catch (error) {
-    console.log(error.message);
+    console.log("");
   }
 });
 

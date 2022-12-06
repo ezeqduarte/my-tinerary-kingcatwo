@@ -18,7 +18,7 @@ export default function Profile() {
     (store) => store.userReducer
   );
 
-  /* console.log(token); */
+ 
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -12,7 +12,7 @@ const getShows = createAsyncThunk("getShows", async (user) => {
       showsUser: res.data.searched, // Me voy a guardar en showUser la respuesta de la data.searched(miarraydeshows), eso se ve con postman
     };
   } catch (error) {
-    console.log(error.message);
+   console.log("");
     return {
       shows: [],
     };
@@ -33,7 +33,7 @@ const createShows = createAsyncThunk("createShows", async (data) => {
     else{return {success:false, error:res.data.message}}
     
   } catch (error) {
-    console.log(error.message);
+   console.log("");
     return {
       error: error.message, //Se hay un error me va a devolver el estado inicial de mis SHOWS. Una buena practica de codigo? si, segun mi mentor favorito
     };
@@ -52,7 +52,7 @@ const deleteShows = createAsyncThunk("deleteShows", async (data) => {
       idShowDeleted: res.data.idDeleted, //Aca le pedimos que en base al id de arriba me responda con el ID del show borrado es decir me va a a
     };
   } catch (error) {
-    console.log(error.message);
+   console.log("");
     return {
       shows: [], //Se hay un error me va a devolver el estado inicial de mis SHOWS. Una buena practica de codigo? si, segun mi mentor favorito
     };
@@ -77,7 +77,7 @@ const editShows = createAsyncThunk("editShows", async (data) => {
       idShowEdited: res.data.id, //ACA ESTA MI PAYLOAD con la respuesta correspondiente.
     };
   } catch (error) {
-    console.log(error.message);
+   console.log("");
     return {
       shows: [], //Caso que no funcione lo de arriba me devuelve shows en su estado inicial.
     };

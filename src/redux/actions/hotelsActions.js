@@ -14,7 +14,7 @@ const getHotels = createAsyncThunk("getHotels", async (data) => {
 
     return { hotelsR: respuesta.data.Hotels };    //Esta es la payload de la accion, es decir lo que contiene la informacion de la accion que se la pasa al reductor.
   } catch (error) {
-    console.log(error.message);
+    console.log("");
   }
 });
 
@@ -27,7 +27,7 @@ const getHotelsAdmin = createAsyncThunk("getHotelsAdmin", async (id) => { //Esto
 
     return { hotelsAdmin: respuesta.data.Hotels }; // si todo va bien le pido que me rettorne un objeto (PAYLOAD) hotels admin, que tiene dentro respuesta.data.hotels
   } catch (error) {
-    console.log(error.message);
+    console.log("");
   }
 });
 
@@ -45,7 +45,7 @@ let headers = { headers: { Authorization: `Bearer ${data.token}` } };
 
     return { hotelsAdmin: respuesta.data.hotelito};
   } catch (error) {
-    console.log(error.message);
+    console.log("");
   }
 });
 
@@ -60,7 +60,7 @@ const deleteHotelsAdmin = createAsyncThunk( //Esto lo hago para poder  eliminar 
 
       return { hotel: respuesta.data.hotel };
     } catch (error) {
-      console.log(error.message);
+      console.log("");
     }
   }
 );
@@ -74,7 +74,7 @@ const getAllHotels = createAsyncThunk( //Esto lo hago para poder  eliminar hotel
 
       return { hotels: respuesta.data.Hotels };
     } catch (error) {
-      console.log(error.message);
+      console.log("");
     }
   }
 );

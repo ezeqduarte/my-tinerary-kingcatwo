@@ -84,7 +84,7 @@ export default function CreateItineraryForm() {
         });
       }
     } catch (error) {
-      console.log(error.message);
+      console.log("");
     }
 
 

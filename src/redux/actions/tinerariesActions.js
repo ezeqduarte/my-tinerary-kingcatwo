@@ -12,7 +12,7 @@ const getTinerariesUser = createAsyncThunk("getTinerariesUser", async (user) => 
       itinerariesUser: res.data.searched,
     };
   } catch (error) {
-    console.log(error.message);
+   console.log("");
     return {
       cities: [],
     };
@@ -30,7 +30,7 @@ const deleteTinerary = createAsyncThunk("deleteTinerary", async (data) => {
       itineraryDeleted: res.data.idDeleted,
     };
   } catch (error) {
-    console.log(error.message);
+   console.log("");
     return {
       cities: [],
     };
@@ -48,7 +48,7 @@ const editTinerary = createAsyncThunk("editTinerary", async (data) => {
       itineraryEdit: res.data.itineraryModificated,
     };
   } catch (error) {
-    console.log(error.message);
+   console.log("");
     return {
       cities: [],
     };
@@ -74,7 +74,7 @@ const newTinerary = createAsyncThunk("newTinerary", async (data) => {
       };
     }
   } catch (error) {
-    console.log(error.message);
+   console.log("");
   }
 });
 

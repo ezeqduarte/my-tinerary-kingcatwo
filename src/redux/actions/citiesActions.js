@@ -17,7 +17,7 @@ const getCities = createAsyncThunk("getCities", async ({ peticion }) => {
       cities: res.data.cities,
     };
   } catch (error) {
-    console.log(error.message);
+   console.log("");
     return {
       cities: [],
     };
@@ -34,7 +34,7 @@ const getContinent = createAsyncThunk("getContinent", async () => {
       continents: res.data.cities,
     };
   } catch (error) {
-    console.log(error.message);
+   console.log("");
     return {
       continents: [],
     };
@@ -50,7 +50,7 @@ const getCitiesOfAdmin = createAsyncThunk("getCitiesOfAdmin", async (id) => {
       citiesOfAdmin: res.data.cities,
     };
   } catch (error) {
-    console.log(error.message);
+   console.log("");
     return {
       citiesAdmin: [],
     };
@@ -72,7 +72,7 @@ const deleteCityAdmin = createAsyncThunk("deleteCityAdmin", async (data) => {
       succes: true,
     };
   } catch (error) {
-    console.log(error.message);
+   console.log("");
   }
 });
 
@@ -105,7 +105,7 @@ const editCityAdmin = createAsyncThunk("editCityAdmin", async (data) => {
       };
     }
   } catch (error) {
-    console.log(error.message);
+   console.log("");
   }
 });
 
@@ -125,7 +125,7 @@ const createCity = createAsyncThunk("createCity", async (data) => {
       };
     }
   } catch (error) {
-    console.log(error.message);
+   console.log("");
   }
 });
 

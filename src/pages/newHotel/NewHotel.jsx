@@ -66,7 +66,7 @@ export default function NewHotel() {
       })
 
       .catch((error) => {
-        console.log(error.message);
+        console.log("");
       });
   };
 

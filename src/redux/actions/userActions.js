@@ -11,7 +11,7 @@ const ingress = createAsyncThunk("ingress", async (datos) => {
       response: res.data,
     };
   } catch (error) {
-    console.log(error.message);
+   console.log("");
     return {
       success: false,
     };
@@ -34,7 +34,7 @@ const editProfile = createAsyncThunk("editProfile", async (datos) => {
       response: res.data.user,
     };
   } catch (error) {
-    console.log(error.message);
+   console.log("");
     return {
       success: false,
     };
@@ -55,7 +55,7 @@ const reIngress = createAsyncThunk("reIngress", async (token) => {
       },
     };
   } catch (error) {
-    console.log(error.response);
+    console.log("");
     return {
       success: false,
       response: error.response.data.message,
