@@ -1,4 +1,4 @@
-## Link to our project "My Tinerary":
+## Link to our project My Tinerary:
 
 https://my-tinerary-kingcatwo.vercel.app/ <br>
 
