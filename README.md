@@ -10,4 +10,7 @@ This project was a collaboration by Ezequiel Duarte and Matias Echarri done in 2
 
 https://github.com/ezeqduarte/back-kingcatwo
 
+## Our Github profiles:
+https://github.com/ezeqduarte
+https://github.com/matiasecharri
 
